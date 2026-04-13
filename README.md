@@ -1,2 +1,0 @@
-# danigrande.github.io
-Portfolio
