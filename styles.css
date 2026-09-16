@@ -489,3 +489,26 @@ footer {
     .pipeline-table { font-size: 0.85rem; }
     .pipeline-table td:first-child { white-space: normal; }
 }
+
+/* Home page cards */
+.card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    margin-bottom: 0.75rem;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.card-links {
+    margin-top: 1rem;
+    font-size: 0.95rem;
+}
+
+.card-links a {
+    display: inline-block;
+    margin-right: 1.25rem;
+}
