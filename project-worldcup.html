@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,27 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">AI Product Case Study</div>
-            <h1>Worldcup Pool App — Agente Mundial</h1>
+            <h1>Worldcup Pool App — <span>Agente Mundial</span></h1>
             <p class="subtitle">An AI-powered World Cup prediction pool with a seven-personality chatbot, real-time scoring, and 14-language banter — built for friend groups to compete, trash-talk, and celebrate together.</p>
             <p class="meta">
                 <span>Role: Product Manager & Sole Builder</span>
                 <span>Timeline: 2026</span>
                 <span>Status: Live prototype (web + TestFlight)</span>
             </p>
+            <div class="hero-tags">
+                <span>LangFlow</span>
+                <span>LLM + RAG</span>
+                <span>14 Languages</span>
+                <span>Judge Evals</span>
+                <span>Human-in-the-Loop</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -51,17 +59,11 @@
             </div>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. Problem & Opportunity -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">Problem & Opportunity</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> Problem & Opportunity</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>The Problem</h4>
@@ -72,19 +74,11 @@
                                 <p>Combine the social ritual of the pool with modern AI to make something sticky and different. A personality-driven chatbot keeps the banter going all tournament. Real-time scoring makes the leaderboard a daily destination. And football fandom is global — transcreation opens 14 languages from day one.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. Vision & Strategy -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">Vision & Strategy</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> Vision & Strategy</h2>
                         <p>The north star: <strong>the ultimate companion for World Cup 2026</strong> — predictions, banter, and AI-generated hype in one place.</p>
                         <div class="area-grid">
                             <div class="area-card">
@@ -100,19 +94,11 @@
                                 <p>The chatbot as the core differentiator vs. traditional pool tools. Two prediction modes to serve different preferences. 14-language transcreation for global reach. An automated quality gate to keep AI quality high at scale.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. What the App Does -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">What the App Does</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> What the App Does</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>Prediction Engine</h4>
@@ -127,19 +113,11 @@
                                 <p>Real-time point calculation as scores come in. The Pool Wall ("El Muro") shows every player's predictions in one view — the fuel for social competition. Each pool is isolated with its own rules and admins.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. The AI Pipeline -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">The AI Pipeline</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> The AI Pipeline</h2>
                         <p>Every chatbot message flows through a pipeline built for quality, safety, and cultural fit:</p>
                         <div class="pipe">
                             <span class="pipe-step">User Message</span>
@@ -170,19 +148,11 @@
                             <span class="tag tag-gold">Hosting</span> Vercel + Render
                             <span class="tag tag-green">Testing</span> Jest + Supertest
                         </p>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. Key Decisions & Trade-offs -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">Key Decisions & Trade-offs</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> Key Decisions & Trade-offs</h2>
                         <div class="decision-row">
                             <div class="decision-label">No frontend framework</div>
                             <div class="decision-desc"><strong>Why:</strong> speed of iteration for a solo build; static hosting is free and there's no build step. <strong>Trade-off:</strong> more manual UI work and no component reuse. <strong>Verdict:</strong> right call for an MVP; a team would want React.</div>
@@ -207,19 +177,11 @@
                             <div class="decision-label">Transcreation over translation</div>
                             <div class="decision-desc"><strong>Why:</strong> football banter doesn't translate literally; the pipeline adapts humour and idioms culturally across 14 languages. <strong>Trade-off:</strong> significant upfront investment. <strong>Verdict:</strong> worth it — nuance is the difference between funny and offensive.</div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 6. Research & Feedback Loops -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">6</span>
-                    <span class="accordion-title">Research & Feedback Loops</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">6</span> Research & Feedback Loops</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>What Informed the Features</h4>
@@ -230,19 +192,11 @@
                                 <p>In-app feedback with voting, so users prioritise their own requests. Correction detection, so when a user corrects the bot it becomes a reviewable signal. Judge logs, so every AI response is scored and low-scoring ones are flagged for human review.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 7. Delivery & Roadmap -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">7</span>
-                    <span class="accordion-title">Delivery & Roadmap</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">7</span> Delivery & Roadmap</h2>
                         <p>The product evolved through seven phases, each one usable on its own:</p>
                         <ul>
                             <li><strong>Phase 1 — Core pool:</strong> accounts, groups, prediction entry, scoring engine, leaderboard</li>
@@ -253,34 +207,18 @@
                             <li><strong>Phase 6 — Intelligence layer:</strong> conversational memory, web search, RSS monitoring</li>
                             <li><strong>Phase 7 — Metrics & ops:</strong> developer dashboard, health monitoring, usage analytics</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 8. Business & Product Strategy -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">8</span>
-                    <span class="accordion-title">Business & Product Strategy</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">8</span> Business & Product Strategy</h2>
                         <p>Beyond the build, I wrote a <strong>six-module strategy teardown</strong> of the product — the bet, the moat, the margin, the contract, the guardrails, and the pitch — with real numbers: unit economics, defensibility, reliability targets, and regulatory exposure.</p>
                         <p class="card-links"><a href="ai-strategy.html">Read the strategy →</a></p>
-                    </div>
-                </div>
             </div>
 
             <!-- 9. By the Numbers -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">9</span>
-                    <span class="accordion-title">By the Numbers</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">9</span> By the Numbers</h2>
                         <div class="metric-grid">
                             <div class="metric-card">
                                 <div class="metric-value">7</div>
@@ -308,19 +246,11 @@
                             </div>
                         </div>
                         <p>Figures describe the built prototype, as of September 2026.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 10. Lessons Learned -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">10</span>
-                    <span class="accordion-title">Lessons Learned</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">10</span> Lessons Learned</h2>
                         <ul>
                             <li><strong>RAG quality is harder than it looks.</strong> Chunking, embeddings, and retrieval relevance all needed iteration — and a dedicated evaluation set would have sped that up.</li>
                             <li><strong>Transcreation paid for itself.</strong> Non-English users reported far higher satisfaction than with raw machine translation.</li>
@@ -328,19 +258,11 @@
                             <li><strong>Personality is fragile.</strong> Without careful anchoring, the bot drifts out of character. Character consistency should be tested automatically.</li>
                             <li><strong>Start the quality pipeline earlier.</strong> Adding judging and human review after launch created a retrofitting tax. Next time: day one.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 11. Status & Links -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">11</span>
-                    <span class="accordion-title">Status & Links</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">11</span> Status & Links</h2>
                         <p>The app is live as a prototype. Next up: the feedback-to-PRD agent pipeline (built, pending deployment) and the quality improvements tracked in the chatbot improvement plan.</p>
                         <p class="card-links">
                             <a href="https://porra-mundial.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
@@ -351,8 +273,6 @@
                             <a href="ai-strategy.html">AI Product Strategy →</a>
                             <a href="project-agent.html">The AI Agents behind it →</a>
                         </p>
-                    </div>
-                </div>
             </div>
 
         </section>

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,26 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html" class="active">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">Models & Tooling</div>
-            <h1>LLMs & Agentic Coding</h1>
+            <h1>LLMs & <span>Agentic Coding</span></h1>
             <p class="subtitle">How I choose models, control costs, and let AI agents write production code — without losing quality.</p>
             <p class="meta">
                 <span>Models in use: 4</span>
                 <span>Approach: Cascading + free tiers</span>
                 <span>Evidence: ~790 automated tests in the ERP</span>
             </p>
+            <div class="hero-tags">
+                <span>Model Selection</span>
+                <span>Cascading Inference</span>
+                <span>Cost Engineering</span>
+                <span>Test-First Agents</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -48,17 +55,11 @@
             <p>And I don't just use models — I use them to build. AI agents wrote the ERP's code under specs, tests, and reviews.</p>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. The Models I Actually Use -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">The Models I Actually Use</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> The Models I Actually Use</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>Llama 3.3 70B on Groq <span class="tag tag-purple">Real-time</span></h4>
@@ -77,19 +78,11 @@
                                 <p>Asynchronous work like daily summaries and analysis, where quality matters more than latency — roughly 4% of traffic.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. The Cascading Strategy -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">The Cascading Strategy</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> The Cascading Strategy</h2>
                         <p>Frontier quality for everything is a margin killer. So traffic cascades by value:</p>
                         <ul>
                             <li>A <strong>self-hosted small model</strong> handles ~96% of traffic — pennies per call, no vendor lock-in.</li>
@@ -110,38 +103,22 @@
                             </div>
                         </div>
                         <p><strong>The break-even math:</strong> a $4.99 per-group pass against $0.30–0.50 of AI cost per group per tournament. The cascading is what makes 90%+ margins possible at consumer prices.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. Cost Engineering -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">Cost Engineering</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> Cost Engineering</h2>
                         <ul>
                             <li><strong>Free tiers as a product decision:</strong> the ERP runs every inference at $0 — document reading, setup suggestions, payment-batch composition — on free-tier inference providers.</li>
                             <li><strong>Unit economics per feature:</strong> ~$0.02 per daily payment batch; ~$0.01 per month-end analysis. Small numbers, tracked honestly.</li>
                             <li><strong>Funded targets vs. MVP reality:</strong> full-scale figures are goals for after revenue; the MVP lives inside free-tier limits by design.</li>
                             <li><strong>Provider abstraction:</strong> OpenAI-compatible endpoints and an inference adapter layer so models can be swapped without code changes.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. Agentic Coding in Practice -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">Agentic Coding in Practice</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> Agentic Coding in Practice</h2>
                         <p>The ERP's codebase is being implemented by AI agents — 36 of 46 planned work items so far — under human-owned product decisions.</p>
                         <ul>
                             <li><strong>Specs first:</strong> every work item starts from a written requirement with acceptance criteria.</li>
@@ -164,27 +141,17 @@
                             </div>
                         </div>
                         <p class="card-links"><a href="project-grandesuite.html">See the ERP case study →</a></p>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. What I Learned -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">What I Learned</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> What I Learned</h2>
                         <ul>
                             <li><strong>Latency is a product feature.</strong> The chatbot's real-time feel comes from inference speed, not raw model size.</li>
                             <li><strong>Some decisions should never be AI.</strong> The ERP's invoice matching is deliberately rules-based and auditable — AI extracts and suggests; deterministic logic decides.</li>
                             <li><strong>Free tiers change product economics.</strong> Per-invoice AI cost is what makes competing tools expensive; free-tier inference removes it.</li>
                             <li><strong>Models are swappable.</strong> Architecture should depend on capabilities and interfaces, not on one provider's name.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
         </section>

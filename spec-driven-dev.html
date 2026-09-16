@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,26 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">Engineering Method</div>
-            <h1>Spec Driven Development</h1>
+            <h1><span>Spec Driven</span> Development</h1>
             <p class="subtitle">Writing the specification first — then letting AI agents implement it. The method that makes agentic coding reliable instead of chaotic.</p>
             <p class="meta">
                 <span>Method: BMAD</span>
                 <span>Proven on: GrandeSuite Next</span>
                 <span>Status: Ongoing practice</span>
             </p>
+            <div class="hero-tags">
+                <span>BMAD</span>
+                <span>Spec-First</span>
+                <span>Traceability</span>
+                <span>Agentic Delivery</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -48,36 +55,22 @@
             <p>Every feature starts as a written requirement with testable acceptance criteria, moves through architecture and design, and only then becomes work an agent can implement — with full traceability from code back to intent.</p>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. Why Specs First -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">Why Specs First</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> Why Specs First</h2>
                         <ul>
                             <li><strong>Agents drift without a single source of truth.</strong> A spec is the contract every generation must respect — prompts alone are not.</li>
                             <li><strong>Traceability.</strong> Every piece of work links back to the requirement that justifies it — "why does this exist?" is answered in seconds.</li>
                             <li><strong>Change control.</strong> When strategy shifts, the spec is updated deliberately instead of the codebase drifting silently.</li>
                             <li><strong>Cheap errors.</strong> A mistake in a spec costs minutes to fix; the same mistake in code costs days.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. The Pipeline -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">The Pipeline</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> The Pipeline</h2>
                         <p>Every feature in the ERP project flowed through the same eleven phases. No phase was skipped.</p>
                         <table class="pipeline-table">
                             <thead>
@@ -101,19 +94,11 @@
                                 <tr><td>11. Testing</td><td>Automated tests, acceptance tests, quality checks</td><td>~790 automated tests</td></tr>
                             </tbody>
                         </table>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. What Makes a Spec Work -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">What Makes a Spec Work</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> What Makes a Spec Work</h2>
                         <ul>
                             <li><strong>Testable acceptance criteria</strong> — written before implementation; nothing vague survives.</li>
                             <li><strong>Traceability</strong> — every work item links to its requirement and the architecture decision behind it.</li>
@@ -121,19 +106,11 @@
                             <li><strong>Readiness checks</strong> — plan, design, and architecture are validated against each other before any code exists.</li>
                             <li><strong>Living documents</strong> — the spec evolves deliberately; changes are versioned decisions, not silent edits.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. Evidence -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">Evidence: GrandeSuite Next</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> Evidence: GrandeSuite Next</h2>
                         <div class="metric-grid">
                             <div class="metric-card">
                                 <div class="metric-value">27</div>
@@ -150,26 +127,16 @@
                         </div>
                         <p>The method caught problems early: the first readiness assessment found six issues — two of them critical — before development began. Traceability meant any number, screen, or test in the system could be explained from the spec in seconds.</p>
                         <p class="card-links"><a href="project-grandesuite.html">See the full case study →</a></p>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. Lessons Learned -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">Lessons Learned</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> Lessons Learned</h2>
                         <ul>
                             <li><strong>Settle the framing before detailed specs.</strong> The project was first planned as a restaurant platform; by the time it was repositioned as an entry-level ERP, parts of the plan had to be reworked. Late strategy changes are expensive — even when they are right.</li>
                             <li><strong>Specs must evolve with the product.</strong> Changes are versioned and deliberate; corrections become new decisions, not edits to history.</li>
                             <li><strong>The readiness check is the cheapest bug-fix step.</strong> Finding misalignment in documents costs minutes; finding it in code costs days.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
         </section>

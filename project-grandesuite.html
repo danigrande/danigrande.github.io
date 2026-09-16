@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,26 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">Solo Investigation · Agentic Coding + BMAD</div>
-            <h1>GrandeSuite Next</h1>
+            <h1>GrandeSuite <span>Next</span></h1>
             <p class="subtitle">An entry-level ERP for growing businesses — built end-to-end by one product manager with AI agents.</p>
             <p class="meta">
                 <span>Role: Product Manager & Sole Builder</span>
                 <span>Timeline: Jul 2026 — Present</span>
                 <span>Status: In progress — MVP partially built (Sep 2026)</span>
             </p>
+            <div class="hero-tags">
+                <span>Agentic Coding</span>
+                <span>BMAD</span>
+                <span>ERP</span>
+                <span>790 Automated Tests</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -51,17 +58,11 @@
             </div>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. The Problem -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">The Problem</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> The Problem</h2>
                         <p>Growing businesses eventually outgrow the accounting software that got them started. The tools that work at $2M in revenue start to break at $20M. And the jump to enterprise software is brutal.</p>
                         <p>Five things go wrong again and again:</p>
                         <ul>
@@ -74,19 +75,11 @@
                         <div class="highlight-box">
                             <p><strong>The result:</strong> businesses lose 1–3% of their spend to invoice errors and spend 10–20 hours a month on manual workarounds. The alternative — enterprise software like NetSuite — means $150K+ quotes and 6–9 month implementations. As the pitch goes: <strong>QuickBooks stops scaling. NetSuite is terrifying.</strong></p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. Market & Opportunity -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">Market & Opportunity</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> Market & Opportunity</h2>
                         <p><strong>Who it is for.</strong> Businesses that have outgrown QuickBooks — typically 20–200 employees and $2–25M in revenue. Especially operations-heavy businesses like distributors, where inventory and paperwork are the daily reality.</p>
                         <p><strong>Why now.</strong> There is a wave of "QuickBooks leavers." More than half of migrations start with a pricing shock, and most businesses know they need to move but delay 6–18 months — mostly out of fear that a new system will fail to get off the ground.</p>
                         <p><strong>The competition.</strong> NetSuite is the default "safe choice," but it costs $150K+ with months of consultants. Sage Intacct and Microsoft Dynamics sit nearby. Intuit launched its own Enterprise Suite in 2026, aimed at the same buyer.</p>
@@ -95,19 +88,11 @@
                         <div class="highlight-box accent">
                             <p><strong>The wedge is operations-first:</strong> warehouse workers scan barcodes, the books stay current by themselves, and finance gets clean numbers without chasing spreadsheets. Implementation in days, not months.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. Product Vision -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">Product Vision</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> Product Vision</h2>
                         <p>GrandeSuite Next is one place to run the financial life of a growing business: buy, sell, get paid, pay suppliers, and keep the books — no exports, no spreadsheets, no separate accounting package.</p>
                         <p>Two everyday flows meet in one system:</p>
                         <ul>
@@ -118,19 +103,11 @@
                         <div class="highlight-box">
                             <p><strong>North Star:</strong> eliminate manual accounting by capturing what actually happens and turning it into double-entry bookkeeping automatically.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. What the System Does -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">What the System Does</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> What the System Does</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>Buying from Suppliers</h4>
@@ -165,19 +142,11 @@
                                 <p>Planned but not started: subscription billing, multiple companies, multiple currencies, tax filing, and manufacturing.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. How It Was Built -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">How It Was Built</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> How It Was Built</h2>
                         <p>GrandeSuite Next was developed with <strong>BMAD</strong> — a structured, AI-augmented development method that takes a product from first idea to production in defined phases. Every phase produces documents that feed the next, and named AI agents play different roles: product manager, business analyst, architect, designer, engineer, test architect, writer.</p>
                         <p>Nothing was skipped: research before requirements, requirements before architecture, architecture before code. Every feature can be traced back to why it exists.</p>
                         <table class="pipeline-table">
@@ -250,38 +219,22 @@
                         <div class="highlight-box teal">
                             <p><strong>Why it matters:</strong> the structure is what let AI agents build something financial-grade without drifting. Traceability answered "why does this exist?" in seconds — and the readiness checks caught problems before they became expensive.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 6. Discovery & Research -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">6</span>
-                    <span class="accordion-title">Discovery & Research</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">6</span> Discovery & Research</h2>
                         <p><strong>Brainstorming</strong> shaped the concept: the North Star, the target market, and four pillars — fast onboarding templates, an event-driven accounting engine, a finance dashboard, and an AI copilot.</p>
                         <p><strong>Domain research</strong> mapped every type of financial transaction in a business — from issuing a purchase order to settling a customer invoice — to its accounting impact. A second deep dive covered supplier invoice workflows, document-reading technology, and compliance requirements.</p>
                         <p><strong>Market research</strong> studied "QuickBooks leavers": who they are, what triggers the switch, how they buy, and how NetSuite, Sage Intacct, and Xero price and position themselves. The pattern was clear: fear of implementation failure is the biggest barrier, and transparent pricing is the biggest opening.</p>
                         <div class="highlight-box teal">
                             <p><strong>Key insight that shaped the strategy:</strong> rather than charging per module like traditional ERP vendors, win on transparent pricing, a fast 5-day go-live, and free frontline users. Compete as operations-first, not another finance-first suite.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 7. AI in the Product -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">7</span>
-                    <span class="accordion-title">AI in the Product</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">7</span> AI in the Product</h2>
                         <p><strong>The philosophy:</strong> use AI where it clearly helps, and keep a human in the loop for anything that touches money. Augment, don't replace.</p>
                         <p><strong>Reading supplier invoices.</strong> A two-tier approach: a fast model handles clean documents; a stronger one handles messy scans. The system escalates automatically when confidence is low. It runs on free-tier AI infrastructure — $0 for the MVP.</p>
                         <p><strong>Confidence scoring and human review.</strong> Anything below the confidence bar goes to a person. The system learns from corrections but never fully trusts itself.</p>
@@ -291,19 +244,11 @@
                         <div class="highlight-box accent">
                             <p><strong>Guardrails:</strong> no chatbot. No autonomous decisions. AI can be switched off per customer. Every output is a suggestion a person can override.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 8. How It Works -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">8</span>
-                    <span class="accordion-title">How It Works</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">8</span> How It Works</h2>
                         <p>Everything that happens is recorded as an event in an append-only log: a delivery received, an item picked, an invoice entered. Nothing is edited or deleted — corrections are new events.</p>
                         <p>Configurable rules translate those events into double-entry bookkeeping. The result is a perfect audit trail, point-in-time reporting, and full traceability: every number can be traced back to who did what, where, and when.</p>
                         <p><strong>The QuickBooks bridge is optional.</strong> It can import opening balances and push records for businesses transitioning off QuickBooks, but the system's own ledger is the source of truth from day one — never a dependency.</p>
@@ -312,37 +257,21 @@
                         <div class="highlight-box">
                             <p><strong>Why it is different:</strong> traditional ERPs lose the link between operations and finance. Here, the link is the architecture.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 9. The Experience -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">9</span>
-                    <span class="accordion-title">The Experience</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">9</span> The Experience</h2>
                         <p>A clean, professional interface built on a small design system — type scale, color tokens, spacing, reusable components. Designed for quick decisions, not decoration.</p>
                         <p><strong>Mobile first for the warehouse:</strong> scan-first screens, large touch targets, offline support, no keyboard needed.</p>
                         <p><strong>The finance web app ("the Cockpit"):</strong> real-time financial statements, alerts only when something deviates, and a close checklist that shows exactly what is left before month-end.</p>
                         <p><strong>A consistent flow through the invoice pipeline:</strong> Scan → Review → Match → Approve → Pay. At any point, the operator knows where they are and what comes next.</p>
                         <p><strong>One dashboard, two audiences:</strong> daily operations for staff (queues, exceptions, deadlines) and a leadership view for management (cost per invoice, cash outlook, overpayments caught).</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 10. Progress -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">10</span>
-                    <span class="accordion-title">Progress</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">10</span> Progress</h2>
                         <div class="highlight-box warning">
                             <p><strong>Still unfinished.</strong> Most core areas are built and tested. The remaining areas are either in progress or explicitly planned for later. Progress as of September 2026.</p>
                         </div>
@@ -380,19 +309,11 @@
                             <li>Tax filing workflows</li>
                             <li>Manufacturing and native mobile apps (later phases)</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 11. Quality & Testing -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">11</span>
-                    <span class="accordion-title">Quality & Testing</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">11</span> Quality & Testing</h2>
                         <p><strong>Tests come first.</strong> Acceptance criteria are written before a feature is built, and every criterion maps to at least one automated test.</p>
                         <p><strong>Three independent reviews per piece of work.</strong> A "blind" reviewer sees only the code and hunts for bugs and security issues. An edge-case reviewer walks every branch and boundary. An acceptance reviewer checks the result against the spec.</p>
                         <p><strong>Readiness checks before building.</strong> The first formal assessment found 6 issues — two of them critical — that were fixed before development began. A later assessment in September 2026 surfaced remaining planning gaps, which were addressed or explicitly deferred.</p>
@@ -400,19 +321,11 @@
                         <div class="highlight-box accent">
                             <p><strong>Quality principle:</strong> tests should prove the absence of defects, not just the presence of features.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 12. Impact & Learnings -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">12</span>
-                    <span class="accordion-title">Impact & Learnings</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">12</span> Impact & Learnings</h2>
                         <h3>What success would look like</h3>
                         <ul>
                             <li><strong>Month-end close:</strong> from 12+ days to 3 days or less, for 80% of customers</li>
@@ -437,8 +350,6 @@
                         <div class="highlight-box teal">
                             <p><strong>What I would do differently:</strong> bring the testing pipeline in earlier. Formal test architecture came midway through the build; integrating it from the first feature would have caught issues sooner and shortened review cycles.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
         </section>

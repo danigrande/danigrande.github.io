@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,26 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">AI Quality</div>
-            <h1>Evals & Human in the Loop</h1>
+            <h1><span>Evals</span> & Human in the Loop</h1>
             <p class="subtitle">How I keep AI output trustworthy at scale — measuring quality automatically, and routing the hard cases to a human.</p>
             <p class="meta">
                 <span>Applied to: Agente Mundial (live)</span>
                 <span>GrandeSuite Next (in development)</span>
                 <span>Status: In production / in practice</span>
             </p>
+            <div class="hero-tags">
+                <span>LLM-as-a-Judge</span>
+                <span>Golden Dataset</span>
+                <span>Human Review</span>
+                <span>Confidence Scoring</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -48,36 +55,22 @@
             <p>So every AI output gets scored, and anything suspicious goes to a human. The same principle applies to building with AI: reviews and tests gate every change.</p>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. Why Evals -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">Why Evals</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> Why Evals</h2>
                         <ul>
                             <li><strong>Plausible-but-wrong is the default failure mode</strong> of language models — it reads fine and costs trust.</li>
                             <li><strong>Consumer products can't ship unmeasured AI.</strong> One bad response can damage the brand; at scale, bad responses are guaranteed unless you filter them.</li>
                             <li><strong>Evals are the test suite of AI</strong> — the same discipline as software tests, applied to probabilistic output.</li>
                             <li><strong>What gets measured can be improved:</strong> scores feed prompt calibration and grow the golden dataset.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. LLM-as-a-Judge -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">LLM-as-a-Judge</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> LLM-as-a-Judge</h2>
                         <p>Every chatbot response is evaluated by a smaller, faster model against relevance, tone, and factuality — automatically, in the same pipeline as the response itself.</p>
                         <div class="metric-grid">
                             <div class="metric-card">
@@ -97,19 +90,11 @@
                         <div class="highlight-box warning">
                             <p><strong>Calibration is the hard part.</strong> The judge and human reviewers disagreed on borderline responses. A structured rubric with examples improved alignment — but it remains an ongoing calibration problem, not a solved one.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. Human in the Loop -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">Human in the Loop</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> Human in the Loop</h2>
                         <p>Humans don't review everything — they review the right things. The triggers:</p>
                         <ul>
                             <li><strong>Downvotes</strong> from users route the response to review.</li>
@@ -118,19 +103,11 @@
                         </ul>
                         <p>Guardrails on the review itself: a daily cap of 20 reviews, deduplication rules, and a reviewer dashboard. Corrections from users are detected, logged, and enter the same queue.</p>
                         <p>Users can also teach the bot directly: when someone corrects it, the correction is classified and saved for review — feedback becomes signal instead of noise.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. Evals in Development -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">Evals in Development</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> Evals in Development</h2>
                         <p>The same discipline applies to building the ERP with AI agents:</p>
                         <ul>
                             <li><strong>Readiness checks before code</strong> — plan, architecture, and design validated against each other.</li>
@@ -138,27 +115,17 @@
                             <li><strong>~790 automated tests</strong> — tests are written before implementation, and every acceptance criterion maps to at least one test.</li>
                         </ul>
                         <p class="card-links"><a href="project-grandesuite.html">See the case study →</a></p>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. Confidence & Lessons -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">Confidence & Lessons</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> Confidence & Lessons</h2>
                         <p><strong>Confidence UX (designed):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…"). Status: designed but not yet shown to users — one of the honest gaps.</p>
                         <div class="highlight-box accent">
                             <p><strong>What I'd do differently:</strong> start the quality pipeline on day one. Retrofitting the judge and review queue after the chatbot was already in use cost more than building it in from the start.</p>
                         </div>
                         <p>Documented gaps, not hidden ones: no on-call rotation, no automated retraining, and no automated rollback yet.</p>
                         <p class="card-links"><a href="project-worldcup.html">See the product it runs on →</a></p>
-                    </div>
-                </div>
             </div>
 
         </section>

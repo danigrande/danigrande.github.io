@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,19 +28,28 @@
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">Strategy Framework</div>
-            <h1>AI Product Strategy</h1>
+            <h1>AI Product <span>Strategy</span></h1>
             <p class="subtitle">A six-module strategy for an AI product — from the bet and the moat to unit economics, trust, guardrails, and the pitch.</p>
             <p class="meta">
                 <span>Applied to: Agente Mundial (Worldcup Pool)</span>
                 <span>Modules: 6</span>
                 <span>Status: Complete</span>
             </p>
+            <div class="hero-tags">
+                <span>The Bet</span>
+                <span>The Moat</span>
+                <span>The Margin</span>
+                <span>The Contract</span>
+                <span>The Guardrails</span>
+                <span>The Pitch</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -49,17 +58,11 @@
             <p class="card-links"><a href="project-worldcup.html">See the product →</a></p>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. The Bet -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">The Bet — What We're Building, For Whom, Why Now</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> The Bet — What We're Building, For Whom, Why Now</h2>
                         <p>A gamified, multi-personality chatbot for World Cup prediction pools. The AI value archetype is a <strong>Copilot</strong> — it doesn't decide anything. It entertains, informs, and keeps the group in the game.</p>
                         <div class="metric-grid">
                             <div class="metric-card">
@@ -79,19 +82,11 @@
                         <div class="highlight-box warning">
                             <p><strong>Kill criteria:</strong> if the financial loss exceeds €2,000 with no evidence of revenue growth, the project stops. A product should know what failure looks like before it starts.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. The Moat -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">The Moat — Why It Won't Get Copied in Six Months</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> The Moat — Why It Won't Get Copied in Six Months</h2>
                         <p>A chatbot is easy to clone. The defensibility comes from what compounds: a golden dataset of quality interactions, personalities that are culturally specific, and a scoring engine that is fiddly to rebuild.</p>
                         <div class="metric-grid">
                             <div class="metric-card">
@@ -117,19 +112,11 @@
                                 <p>An indie developer could ship the same idea as a Telegram mini-app. Defense: the scoring engine, transcreation pipeline, and seven personalities are months of work — and the dataset compounds meanwhile.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. The Margin -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">The Margin — Will It Make Money or Bleed It</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> The Margin — Will It Make Money or Bleed It</h2>
                         <p>Free product today; premium entertainment tomorrow. The math works because inference is cascaded: a self-hosted small model handles ~96% of traffic, and a frontier model handles the ~4% that is asynchronous.</p>
                         <div class="metric-grid">
                             <div class="metric-card">
@@ -147,19 +134,11 @@
                         </div>
                         <p><strong>Pricing:</strong> a $4.99 group pass per tournament (admin-sponsored) plus banner ads. At 10% conversion, the blended margin lands between 55–65%. Break-even needs ~5,400 paid groups; the monthly operating cost is covered by just 180–340 paid groups.</p>
                         <p><strong>Cascading strategy:</strong> today, 100% of traffic runs on a 70B model's free tier. Tomorrow, a self-hosted 8B model handles nearly everything, with a small premium model for daily summaries.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. The Contract -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">The Contract — Why Users Trust a Probabilistic System</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> The Contract — Why Users Trust a Probabilistic System</h2>
                         <p>Fun product, serious promises. The contract sets measurable targets instead of vague quality claims:</p>
                         <div class="metric-grid">
                             <div class="metric-card">
@@ -181,19 +160,11 @@
                         <div class="highlight-box">
                             <p><strong>Honest gaps:</strong> the golden dataset is still small for statistical significance, there is no latency enforcement, and no automated rollback. Naming the gaps is part of the contract.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. The Guardrails -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">The Guardrails — What Breaks at Scale</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> The Guardrails — What Breaks at Scale</h2>
                         <p>The quality gate compounds: failed responses retry up to three times with judge feedback injected into the prompt. Users never reach the model directly.</p>
                         <div class="area-grid">
                             <div class="area-card">
@@ -211,26 +182,16 @@
                         </div>
                         <p><strong>Shadow AI audit:</strong> I also mapped the workarounds users were already doing on their own — seven hacks worth about $85/month, from what-if simulations to extra languages. Four became roadmap items; one was governed with rate limits.</p>
                         <p><strong>Audit cadence:</strong> weekly golden-set evaluation, daily human review, quarterly policy review.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 6. The Pitch -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">6</span>
-                    <span class="accordion-title">The Pitch — Fund It, Ship It, Grow It</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">6</span> The Pitch — Fund It, Ship It, Grow It</h2>
                         <p><strong>Three horizons:</strong> Now — per-personality quality thresholds, leaderboard history, more direct-generation languages, match reminders. Next — what-if simulation, a prediction-strategy mode, shareable leaderboard cards. Bet — generic leagues (La Liga, Premier League), custom personalities, cross-group rankings.</p>
                         <div class="highlight-box accent">
                             <p><strong>The ask:</strong> $42K — $27K capital for monetization infrastructure plus $15K for three months of self-hosted GPUs. The board narrative: personality-driven commentary turns a static pool into a daily social ritual — and the 50-day tournament generates the data to validate a year-round product.</p>
                         </div>
                         <p><strong>The most important decision:</strong> fine-tuning was dropped from all horizons. The data flywheel score was re-scored from 5/5 to 2/5 — fine-tuning improves the <em>next</em> event, not this one. Focus beats ambition.</p>
-                    </div>
-                </div>
             </div>
 
         </section>

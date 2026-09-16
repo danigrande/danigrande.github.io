@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav>
@@ -28,18 +28,25 @@
                 <a href="project-agent.html" class="active">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
             </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
     </nav>
 
     <main>
         <section id="hero">
             <div class="badge">Agent Orchestration</div>
-            <h1>AI Agents</h1>
+            <h1>AI <span>Agents</span></h1>
             <p class="subtitle">Visual agent workflows built with LangFlow — including a feedback-to-PRD pipeline where AI reads user feedback, drafts product requirements, and hands them to a coding agent.</p>
             <p class="meta">
                 <span>Tools: LangFlow · Groq · Node.js</span>
                 <span>Status: Flows designed and integrated; deployment pending</span>
             </p>
+            <div class="hero-tags">
+                <span>LangFlow</span>
+                <span>Multi-Agent Flows</span>
+                <span>Groq</span>
+                <span>Human Approval Gates</span>
+            </div>
         </section>
 
         <section id="intro">
@@ -47,17 +54,11 @@
             <p>Both are built visually in LangFlow as agent graphs, exported as flow files, and called from application code by flow ID.</p>
         </section>
 
-        <section class="accordion-section">
+        <section class="page-content">
 
             <!-- 1. What I Built -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">1</span>
-                    <span class="accordion-title">What I Built with Agents</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">1</span> What I Built with Agents</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>The User-Facing Agent</h4>
@@ -68,19 +69,11 @@
                                 <p>A feedback-to-PRD pipeline: reads raw user feedback, triages it, and drafts a structured product requirement for human approval.</p>
                             </div>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 2. The Feedback-to-PRD Pipeline -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">2</span>
-                    <span class="accordion-title">The Feedback-to-PRD Pipeline</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">2</span> The Feedback-to-PRD Pipeline</h2>
                         <p>The pipeline exists to close the loop between what users say and what gets built. Instead of feedback dying in a backlog, it becomes a reviewable product requirement.</p>
                         <div class="pipe">
                             <span class="pipe-step">User Feedback</span>
@@ -105,19 +98,11 @@
                         <div class="highlight-box">
                             <p><strong>Nothing is built automatically.</strong> A human approves every PRD first — only then does a coding agent pick it up as work.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 3. Inside the Flows -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">3</span>
-                    <span class="accordion-title">Inside the Flows</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">3</span> Inside the Flows</h2>
                         <div class="metric-grid">
                             <div class="metric-card">
                                 <div class="metric-value">5</div>
@@ -143,19 +128,11 @@
                             </div>
                         </div>
                         <p>The integration code calls a flow by ID, sends the input, waits for the structured response, and parses it into the pipeline's data model — with a two-minute timeout and a simulation fallback when the flow isn't configured yet, so development never blocks on infrastructure.</p>
-                    </div>
-                </div>
             </div>
 
             <!-- 4. Agents in Production -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">4</span>
-                    <span class="accordion-title">Agents in Production</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">4</span> Agents in Production</h2>
                         <p>Around the chatbot, supporting services do the agent-like work of judging quality and adapting language:</p>
                         <div class="area-grid">
                             <div class="area-card">
@@ -178,38 +155,22 @@
                         <div class="highlight-box accent">
                             <p><strong>Deliberately not a multi-agent free-for-all.</strong> One stateless chatbot plus supporting services: simpler to debug, cheaper to run, easier to trust. Orchestration is reserved for the process work, where the LangFlow graphs earn their keep.</p>
                         </div>
-                    </div>
-                </div>
             </div>
 
             <!-- 5. Human Gates & Safety -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">5</span>
-                    <span class="accordion-title">Human Gates & Safety</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">5</span> Human Gates & Safety</h2>
                         <ul>
                             <li><strong>PRD approval</strong> — a person approves every generated requirement before it becomes work.</li>
                             <li><strong>Response review</strong> — downvotes, judge failures, and calibration signals route to a human queue, with a daily cap and deduplication.</li>
                             <li><strong>Corrections</strong> — when users correct the bot, the correction is detected, logged, and fed into the review pipeline.</li>
                             <li><strong>Never automatic</strong> — the agents analyze, draft, and suggest. Irreversible actions stay with people.</li>
                         </ul>
-                    </div>
-                </div>
             </div>
 
             <!-- 6. Status & Next Steps -->
-            <div class="accordion">
-                <button class="accordion-header">
-                    <span class="accordion-num">6</span>
-                    <span class="accordion-title">Status & Next Steps</span>
-                    <span class="accordion-arrow">▼</span>
-                </button>
-                <div class="accordion-body">
-                    <div class="accordion-body-inner">
+            <div class="cs-section">
+                <h2><span class="num">6</span> Status & Next Steps</h2>
                         <p>The flows are exported, the integration code is in the app, and the deployment path is documented. Remaining: import the flow into DataStax LangFlow, configure the API key and flow ID in the environment, then run the end-to-end test — dashboard → analyze feedback → generate PRD → approve.</p>
                         <div class="highlight-box warning">
                             <p><strong>Pending:</strong> the feedback-to-PRD pipeline is not yet live in production. Until then, the app falls back to a simulated analysis path so the rest of the workflow can still be exercised.</p>
@@ -222,8 +183,6 @@
                             <a href="project-worldcup.html">Worldcup Pool case study →</a>
                             <a href="evals-human-in-the-loop.html">How the judge system works →</a>
                         </p>
-                    </div>
-                </div>
             </div>
 
         </section>
