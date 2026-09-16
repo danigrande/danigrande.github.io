@@ -512,3 +512,102 @@ footer {
     display: inline-block;
     margin-right: 1.25rem;
 }
+
+/* Tags */
+.tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.15rem 0.55rem;
+    border-radius: 4px;
+    margin: 0 0.35rem 0.35rem 0;
+}
+
+.tag-blue { background: rgba(0, 255, 255, 0.12); color: var(--primary); }
+.tag-cyan { background: rgba(0, 255, 200, 0.12); color: #6effd8; }
+.tag-green { background: rgba(0, 255, 136, 0.12); color: #5cffb0; }
+.tag-gold { background: rgba(255, 200, 0, 0.12); color: #ffd24d; }
+.tag-purple { background: rgba(186, 0, 255, 0.15); color: #d98cff; }
+.tag-pink { background: rgba(255, 0, 150, 0.15); color: #ff8ccd; }
+
+/* Decision rows */
+.decision-row {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1.5rem;
+    padding: 1.1rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.decision-row:first-child {
+    padding-top: 0;
+}
+
+.decision-row:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.decision-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.decision-desc {
+    font-size: 0.95rem;
+    color: #b0b0b0;
+}
+
+.decision-desc strong {
+    color: var(--text);
+}
+
+/* Pipeline diagram */
+.pipe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 1.5rem 1rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    margin: 1.5rem 0;
+}
+
+.pipe-step {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #b0b0b0;
+    text-align: center;
+}
+
+.pipe-step.active {
+    border-color: var(--primary);
+    color: var(--text);
+    background: rgba(0, 255, 255, 0.08);
+}
+
+.pipe-arrow {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .decision-row {
+        grid-template-columns: 1fr;
+        gap: 0.4rem;
+    }
+    .pipe {
+        flex-direction: column;
+    }
+    .pipe-arrow {
+        transform: rotate(90deg);
+    }
+}

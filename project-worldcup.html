@@ -32,41 +32,335 @@
     </nav>
 
     <main>
-        <section id="project-intro">
-            <div class="badge">Web App Case Study</div>
-            <h1>Worldcup Pool App</h1>
-            <p>[Placeholder: Overview of the Worldcup Pool App - a real-time tournament prediction and pool management platform.]</p>
+        <section id="hero">
+            <div class="badge">AI Product Case Study</div>
+            <h1>Worldcup Pool App — Agente Mundial</h1>
+            <p class="subtitle">An AI-powered World Cup prediction pool with a seven-personality chatbot, real-time scoring, and 14-language banter — built for friend groups to compete, trash-talk, and celebrate together.</p>
+            <p class="meta">
+                <span>Role: Product Manager & Sole Builder</span>
+                <span>Timeline: 2026</span>
+                <span>Status: Live prototype (web + TestFlight)</span>
+            </p>
         </section>
 
-        <section id="features">
-            <h2>Key Features</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Real-Time Scoring</h3>
-                    <p>[Placeholder: Live match tracking, automatic point calculation, and leaderboard updates during tournament play.]</p>
-                </div>
-                <div class="card">
-                    <h3>Pool Management</h3>
-                    <p>[Placeholder: User-friendly interface for creating, joining, and managing prediction pools with friends and colleagues.]</p>
-                </div>
-                <div class="card">
-                    <h3>AI Predictions</h3>
-                    <p>[Placeholder: Machine learning models that provide match outcome predictions and insights to inform user picks.]</p>
-                </div>
+        <section id="intro">
+            <p>Every World Cup, millions of friend groups run prediction pools on spreadsheets and WhatsApp. Someone has to calculate the points by hand, predictions live across scattered chats, and the whole thing goes quiet after matchday one.</p>
+            <p>I built the alternative: a real app for the pool — and gave it a personality. <strong>Agente Mundial</strong> is an AI chatbot with seven distinct characters that talks trash, summarizes matches, and keeps the group engaged through the entire tournament.</p>
+            <div class="highlight-box">
+                <p><strong>Live prototype.</strong> The app runs on the web and on iPhone (TestFlight), with the chatbot's quality pipeline — automated scoring plus human review — running behind every message.</p>
             </div>
         </section>
 
-        <section id="architecture">
-            <h2>Architecture & Stack</h2>
-            <div class="card">
-                <p>[Placeholder: Tech stack overview, data pipeline architecture, and how real-time updates are delivered to users.]</p>
+        <section class="accordion-section">
+
+            <!-- 1. Problem & Opportunity -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">1</span>
+                    <span class="accordion-title">Problem & Opportunity</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>The Problem</h4>
+                                <p>Manual score tracking — someone computes the points by hand. No single source of truth — predictions live across spreadsheets and chats. No real-time engagement — the pool goes silent after the first matchday. A generic, impersonal experience — every pool tool looks and feels the same.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>The Opportunity</h4>
+                                <p>Combine the social ritual of the pool with modern AI to make something sticky and different. A personality-driven chatbot keeps the banter going all tournament. Real-time scoring makes the leaderboard a daily destination. And football fandom is global — transcreation opens 14 languages from day one.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- 2. Vision & Strategy -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">2</span>
+                    <span class="accordion-title">Vision & Strategy</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The north star: <strong>the ultimate companion for World Cup 2026</strong> — predictions, banter, and AI-generated hype in one place.</p>
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Target Users</h4>
+                                <p>Friend groups, football fans, and casual bettors who want a fun, low-stakes competition during the World Cup. No gambling — just bragging rights.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Core Differentiator</h4>
+                                <p>Agente Mundial — an AI chatbot with seven distinct personalities (Andrés Montes, Josep Pedrerol, Donald Trump, Darth Vader, and more) that delivers trash talk, match summaries, and memes in 14 languages.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Strategic Bets</h4>
+                                <p>The chatbot as the core differentiator vs. traditional pool tools. Two prediction modes to serve different preferences. 14-language transcreation for global reach. An automated quality gate to keep AI quality high at scale.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. What the App Does -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">3</span>
+                    <span class="accordion-title">What the App Does</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Prediction Engine</h4>
+                                <p>All 12 groups (48 teams) plus the knockout rounds through the final. Two modes: Classic (fill everything before the tournament) and Dynamic (predict round by round). Automatic standings, bracket resolution, real-time sync, and honour-roll picks: champion, runner-up, Golden Boot, Golden Ball.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>AI Chatbot — Agente Mundial</h4>
+                                <p>Seven personalities with unique voices, prompts, and even personality-specific error messages. 14 languages via transcreation. Conversational memory, live web search for match news, RSS monitoring, daily AI-generated tournament summaries, and voice message support.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Leaderboard & El Muro</h4>
+                                <p>Real-time point calculation as scores come in. The Pool Wall ("El Muro") shows every player's predictions in one view — the fuel for social competition. Each pool is isolated with its own rules and admins.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. The AI Pipeline -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">4</span>
+                    <span class="accordion-title">The AI Pipeline</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Every chatbot message flows through a pipeline built for quality, safety, and cultural fit:</p>
+                        <div class="pipe">
+                            <span class="pipe-step">User Message</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">RAG Memory</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Web Search</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Personality Prompt</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step active">Groq LLM</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Judge Eval</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Transcreation</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Response</span>
+                        </div>
+                        <h3>The stack</h3>
+                        <p>
+                            <span class="tag tag-blue">Frontend</span> HTML/CSS/JS
+                            <span class="tag tag-blue">Backend</span> Node.js + Express
+                            <span class="tag tag-blue">Database</span> MongoDB Atlas
+                            <span class="tag tag-purple">LLM</span> Groq Cloud (Llama 3.3 70B)
+                            <span class="tag tag-purple">RAG</span> LangChain + vector store
+                            <span class="tag tag-cyan">Search</span> Tavily
+                            <span class="tag tag-cyan">Realtime</span> Socket.IO
+                            <span class="tag tag-gold">Hosting</span> Vercel + Render
+                            <span class="tag tag-green">Testing</span> Jest + Supertest
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Key Decisions & Trade-offs -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">5</span>
+                    <span class="accordion-title">Key Decisions & Trade-offs</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="decision-row">
+                            <div class="decision-label">No frontend framework</div>
+                            <div class="decision-desc"><strong>Why:</strong> speed of iteration for a solo build; static hosting is free and there's no build step. <strong>Trade-off:</strong> more manual UI work and no component reuse. <strong>Verdict:</strong> right call for an MVP; a team would want React.</div>
+                        </div>
+                        <div class="decision-row">
+                            <div class="decision-label">Groq (Llama 3.3 70B) over OpenAI</div>
+                            <div class="decision-desc"><strong>Why:</strong> far lower latency and cost, with comparable quality for structured tasks. <strong>Trade-off:</strong> a younger ecosystem. <strong>Verdict:</strong> correct — inference speed is what makes the chatbot feel real-time.</div>
+                        </div>
+                        <div class="decision-row">
+                            <div class="decision-label">RAG + web search for memory</div>
+                            <div class="decision-desc"><strong>Why:</strong> a chatbot that forgets the conversation or doesn't know today's results is useless. <strong>Trade-off:</strong> added latency and architectural complexity. <strong>Verdict:</strong> essential for quality.</div>
+                        </div>
+                        <div class="decision-row">
+                            <div class="decision-label">Two prediction modes</div>
+                            <div class="decision-desc"><strong>Why:</strong> some users want set-and-forget; others want to react round by round. <strong>Trade-off:</strong> double the UI and validation logic. <strong>Verdict:</strong> correct — it tested well with real users and widened the audience.</div>
+                        </div>
+                        <div class="decision-row">
+                            <div class="decision-label">Judge + human-in-the-loop</div>
+                            <div class="decision-desc"><strong>Why:</strong> AI content at scale needs a quality gate — every response is scored by a smaller model, and low scores trigger human review. <strong>Trade-off:</strong> added cost and latency per message. <strong>Verdict:</strong> critical for a consumer-facing product.</div>
+                        </div>
+                        <div class="decision-row">
+                            <div class="decision-label">Transcreation over translation</div>
+                            <div class="decision-desc"><strong>Why:</strong> football banter doesn't translate literally; the pipeline adapts humour and idioms culturally across 14 languages. <strong>Trade-off:</strong> significant upfront investment. <strong>Verdict:</strong> worth it — nuance is the difference between funny and offensive.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Research & Feedback Loops -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">6</span>
+                    <span class="accordion-title">Research & Feedback Loops</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>What Informed the Features</h4>
+                                <p>Observing how real friend groups run pools — mostly spreadsheets plus WhatsApp. The personalities were chosen for cultural relevance: iconic Spanish football voices alongside universal characters. Two prediction modes came from two real user behaviours: planners and reactors.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Built-in Feedback Loops</h4>
+                                <p>In-app feedback with voting, so users prioritise their own requests. Correction detection, so when a user corrects the bot it becomes a reviewable signal. Judge logs, so every AI response is scored and low-scoring ones are flagged for human review.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 7. Delivery & Roadmap -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">7</span>
+                    <span class="accordion-title">Delivery & Roadmap</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The product evolved through seven phases, each one usable on its own:</p>
+                        <ul>
+                            <li><strong>Phase 1 — Core pool:</strong> accounts, groups, prediction entry, scoring engine, leaderboard</li>
+                            <li><strong>Phase 2 — Chatbot v1:</strong> Agente Mundial with one personality, English and Spanish</li>
+                            <li><strong>Phase 3 — Multi-personality:</strong> seven personalities with unique prompts and error handling</li>
+                            <li><strong>Phase 4 — Quality pipeline:</strong> automated judging, human review, correction detection</li>
+                            <li><strong>Phase 5 — Global reach:</strong> transcreation pipeline, 14 languages, translated UI</li>
+                            <li><strong>Phase 6 — Intelligence layer:</strong> conversational memory, web search, RSS monitoring</li>
+                            <li><strong>Phase 7 — Metrics & ops:</strong> developer dashboard, health monitoring, usage analytics</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 8. Business & Product Strategy -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">8</span>
+                    <span class="accordion-title">Business & Product Strategy</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Beyond the build, I wrote a <strong>six-module strategy teardown</strong> of the product — the bet, the moat, the margin, the contract, the guardrails, and the pitch — with real numbers: unit economics, defensibility, reliability targets, and regulatory exposure.</p>
+                        <p class="card-links"><a href="ai-strategy.html">Read the strategy →</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 9. By the Numbers -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">9</span>
+                    <span class="accordion-title">By the Numbers</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">7</div>
+                                <div class="metric-label">Chatbot personalities</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">14</div>
+                                <div class="metric-label">Languages</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">2</div>
+                                <div class="metric-label">Prediction modes</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">101</div>
+                                <div class="metric-label">Golden test cases</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">100%</div>
+                                <div class="metric-label">Messages judge-scored</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">7</div>
+                                <div class="metric-label">Delivery phases</div>
+                            </div>
+                        </div>
+                        <p>Figures describe the built prototype, as of September 2026.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 10. Lessons Learned -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">10</span>
+                    <span class="accordion-title">Lessons Learned</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <ul>
+                            <li><strong>RAG quality is harder than it looks.</strong> Chunking, embeddings, and retrieval relevance all needed iteration — and a dedicated evaluation set would have sped that up.</li>
+                            <li><strong>Transcreation paid for itself.</strong> Non-English users reported far higher satisfaction than with raw machine translation.</li>
+                            <li><strong>Judges need calibration.</strong> The scoring model disagreed with human reviewers on borderline responses; a rubric with examples helped, but it's an ongoing problem.</li>
+                            <li><strong>Personality is fragile.</strong> Without careful anchoring, the bot drifts out of character. Character consistency should be tested automatically.</li>
+                            <li><strong>Start the quality pipeline earlier.</strong> Adding judging and human review after launch created a retrofitting tax. Next time: day one.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 11. Status & Links -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">11</span>
+                    <span class="accordion-title">Status & Links</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The app is live as a prototype. Next up: the feedback-to-PRD agent pipeline (built, pending deployment) and the quality improvements tracked in the chatbot improvement plan.</p>
+                        <p class="card-links">
+                            <a href="https://porra-mundial.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+                            <a href="https://testflight.apple.com/join/dm43b6bp" target="_blank" rel="noopener">TestFlight ↗</a>
+                            <a href="https://github.com/danigrande/porra-mundial" target="_blank" rel="noopener">GitHub ↗</a>
+                        </p>
+                        <p class="card-links">
+                            <a href="ai-strategy.html">AI Product Strategy →</a>
+                            <a href="project-agent.html">The AI Agents behind it →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
     </footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

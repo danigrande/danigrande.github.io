@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Strategy | Portfolio</title>
+    <title>AI Product Strategy | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,41 +32,213 @@
     </nav>
 
     <main>
+        <section id="hero">
+            <div class="badge">Strategy Framework</div>
+            <h1>AI Product Strategy</h1>
+            <p class="subtitle">A six-module strategy for an AI product — from the bet and the moat to unit economics, trust, guardrails, and the pitch.</p>
+            <p class="meta">
+                <span>Applied to: Agente Mundial (Worldcup Pool)</span>
+                <span>Modules: 6</span>
+                <span>Status: Complete</span>
+            </p>
+        </section>
+
         <section id="intro">
-            <div class="badge">Strategic Framework</div>
-            <h1>AI Strategy</h1>
-            <p>[Placeholder: A comprehensive framework for aligning AI initiatives with business objectives, from opportunity identification to scaled deployment.]</p>
+            <p>Most AI products start with the technology and hope the business follows. This framework forces the harder questions first: Why will this win? What happens when it gets copied? Does it make money? Why will users trust it? What breaks at scale? And how would I pitch it?</p>
+            <p>I built it for my own product — Agente Mundial, the World Cup pool chatbot — and answered every question with numbers instead of adjectives.</p>
+            <p class="card-links"><a href="project-worldcup.html">See the product →</a></p>
         </section>
 
-        <section id="pillars">
-            <h2>Strategic Pillars</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Opportunity Assessment</h3>
-                    <p>[Placeholder: Methodology for identifying high-impact AI use cases that deliver measurable business value.]</p>
-                </div>
-                <div class="card">
-                    <h3>Build vs. Buy vs. Partner</h3>
-                    <p>[Placeholder: Decision framework for evaluating whether to build in-house, purchase commercial solutions, or partner with AI vendors.]</p>
-                </div>
-                <div class="card">
-                    <h3>Governance & Risk</h3>
-                    <p>[Placeholder: Establishing guardrails for responsible AI, data privacy, bias mitigation, and regulatory compliance.]</p>
-                </div>
-            </div>
-        </section>
+        <section class="accordion-section">
 
-        <section id="roadmap">
-            <h2>Execution Roadmap</h2>
-            <div class="card">
-                <p>[Placeholder: Phased approach to AI adoption - from pilot projects and proof-of-concept to production scaling and continuous optimization.]</p>
+            <!-- 1. The Bet -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">1</span>
+                    <span class="accordion-title">The Bet — What We're Building, For Whom, Why Now</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>A gamified, multi-personality chatbot for World Cup prediction pools. The AI value archetype is a <strong>Copilot</strong> — it doesn't decide anything. It entertains, informs, and keeps the group in the game.</p>
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">2/5</div>
+                                <div class="metric-label">Moat vulnerability</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">2/5</div>
+                                <div class="metric-label">Data vulnerability</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">4/5</div>
+                                <div class="metric-label">Platform vulnerability</div>
+                            </div>
+                        </div>
+                        <p><strong>Top risks:</strong> post-event churn (critical — the tournament ends), no data on day one (high), self-hosted infrastructure (medium), untested revenue model (medium), and LLM unit economics (mitigated by the cascading strategy).</p>
+                        <div class="highlight-box warning">
+                            <p><strong>Kill criteria:</strong> if the financial loss exceeds €2,000 with no evidence of revenue growth, the project stops. A product should know what failure looks like before it starts.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- 2. The Moat -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">2</span>
+                    <span class="accordion-title">The Moat — Why It Won't Get Copied in Six Months</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>A chatbot is easy to clone. The defensibility comes from what compounds: a golden dataset of quality interactions, personalities that are culturally specific, and a scoring engine that is fiddly to rebuild.</p>
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">10/20</div>
+                                <div class="metric-label">Data flywheel score</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">85%</div>
+                                <div class="metric-label">Vendor portability</div>
+                            </div>
+                        </div>
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Platform risk — Meta / Apple</h4>
+                                <p>Native AI agents could appear inside the OS or default group chats. Defense: a dedicated UI and culturally bold personalities that brand-safe horizontal platforms can't ship.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Vertical risk — Sleeper / ESPN</h4>
+                                <p>Existing fantasy-sports incumbents could expand. Defense: a different audience — Spanish-speaking football fans in WhatsApp groups — served by culture-specific anchors they'd have to rebuild from scratch.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Distribution risk — Telegram clones</h4>
+                                <p>An indie developer could ship the same idea as a Telegram mini-app. Defense: the scoring engine, transcreation pipeline, and seven personalities are months of work — and the dataset compounds meanwhile.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. The Margin -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">3</span>
+                    <span class="accordion-title">The Margin — Will It Make Money or Bleed It</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Free product today; premium entertainment tomorrow. The math works because inference is cascaded: a self-hosted small model handles ~96% of traffic, and a frontier model handles the ~4% that is asynchronous.</p>
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">90–94%</div>
+                                <div class="metric-label">AI-adjusted gross margin</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">$0.30–0.50</div>
+                                <div class="metric-label">AI cost per group / tournament</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">~5,400</div>
+                                <div class="metric-label">Paid groups to break even</div>
+                            </div>
+                        </div>
+                        <p><strong>Pricing:</strong> a $4.99 group pass per tournament (admin-sponsored) plus banner ads. At 10% conversion, the blended margin lands between 55–65%. Break-even needs ~5,400 paid groups; the monthly operating cost is covered by just 180–340 paid groups.</p>
+                        <p><strong>Cascading strategy:</strong> today, 100% of traffic runs on a 70B model's free tier. Tomorrow, a self-hosted 8B model handles nearly everything, with a small premium model for daily summaries.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. The Contract -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">4</span>
+                    <span class="accordion-title">The Contract — Why Users Trust a Probabilistic System</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Fun product, serious promises. The contract sets measurable targets instead of vague quality claims:</p>
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">92%</div>
+                                <div class="metric-label">Accuracy target</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;1%</div>
+                                <div class="metric-label">Hallucination rate target</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">&lt;800ms</div>
+                                <div class="metric-label">p95 response latency</div>
+                            </div>
+                        </div>
+                        <p><strong>The golden dataset:</strong> 101 test cases across six categories — intent classification, personality responses, language purity, transcreation, edge cases, and daily summaries — including adversarial cases.</p>
+                        <p><strong>Confidence UX (designed):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…").</p>
+                        <p><strong>Human review triggers:</strong> downvotes, calibration signals, and responses that failed the quality gate three times. Daily review cap of 20, with deduplication rules.</p>
+                        <div class="highlight-box">
+                            <p><strong>Honest gaps:</strong> the golden dataset is still small for statistical significance, there is no latency enforcement, and no automated rollback. Naming the gaps is part of the contract.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. The Guardrails -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">5</span>
+                    <span class="accordion-title">The Guardrails — What Breaks at Scale</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The quality gate compounds: failed responses retry up to three times with judge feedback injected into the prompt. Users never reach the model directly.</p>
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Autonomy boundaries</h4>
+                                <p>Solo: standard replies, web search, translations, summaries, corrections. Needs a human: forced approvals, downvotes, user reports. Never automatic: account deletion, impersonation.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Escalation</h4>
+                                <p>Judge failure → retry (max 3) → human review. Downvote → human review. User report → pending record. Rate limits guard the model itself.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Regulatory exposure</h4>
+                                <p>EU AI Act — minimal (entertainment). GDPR — limited data, but gaps: no lawful-basis register, incomplete deletion. COPPA — high exposure: no age gate yet.</p>
+                            </div>
+                        </div>
+                        <p><strong>Shadow AI audit:</strong> I also mapped the workarounds users were already doing on their own — seven hacks worth about $85/month, from what-if simulations to extra languages. Four became roadmap items; one was governed with rate limits.</p>
+                        <p><strong>Audit cadence:</strong> weekly golden-set evaluation, daily human review, quarterly policy review.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. The Pitch -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">6</span>
+                    <span class="accordion-title">The Pitch — Fund It, Ship It, Grow It</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p><strong>Three horizons:</strong> Now — per-personality quality thresholds, leaderboard history, more direct-generation languages, match reminders. Next — what-if simulation, a prediction-strategy mode, shareable leaderboard cards. Bet — generic leagues (La Liga, Premier League), custom personalities, cross-group rankings.</p>
+                        <div class="highlight-box accent">
+                            <p><strong>The ask:</strong> $42K — $27K capital for monetization infrastructure plus $15K for three months of self-hosted GPUs. The board narrative: personality-driven commentary turns a static pool into a daily social ritual — and the 50-day tournament generates the data to validate a year-round product.</p>
+                        </div>
+                        <p><strong>The most important decision:</strong> fine-tuning was dropped from all horizons. The data flywheel score was re-scored from 5/5 to 2/5 — fine-tuning improves the <em>next</em> event, not this one. Focus beats ambition.</p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
     </footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -32,55 +32,206 @@
     </nav>
 
     <main>
-        <section id="project-intro">
-            <div class="badge">Orchestration Case Study</div>
+        <section id="hero">
+            <div class="badge">Agent Orchestration</div>
             <h1>AI Agents</h1>
-            <p>[Placeholder: Overview of the project - using LangChain to orchestrate a multi-agent system for real-time sports data processing.]</p>
+            <p class="subtitle">Visual agent workflows built with LangFlow — including a feedback-to-PRD pipeline where AI reads user feedback, drafts product requirements, and hands them to a coding agent.</p>
+            <p class="meta">
+                <span>Tools: LangFlow · Groq · Node.js</span>
+                <span>Status: Flows designed and integrated; deployment pending</span>
+            </p>
         </section>
 
-        <section id="architecture">
-            <h2>System Architecture</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Data Extraction</h3>
-                    <p>[Placeholder: How the agent monitors football World Cup results using web scraping or API integration.]</p>
-                </div>
-                <div class="card">
-                    <h3>Decision Engine</h3>
-                    <p>[Placeholder: The logic used to process game outcomes and determine betting implications/updates.]</p>
-                </div>
-                <div class="card">
-                    <h3>Communication Layer</h3>
-                    <p>[Placeholder: Integration with WhatsApp API to deliver automated, real-time updates to stakeholders.]</p>
-                </div>
-            </div>
+        <section id="intro">
+            <p>I use agents for two jobs: producing the product — the chatbot users talk to — and running the product process, turning user feedback into product requirements. The second one is the more interesting experiment.</p>
+            <p>Both are built visually in LangFlow as agent graphs, exported as flow files, and called from application code by flow ID.</p>
         </section>
 
-        <section id="workflow">
-            <h2>Agentic Workflow</h2>
-            <div class="card">
-                <p>[Placeholder: Step-by-step breakdown of the LangChain chain/graph - from event trigger to stakeholder notification.]</p>
-            </div>
-        </section>
+        <section class="accordion-section">
 
-        <section id="impact">
-            <h2>Business Value</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Efficiency</h3>
-                    <p>[Placeholder: Reduction in manual monitoring and reporting time.]</p>
-                </div>
-                <div class="card">
-                    <h3>Scalability</h3>
-                    <p>[Placeholder: Ability to add more sports or data sources with minimal architectural changes.]</p>
+            <!-- 1. What I Built -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">1</span>
+                    <span class="accordion-title">What I Built with Agents</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>The User-Facing Agent</h4>
+                                <p>Agente Mundial — a personality-driven chatbot with conversational memory, live web search, and an automatic quality gate. Seven characters, 14 languages.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>The Process Agent</h4>
+                                <p>A feedback-to-PRD pipeline: reads raw user feedback, triages it, and drafts a structured product requirement for human approval.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+            <!-- 2. The Feedback-to-PRD Pipeline -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">2</span>
+                    <span class="accordion-title">The Feedback-to-PRD Pipeline</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The pipeline exists to close the loop between what users say and what gets built. Instead of feedback dying in a backlog, it becomes a reviewable product requirement.</p>
+                        <div class="pipe">
+                            <span class="pipe-step">User Feedback</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Strategy Owner</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">PRD Writer</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step active">Juno Orchestrator</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Draft PRD</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Human Approval</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Coding Agent</span>
+                        </div>
+                        <ul>
+                            <li><strong>Strategy Owner</strong> — reads the feedback and decides what kind of product decision it implies, including a priority from P0 to P3.</li>
+                            <li><strong>PRD Writer</strong> — turns the analysis into a draft requirement: problem statement, proposed solution, user impact, technical notes, and acceptance criteria.</li>
+                            <li><strong>Juno Orchestrator</strong> — coordinates the flow and produces the final structured output.</li>
+                        </ul>
+                        <div class="highlight-box">
+                            <p><strong>Nothing is built automatically.</strong> A human approves every PRD first — only then does a coding agent pick it up as work.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Inside the Flows -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">3</span>
+                    <span class="accordion-title">Inside the Flows</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">5</div>
+                                <div class="metric-label">Nodes in the feedback-to-PRD flow</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">8</div>
+                                <div class="metric-label">Nodes in the prediction flow</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">3 + 3</div>
+                                <div class="metric-label">Agent roles across both flows</div>
+                            </div>
+                        </div>
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Feedback-to-PRD flow</h4>
+                                <p>Chat input → three collaborating agents (Strategy Owner, PRD Writer, Juno Orchestrator) → structured output ready for review.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Prediction flow</h4>
+                                <p>Chat input → three agents running on Groq models → match prediction output. The same visual pattern, pointed at a different job.</p>
+                            </div>
+                        </div>
+                        <p>The integration code calls a flow by ID, sends the input, waits for the structured response, and parses it into the pipeline's data model — with a two-minute timeout and a simulation fallback when the flow isn't configured yet, so development never blocks on infrastructure.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Agents in Production -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">4</span>
+                    <span class="accordion-title">Agents in Production</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Around the chatbot, supporting services do the agent-like work of judging quality and adapting language:</p>
+                        <div class="area-grid">
+                            <div class="area-card">
+                                <h4>Judge</h4>
+                                <p>A smaller model scores every response for relevance, tone, and factuality. Low scores trigger human review.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Transcreation</h4>
+                                <p>Adapts every response culturally across 14 languages, preserving humour and football idioms — not literal translation.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>RAG memory</h4>
+                                <p>Conversation history in a vector store gives the bot context, so it remembers the group and the tournament.</p>
+                            </div>
+                            <div class="area-card">
+                                <h4>Web search & RSS</h4>
+                                <p>Live match context and breaking football news feed the responses with current information.</p>
+                            </div>
+                        </div>
+                        <div class="highlight-box accent">
+                            <p><strong>Deliberately not a multi-agent free-for-all.</strong> One stateless chatbot plus supporting services: simpler to debug, cheaper to run, easier to trust. Orchestration is reserved for the process work, where the LangFlow graphs earn their keep.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Human Gates & Safety -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">5</span>
+                    <span class="accordion-title">Human Gates & Safety</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <ul>
+                            <li><strong>PRD approval</strong> — a person approves every generated requirement before it becomes work.</li>
+                            <li><strong>Response review</strong> — downvotes, judge failures, and calibration signals route to a human queue, with a daily cap and deduplication.</li>
+                            <li><strong>Corrections</strong> — when users correct the bot, the correction is detected, logged, and fed into the review pipeline.</li>
+                            <li><strong>Never automatic</strong> — the agents analyze, draft, and suggest. Irreversible actions stay with people.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 6. Status & Next Steps -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">6</span>
+                    <span class="accordion-title">Status & Next Steps</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>The flows are exported, the integration code is in the app, and the deployment path is documented. Remaining: import the flow into DataStax LangFlow, configure the API key and flow ID in the environment, then run the end-to-end test — dashboard → analyze feedback → generate PRD → approve.</p>
+                        <div class="highlight-box warning">
+                            <p><strong>Pending:</strong> the feedback-to-PRD pipeline is not yet live in production. Until then, the app falls back to a simulated analysis path so the rest of the workflow can still be exercised.</p>
+                        </div>
+                        <p class="card-links">
+                            <a href="https://porra-mundial.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+                            <a href="https://github.com/danigrande/porra-mundial" target="_blank" rel="noopener">GitHub ↗</a>
+                        </p>
+                        <p class="card-links">
+                            <a href="project-worldcup.html">Worldcup Pool case study →</a>
+                            <a href="evals-human-in-the-loop.html">How the judge system works →</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
     </footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

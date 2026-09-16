@@ -32,41 +32,152 @@
     </nav>
 
     <main>
-        <section id="intro">
-            <div class="badge">Engineering Methodology</div>
+        <section id="hero">
+            <div class="badge">Engineering Method</div>
             <h1>Spec Driven Development</h1>
-            <p>[Placeholder: An introduction to the paradigm shift in software engineering where high-fidelity specifications drive the automated generation of code, tests, and documentation.]</p>
+            <p class="subtitle">Writing the specification first — then letting AI agents implement it. The method that makes agentic coding reliable instead of chaotic.</p>
+            <p class="meta">
+                <span>Method: BMAD</span>
+                <span>Proven on: GrandeSuite Next</span>
+                <span>Status: Ongoing practice</span>
+            </p>
         </section>
 
-        <section id="frameworks">
-            <h2>Frameworks & Ecosystem</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>BMAD (Business Model Architecture Design)</h3>
-                    <p>[Placeholder: Explaining how BMAD integrates business requirements directly into the technical specification layer.]</p>
-                </div>
-                <div class="card">
-                    <h3>Spec Kit & Beyond</h3>
-                    <p>[Placeholder: Overview of tools and libraries that facilitate structured prompt engineering and schema-based development.]</p>
-                </div>
-                <div class="card">
-                    <h3>Standardized Schemas</h3>
-                    <p>[Placeholder: The role of JSON Schema, OpenAPI, and Protobuf in ensuring AI agents interpret specifications correctly.]</p>
-                </div>
-            </div>
+        <section id="intro">
+            <p>AI agents can write code fast. The hard part is making sure they build the right thing — and keep building it as the product evolves. My answer: never let code lead. The spec leads; the agents follow.</p>
+            <p>Every feature starts as a written requirement with testable acceptance criteria, moves through architecture and design, and only then becomes work an agent can implement — with full traceability from code back to intent.</p>
         </section>
 
-        <section id="benefits">
-            <h2>The Value Proposition</h2>
-            <div class="card">
-                <p>[Placeholder: Discussing the reduction in technical debt, increased velocity, and improved reliability when using spec-driven workflows for complex AI systems.]</p>
+        <section class="accordion-section">
+
+            <!-- 1. Why Specs First -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">1</span>
+                    <span class="accordion-title">Why Specs First</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <ul>
+                            <li><strong>Agents drift without a single source of truth.</strong> A spec is the contract every generation must respect — prompts alone are not.</li>
+                            <li><strong>Traceability.</strong> Every piece of work links back to the requirement that justifies it — "why does this exist?" is answered in seconds.</li>
+                            <li><strong>Change control.</strong> When strategy shifts, the spec is updated deliberately instead of the codebase drifting silently.</li>
+                            <li><strong>Cheap errors.</strong> A mistake in a spec costs minutes to fix; the same mistake in code costs days.</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+
+            <!-- 2. The Pipeline -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">2</span>
+                    <span class="accordion-title">The Pipeline</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <p>Every feature in the ERP project flowed through the same eleven phases. No phase was skipped.</p>
+                        <table class="pipeline-table">
+                            <thead>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>What happened</th>
+                                    <th>Output</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>1. Brainstorming</td><td>Shaped the idea, market, and strategy</td><td>Concept notes</td></tr>
+                                <tr><td>2. Brief</td><td>Defined the problem, users, and success measures</td><td>Product brief</td></tr>
+                                <tr><td>3. Requirements</td><td>Detailed every area of the system in writing</td><td>27 planning documents</td></tr>
+                                <tr><td>4. Architecture</td><td>Designed how the system works; documented every decision</td><td>Architecture document</td></tr>
+                                <tr><td>5. UX Design</td><td>Designed screens, flows, and the design system</td><td>UX and design documents</td></tr>
+                                <tr><td>6. Work breakdown</td><td>Split the plan into well-scoped pieces with acceptance criteria</td><td>46 planned work items</td></tr>
+                                <tr><td>7. Readiness check</td><td>Verified the plan was consistent before building</td><td>Assessment reports</td></tr>
+                                <tr><td>8. Sprint planning</td><td>Sequenced the work by dependency</td><td>Sprint plan</td></tr>
+                                <tr><td>9. Build</td><td>Test-first implementation by AI agents</td><td>Backend and frontend code</td></tr>
+                                <tr><td>10. Code review</td><td>Three independent adversarial reviews per piece</td><td>Review notes</td></tr>
+                                <tr><td>11. Testing</td><td>Automated tests, acceptance tests, quality checks</td><td>~790 automated tests</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. What Makes a Spec Work -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">3</span>
+                    <span class="accordion-title">What Makes a Spec Work</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <ul>
+                            <li><strong>Testable acceptance criteria</strong> — written before implementation; nothing vague survives.</li>
+                            <li><strong>Traceability</strong> — every work item links to its requirement and the architecture decision behind it.</li>
+                            <li><strong>Explicit non-goals</strong> — saying what the product will <em>not</em> do prevents scope creep.</li>
+                            <li><strong>Readiness checks</strong> — plan, design, and architecture are validated against each other before any code exists.</li>
+                            <li><strong>Living documents</strong> — the spec evolves deliberately; changes are versioned decisions, not silent edits.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Evidence -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">4</span>
+                    <span class="accordion-title">Evidence: GrandeSuite Next</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <div class="metric-grid">
+                            <div class="metric-card">
+                                <div class="metric-value">27</div>
+                                <div class="metric-label">Planning documents</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">46</div>
+                                <div class="metric-label">Work items planned</div>
+                            </div>
+                            <div class="metric-card">
+                                <div class="metric-value">~790</div>
+                                <div class="metric-label">Automated tests</div>
+                            </div>
+                        </div>
+                        <p>The method caught problems early: the first readiness assessment found six issues — two of them critical — before development began. Traceability meant any number, screen, or test in the system could be explained from the spec in seconds.</p>
+                        <p class="card-links"><a href="project-grandesuite.html">See the full case study →</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Lessons Learned -->
+            <div class="accordion">
+                <button class="accordion-header">
+                    <span class="accordion-num">5</span>
+                    <span class="accordion-title">Lessons Learned</span>
+                    <span class="accordion-arrow">▼</span>
+                </button>
+                <div class="accordion-body">
+                    <div class="accordion-body-inner">
+                        <ul>
+                            <li><strong>Settle the framing before detailed specs.</strong> The project was first planned as a restaurant platform; by the time it was repositioned as an entry-level ERP, parts of the plan had to be reworked. Late strategy changes are expensive — even when they are right.</li>
+                            <li><strong>Specs must evolve with the product.</strong> Changes are versioned and deliberate; corrections become new decisions, not edits to history.</li>
+                            <li><strong>The readiness check is the cheapest bug-fix step.</strong> Finding misalignment in documents costs minutes; finding it in code costs days.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
         </section>
     </main>
 
     <footer>
         <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
     </footer>
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
