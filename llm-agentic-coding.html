@@ -110,6 +110,9 @@
                 <div class="highlight-box warning">
                     <p><strong>Why DeepSeek wins on cost.</strong> DeepSeek V4.1 Flash caches far more aggressively than the others: a cache read costs <strong>2%</strong> of input with <strong>free writes</strong> and persists <strong>hours–days</strong>. Anthropic and OpenAI read at <strong>~10%</strong>; Anthropic charges <strong>1.25×</strong> for cache writes and its cache expires in <strong>5 minutes</strong>, so it caches less in practice. The cache-hit ratios above are estimates — they are what drive the cost. Figures are input + cache read + output + cache writes at September 2026 list rates; on a flat-rate plan like opencode GO, the cash cost is lower still.</p>
                 </div>
+                <div class="highlight-box">
+                    <p><strong>The cost the table doesn't show.</strong> Token price isn't the same as cost per finished task. In agentic coding, a weaker model that fails more often enters self-correction loops — and every retry re-sends the whole context (history, changed files, linter output). A model that gets it right in 5 calls can cost less overall than one that needs 25, even at a far higher price per token. Two honest caveats: the $14 is DeepSeek's <em>actual</em> measured usage (its loops are already included), while the other rows reprice that same token volume — so if a frontier model needed fewer iterations, the real gap would be narrower. Treat this as directional, not exact; time and human review aren't counted here either.</p>
+                </div>
 
                 <p>I've tried the alternatives — other models, and other IDEs like Visual Studio with Kilo Code, and Antigravity. They work. But on cost, opencode + DeepSeek is in a different league.</p>
             </div>
