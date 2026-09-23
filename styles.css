@@ -376,6 +376,7 @@ main > section:last-child {
 /* Sections (case-study style) */
 .cs-section {
     margin: 3.25rem 0;
+    padding-top: 1.5rem;
 }
 
 .cs-section h2 {
@@ -384,7 +385,9 @@ main > section:last-child {
     gap: 10px;
     font-size: 1.6rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
 }
 
 .cs-section h2 .num {
@@ -409,17 +412,17 @@ main > section:last-child {
 }
 
 .cs-section h3 {
-    font-size: 1.05rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    color: var(--text);
-    margin: 1.5rem 0 0.75rem;
+    color: var(--primary);
+    margin: 2.25rem 0 0.75rem;
 }
 
 .cs-section h4 {
     font-size: 0.95rem;
-    font-weight: 700;
+    font-weight: 600;
     color: var(--text);
-    margin: 1.25rem 0 0.5rem;
+    margin: 1.75rem 0 0.5rem;
 }
 
 .cs-section ul,
@@ -916,29 +919,6 @@ main > section:last-child {
     line-height: 1.6;
     color: var(--text-secondary);
     white-space: pre;
-}
-
-/* Scoped: AI Strategy (Agente Mundial) — clearer heading hierarchy */
-.strategy-full .cs-section {
-    padding-top: 1.5rem;
-}
-
-.strategy-full .cs-section h2 {
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 1.5rem;
-}
-
-.strategy-full .cs-section h3 {
-    color: var(--primary);
-    font-size: 1.15rem;
-    margin-top: 2.25rem;
-    margin-bottom: 0.75rem;
-}
-
-.strategy-full .cs-section h4 {
-    margin-top: 1.75rem;
-    font-weight: 600;
 }
 
 /* Footer */
