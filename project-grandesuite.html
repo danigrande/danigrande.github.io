@@ -23,7 +23,13 @@
                     </div>
                 </div>
                 <a href="spec-driven-dev.html">Spec Driven Development</a>
-                <a href="ai-strategy.html">AI Strategy</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Strategy <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="ai-strategy.html">The Framework</a>
+                        <a href="ai-strategy-agente-mundial.html">Agente Mundial (Applied)</a>
+                    </div>
+                </div>
                 <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
@@ -36,320 +42,358 @@
         <section id="hero">
             <div class="badge">Solo Investigation · Agentic Coding + BMAD</div>
             <h1>GrandeSuite <span>Next</span></h1>
-            <p class="subtitle">An entry-level ERP for growing businesses — built end-to-end by one product manager with AI agents.</p>
+            <p class="subtitle">An entry-level ERP for growing businesses — designed and built end-to-end by one product manager with AI agents, to see how far one person can take a product that took a thousand people five years.</p>
             <p class="meta">
                 <span>Role: Product Manager & Sole Builder</span>
                 <span>Timeline: Jul 2026 — Present</span>
-                <span>Status: In progress — MVP partially built (Sep 2026)</span>
+                <span>Status: In progress — MVP built and tested (Sep 2026)</span>
             </p>
             <div class="hero-tags">
                 <span>Agentic Coding</span>
                 <span>BMAD</span>
                 <span>ERP</span>
-                <span>790 Automated Tests</span>
+                <span>~790 Automated Tests</span>
             </div>
         </section>
 
         <section id="intro">
-            <p>Can one product manager, working with AI agents, take a real business problem all the way to working software? That is the experiment behind GrandeSuite Next.</p>
-            <p>The product is an entry-level ERP — the business software a company uses to buy, sell, track inventory, and keep its books. It is aimed at growing businesses that have outgrown QuickBooks but can't justify a $150,000+ enterprise system. Everything on this page — research, requirements, architecture, design, and code — was produced by one person working with AI agents through a structured development method called BMAD.</p>
+            <p>Can one product manager, working with AI agents, take a real business problem all the way to working software? That is the experiment behind GrandeSuite Next — and it started with a very specific frustration.</p>
             <div class="highlight-box warning">
-                <p><strong>This project is unfinished.</strong> It is an ongoing, solo experiment. The core financial areas are built and tested, but several planned areas — such as subscription billing, multiple companies, and multiple currencies — have not been built yet. Progress shown here is as of September 2026.</p>
+                <p><strong>This project is unfinished by design.</strong> It is an ongoing, solo experiment. The core ERP is built and tested, but some areas remain in the backlog and the planning documentation has gaps. Progress shown here is as of September 2026.</p>
             </div>
         </section>
 
         <section class="page-content">
 
-            <!-- 1. The Problem -->
+            <!-- 0. Why this project -->
             <div class="cs-section">
-                <h2><span class="num">1</span> The Problem</h2>
-                        <p>Growing businesses eventually outgrow the accounting software that got them started. The tools that work at $2M in revenue start to break at $20M. And the jump to enterprise software is brutal.</p>
-                        <p>Five things go wrong again and again:</p>
-                        <ul>
-                            <li><strong>Invoices arrive everywhere.</strong> Paper, PDFs, emails, supplier portals — often in different inboxes. People retype them by hand, and errors slip in.</li>
-                            <li><strong>Prices creep up unnoticed.</strong> Nobody has time to check every invoice line against what was ordered — so supplier price increases surface weeks later, after the margin is already lost.</li>
-                            <li><strong>Approvals get stuck.</strong> Managers are on the floor or on the road, not at a desk signing paperwork. Payment terms slip.</li>
-                            <li><strong>Cash leaks quietly.</strong> Duplicate payments, missed supplier credits, and paying for short deliveries drain money without anyone noticing.</li>
-                            <li><strong>No separation of duties.</strong> The same person who approves a payment often releases it — with no audit trail of who authorized what.</li>
-                        </ul>
-                        <div class="highlight-box">
-                            <p><strong>The result:</strong> businesses lose 1–3% of their spend to invoice errors and spend 10–20 hours a month on manual workarounds. The alternative — enterprise software like NetSuite — means $150K+ quotes and 6–9 month implementations. As the pitch goes: <strong>QuickBooks stops scaling. NetSuite is terrifying.</strong></p>
-                        </div>
+                <h2><span class="num">0</span> Why This Project</h2>
+                <p>For five years I was a Principal Product Manager at Oracle NetSuite, working on the ERP. We wanted to build <strong>"NetSuite Next"</strong> — a new, smaller, modern version of the product. More than a thousand people worked on it, and after five years it still hadn't seen the light of day.</p>
+                <p>That experience stuck with me. What if the bottleneck wasn't the vision or the demand, but the sheer weight of shipping something that big? I wanted to know how far one person — using AI agents — could take a proof of concept for exactly that kind of product.</p>
+                <p>GrandeSuite Next is that experiment: an entry-level ERP for growing businesses, designed and built end-to-end by one product manager working with AI. Not to prove a point about AI, but to find out how much of a "thousand-person, five-year" project is actually reachable — and where the real hard parts still are.</p>
             </div>
 
-            <!-- 2. Market & Opportunity -->
+            <!-- 1. Key learnings -->
             <div class="cs-section">
-                <h2><span class="num">2</span> Market & Opportunity</h2>
-                        <p><strong>Who it is for.</strong> Businesses that have outgrown QuickBooks — typically 20–200 employees and $2–25M in revenue. Especially operations-heavy businesses like distributors, where inventory and paperwork are the daily reality.</p>
-                        <p><strong>Why now.</strong> There is a wave of "QuickBooks leavers." More than half of migrations start with a pricing shock, and most businesses know they need to move but delay 6–18 months — mostly out of fear that a new system will fail to get off the ground.</p>
-                        <p><strong>The competition.</strong> NetSuite is the default "safe choice," but it costs $150K+ with months of consultants. Sage Intacct and Microsoft Dynamics sit nearby. Intuit launched its own Enterprise Suite in 2026, aimed at the same buyer.</p>
-                        <p><strong>The gap.</strong> Nobody offers the operational core — purchasing, inventory, sales, and accounting — in one simple system, at a mid-market price, with a fast, fixed implementation.</p>
-                        <p><strong>The bet.</strong> A 5-day fixed-price onboarding ("Pit Bay") for $10K, then $500/month with frontline workers free. Year-one cost of $16–33K, compared with $50–100K+ for Microsoft Dynamics.</p>
-                        <div class="highlight-box accent">
-                            <p><strong>The wedge is operations-first:</strong> warehouse workers scan barcodes, the books stay current by themselves, and finance gets clean numbers without chasing spreadsheets. Implementation in days, not months.</p>
-                        </div>
+                <h2><span class="num">1</span> Key Learnings</h2>
+                <p>After building this, the things that matter most:</p>
+                <ol>
+                    <li><strong>Start with the pain that hurts most.</strong> Supplier invoices were the highest-pain, highest-volume process — and the fastest path to visible value.</li>
+                    <li><strong>Architect for immutability from day one.</strong> An append-only event log made audit, debugging, and point-in-time reporting trivial.</li>
+                    <li><strong>AI is a tool, not the product.</strong> Every AI feature was tested against one question: does it reduce human effort or error?</li>
+                    <li><strong>Free-tier AI changes the economics.</strong> Running inference on free tiers removed the per-invoice costs that make competing tools expensive.</li>
+                    <li><strong>The process is the product.</strong> The structured pipeline caught alignment issues before they became expensive rework.</li>
+                    <li><strong>Strategy is a living thing.</strong> Late repositioning is expensive — even when it is the right call.</li>
+                </ol>
+                <div class="highlight-box accent">
+                    <p><strong>Draft list.</strong> These are distilled from the full learnings further down the page — final key learnings to be confirmed.</p>
+                </div>
             </div>
 
-            <!-- 3. Product Vision -->
+            <!-- 2. The Problem -->
             <div class="cs-section">
-                <h2><span class="num">3</span> Product Vision</h2>
-                        <p>GrandeSuite Next is one place to run the financial life of a growing business: buy, sell, get paid, pay suppliers, and keep the books — no exports, no spreadsheets, no separate accounting package.</p>
-                        <p>Two everyday flows meet in one system:</p>
-                        <ul>
-                            <li><strong>Buying</strong> (procure-to-pay): order from suppliers → receive goods, scanned at the warehouse → get the invoice → pay.</li>
-                            <li><strong>Selling</strong> (order-to-cash): quote a customer → take the order → pick, pack, and ship → invoice → collect payment → handle returns.</li>
-                        </ul>
-                        <p>Every step becomes bookkeeping automatically. The books are always current, and every number can be traced back to the real-world action that created it.</p>
-                        <div class="highlight-box">
-                            <p><strong>North Star:</strong> eliminate manual accounting by capturing what actually happens and turning it into double-entry bookkeeping automatically.</p>
-                        </div>
+                <h2><span class="num">2</span> The Problem</h2>
+                <p>Growing businesses eventually outgrow the accounting software that got them started. The tools that work at $2M in revenue start to break at $20M. And the jump to enterprise software is brutal.</p>
+                <p>Five things go wrong again and again:</p>
+                <ul>
+                    <li><strong>Invoices arrive everywhere.</strong> Paper, PDFs, emails, supplier portals — often in different inboxes. People retype them by hand, and errors slip in.</li>
+                    <li><strong>Prices creep up unnoticed.</strong> Nobody has time to check every invoice line against what was ordered — so supplier price increases surface weeks later, after the margin is already lost.</li>
+                    <li><strong>Approvals get stuck.</strong> Managers are on the floor or on the road, not at a desk signing paperwork. Payment terms slip.</li>
+                    <li><strong>Cash leaks quietly.</strong> Duplicate payments, missed supplier credits, and paying for short deliveries drain money without anyone noticing.</li>
+                    <li><strong>No separation of duties.</strong> The same person who approves a payment often releases it — with no audit trail of who authorized what.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><strong>The result:</strong> businesses lose 1–3% of their spend to invoice errors and spend 10–20 hours a month on manual workarounds. The alternative — enterprise software like NetSuite — means $150K+ quotes and 6–9 month implementations. As the pitch goes: <strong>QuickBooks stops scaling. NetSuite is terrifying.</strong></p>
+                </div>
             </div>
 
-            <!-- 4. What the System Does -->
+            <!-- 3. Market & Opportunity -->
             <div class="cs-section">
-                <h2><span class="num">4</span> What the System Does</h2>
-                        <div class="area-grid">
-                            <div class="area-card">
-                                <h4>Buying from Suppliers</h4>
-                                <p>Create purchase orders, receive deliveries by scanning, capture supplier invoices (read automatically when possible), check invoices against what was ordered and received, and schedule payments.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Selling to Customers</h4>
-                                <p>Quotes and orders; pick, pack, and ship with mobile scanning; invoices and payments; returns and credit notes; customer credit limits.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Bookkeeping & Reports</h4>
-                                <p>Every operation becomes double-entry bookkeeping automatically. Chart of accounts, profit & loss, balance sheet, cash flow, and a month-end close checklist.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Inventory</h4>
-                                <p>Live stock levels across locations, a barcode catalog, transfers and adjustments, and weighted-average valuation.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>AI Helpers</h4>
-                                <p>Reads supplier invoices, suggests which bills to pay and when, flags duplicates and anomalies, helps map accounts during setup, and classifies unknown barcodes. Always a suggestion — a human decides.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Mobile App for the Warehouse</h4>
-                                <p>Scan to receive, pick, transfer, ship, and count stock. Works offline and syncs later. Designed for shared devices and gloves, not desks.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Finance Dashboard</h4>
-                                <p>Real-time financial statements, alerts only when something deviates, a month-end close checklist, and one-click trial balance export for accountants.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Not Built Yet</h4>
-                                <p>Planned but not started: subscription billing, multiple companies, multiple currencies, tax filing, and manufacturing.</p>
-                            </div>
-                        </div>
+                <h2><span class="num">3</span> Market & Opportunity</h2>
+                <p><strong>Who it is for.</strong> Businesses that have outgrown QuickBooks — typically 20–200 employees and $2–25M in revenue. Especially operations-heavy businesses like distributors, where inventory and paperwork are the daily reality.</p>
+                <p><strong>Why now.</strong> There is a wave of "QuickBooks leavers." More than half of migrations start with a pricing shock, and most businesses know they need to move but delay 6–18 months — mostly out of fear that a new system will fail to get off the ground.</p>
+                <p><strong>The competition.</strong> NetSuite is the default "safe choice," but it costs $150K+ with months of consultants. Sage Intacct and Microsoft Dynamics sit nearby. Intuit launched its own Enterprise Suite in 2026, aimed at the same buyer.</p>
+                <p><strong>The gap.</strong> Nobody offers the operational core — purchasing, inventory, sales, and accounting — in one simple system, at a mid-market price, with a fast, fixed implementation.</p>
+                <p><strong>The bet.</strong> A 5-day fixed-price onboarding ("Pit Bay") for $10K, then $500/month with frontline workers free. Year-one cost of $16–33K, compared with $50–100K+ for Microsoft Dynamics.</p>
+                <div class="highlight-box accent">
+                    <p><strong>The wedge is operations-first:</strong> warehouse workers scan barcodes, the books stay current by themselves, and finance gets clean numbers without chasing spreadsheets. Implementation in days, not months.</p>
+                </div>
             </div>
 
-            <!-- 5. How It Was Built -->
+            <!-- 4. Product Vision -->
             <div class="cs-section">
-                <h2><span class="num">5</span> How It Was Built</h2>
-                        <p>GrandeSuite Next was developed with <strong>BMAD</strong> — a structured, AI-augmented development method that takes a product from first idea to production in defined phases. Every phase produces documents that feed the next, and named AI agents play different roles: product manager, business analyst, architect, designer, engineer, test architect, writer.</p>
-                        <p>Nothing was skipped: research before requirements, requirements before architecture, architecture before code. Every feature can be traced back to why it exists.</p>
-                        <table class="pipeline-table">
-                            <thead>
-                                <tr>
-                                    <th>Phase</th>
-                                    <th>What happened</th>
-                                    <th>Output</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr><td>1. Brainstorming</td><td>Shaped the idea, target market, and strategy</td><td>Concept notes</td></tr>
-                                <tr><td>2. Brief</td><td>Defined the problem, users, and success measures</td><td>Product brief (2 versions)</td></tr>
-                                <tr><td>3. Requirements</td><td>Detailed every area of the system in writing</td><td>27 planning documents (PRDs)</td></tr>
-                                <tr><td>4. Architecture</td><td>Designed how the system works; documented every major decision</td><td>Architecture document</td></tr>
-                                <tr><td>5. UX Design</td><td>Designed the screens, flows, and design system</td><td>UX and design documents</td></tr>
-                                <tr><td>6. Work breakdown</td><td>Split the plan into well-scoped pieces with clear acceptance criteria</td><td>46 planned work items</td></tr>
-                                <tr><td>7. Readiness check</td><td>Verified the plan was consistent before building</td><td>Assessment reports</td></tr>
-                                <tr><td>8. Sprint planning</td><td>Sequenced the work by dependency</td><td>Sprint plan</td></tr>
-                                <tr><td>9. Build</td><td>Test-first implementation by AI agents</td><td>Backend and frontend code</td></tr>
-                                <tr><td>10. Code review</td><td>Three independent adversarial reviews per piece of work</td><td>Review notes</td></tr>
-                                <tr><td>11. Testing</td><td>Automated tests, acceptance tests, quality checks</td><td>~790 automated tests</td></tr>
-                            </tbody>
-                        </table>
-                        <p>In total, the method produced 27 planning documents — one for every area of the system — and 10 everyday workflows described step by step. A good example: "Carlos processes a supplier invoice," a single action that touches five parts of the system, from receiving to bookkeeping.</p>
-                        <h3>The AI teammates</h3>
-                        <p>Each agent encodes a different role and way of thinking — so multiple perspectives are applied at every stage.</p>
-                        <div class="agent-grid">
-                            <div class="agent-card">
-                                <div class="agent-name">John</div>
-                                <div class="agent-role">Product Manager</div>
-                                <div class="agent-desc">Drives discovery, challenges assumptions, and owns the quality of the plan</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Mary</div>
-                                <div class="agent-role">Business Analyst</div>
-                                <div class="agent-desc">Brings strategic frameworks and clear, structured thinking to requirements</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Winston</div>
-                                <div class="agent-role">System Architect</div>
-                                <div class="agent-desc">Prefers boring, stable technology; ties every decision to business value</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Sally</div>
-                                <div class="agent-role">UX Designer</div>
-                                <div class="agent-desc">Balances empathy with edge cases; starts simple and improves with feedback</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Amelia</div>
-                                <div class="agent-role">Software Engineer</div>
-                                <div class="agent-desc">Strict test-first development; documents tests and catches regressions</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Murat</div>
-                                <div class="agent-role">Test Architect</div>
-                                <div class="agent-desc">Risk-based testing strategy and quality pipelines</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Paige</div>
-                                <div class="agent-role">Technical Writer</div>
-                                <div class="agent-desc">Clear documentation and editorial quality</div>
-                            </div>
-                            <div class="agent-card">
-                                <div class="agent-name">Carson</div>
-                                <div class="agent-role">Brainstorming Coach</div>
-                                <div class="agent-desc">Facilitates ideation and divergent thinking</div>
-                            </div>
-                        </div>
-                        <div class="highlight-box teal">
-                            <p><strong>Why it matters:</strong> the structure is what let AI agents build something financial-grade without drifting. Traceability answered "why does this exist?" in seconds — and the readiness checks caught problems before they became expensive.</p>
-                        </div>
+                <h2><span class="num">4</span> Product Vision</h2>
+                <p>GrandeSuite Next is one place to run the financial life of a growing business: buy, sell, get paid, pay suppliers, and keep the books — no exports, no spreadsheets, no separate accounting package. The <strong>vision</strong> is a native general ledger as the single source of truth, with multi-entity and multi-currency support, and a QuickBooks bridge as an onboarding convenience for businesses transitioning off QBO — never a dependency.</p>
+                <p>Two everyday flows meet in one system:</p>
+                <ul>
+                    <li><strong>Buying</strong> (procure-to-pay): order from suppliers → receive goods, scanned at the warehouse → get the invoice → pay.</li>
+                    <li><strong>Selling</strong> (order-to-cash): quote a customer → take the order → pick, pack, and ship → invoice → collect payment → handle returns.</li>
+                </ul>
+                <p>Every step becomes bookkeeping automatically. The books are always current, and every number can be traced back to the real-world action that created it.</p>
+                <div class="highlight-box">
+                    <p><strong>North Star:</strong> eliminate manual accounting by capturing what actually happens and turning it into double-entry bookkeeping automatically.</p>
+                </div>
+                <div class="highlight-box teal">
+                    <p><strong>Honest current state:</strong> the MVP core is built and tested — including a native ledger that generates real-time financial statements — and much of the phase-2 foundation (multi-entity, multi-currency, tax, revenue recognition, custom workflows, payroll) is also built. What remains is fast-follow scope and documentation. See "Progress" below.</p>
+                </div>
             </div>
 
-            <!-- 6. Discovery & Research -->
+            <!-- 5. What the System Does -->
             <div class="cs-section">
-                <h2><span class="num">6</span> Discovery & Research</h2>
-                        <p><strong>Brainstorming</strong> shaped the concept: the North Star, the target market, and four pillars — fast onboarding templates, an event-driven accounting engine, a finance dashboard, and an AI copilot.</p>
-                        <p><strong>Domain research</strong> mapped every type of financial transaction in a business — from issuing a purchase order to settling a customer invoice — to its accounting impact. A second deep dive covered supplier invoice workflows, document-reading technology, and compliance requirements.</p>
-                        <p><strong>Market research</strong> studied "QuickBooks leavers": who they are, what triggers the switch, how they buy, and how NetSuite, Sage Intacct, and Xero price and position themselves. The pattern was clear: fear of implementation failure is the biggest barrier, and transparent pricing is the biggest opening.</p>
-                        <div class="highlight-box teal">
-                            <p><strong>Key insight that shaped the strategy:</strong> rather than charging per module like traditional ERP vendors, win on transparent pricing, a fast 5-day go-live, and free frontline users. Compete as operations-first, not another finance-first suite.</p>
-                        </div>
+                <h2><span class="num">5</span> What the System Does</h2>
+                <div class="area-grid">
+                    <div class="area-card">
+                        <h4>Buying from Suppliers</h4>
+                        <p>Create purchase orders, receive deliveries by scanning, capture supplier invoices (read automatically when possible), check invoices against what was ordered and received, and schedule payments.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Selling to Customers</h4>
+                        <p>Quotes and orders; pick, pack, and ship with mobile scanning; invoices and payments; returns and credit notes; customer credit limits.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Bookkeeping & Reports</h4>
+                        <p>Every operation becomes double-entry bookkeeping automatically. Chart of accounts, profit & loss, balance sheet, cash flow, and a month-end close checklist.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Inventory</h4>
+                        <p>Live stock levels across locations, a barcode catalog, transfers and adjustments, and weighted-average valuation.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>AI Helpers</h4>
+                        <p>Reads supplier invoices, suggests which bills to pay and when, flags duplicates and anomalies, helps map accounts during setup, and classifies unknown barcodes. Always a suggestion — a human decides.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Mobile App for the Warehouse</h4>
+                        <p>Scan to receive, pick, transfer, ship, and count stock. Works offline and syncs later. Designed for shared devices and gloves, not desks.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Finance Dashboard</h4>
+                        <p>Real-time financial statements, alerts only when something deviates, a month-end close checklist, and one-click trial balance export for accountants.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>Still Planned</h4>
+                        <p>In the backlog: fast-follow scope such as job and asset events and additional Pit Bay templates — plus multi-entity consolidation polish.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- 7. AI in the Product -->
+            <!-- 6. How It Was Built -->
             <div class="cs-section">
-                <h2><span class="num">7</span> AI in the Product</h2>
-                        <p><strong>The philosophy:</strong> use AI where it clearly helps, and keep a human in the loop for anything that touches money. Augment, don't replace.</p>
-                        <p><strong>Reading supplier invoices.</strong> A two-tier approach: a fast model handles clean documents; a stronger one handles messy scans. The system escalates automatically when confidence is low. It runs on free-tier AI infrastructure — $0 for the MVP.</p>
-                        <p><strong>Confidence scoring and human review.</strong> Anything below the confidence bar goes to a person. The system learns from corrections but never fully trusts itself.</p>
-                        <p><strong>Matching is deliberately not AI.</strong> Checking an invoice against what was ordered and received is rules-based and auditable — financial integrity is never left to a model's guess.</p>
-                        <p><strong>Payment suggestions.</strong> Every day the system proposes which bills to pay and which to delay, flags duplicates and outliers, and explains each recommendation in plain language. It never moves money — the controller reviews and approves.</p>
-                        <p><strong>Setup copilot.</strong> During onboarding, AI suggests account mappings, finds duplicate customer data and missing items, and classifies unknown barcodes.</p>
-                        <div class="highlight-box accent">
-                            <p><strong>Guardrails:</strong> no chatbot. No autonomous decisions. AI can be switched off per customer. Every output is a suggestion a person can override.</p>
-                        </div>
+                <h2><span class="num">6</span> How It Was Built</h2>
+                <p>GrandeSuite Next was developed with <strong>BMAD</strong> — a structured, AI-augmented development method that takes a product from first idea to production in defined phases. Every phase produces documents that feed the next, and named AI agents play different roles: product manager, business analyst, architect, designer, engineer, test architect, writer.</p>
+                <p>Nothing was skipped: research before requirements, requirements before architecture, architecture before code. Every feature can be traced back to why it exists.</p>
+                <table class="pipeline-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>What happened</th>
+                            <th>Output</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1. Brainstorming</td><td>Shaped the idea, target market, and strategy</td><td>Concept notes</td></tr>
+                        <tr><td>2. Brief</td><td>Defined the problem, users, and success measures</td><td>Product brief (2 versions)</td></tr>
+                        <tr><td>3. Requirements</td><td>Detailed every area of the system in writing</td><td>27 planning documents (PRDs)</td></tr>
+                        <tr><td>4. Architecture</td><td>Designed how the system works; documented every major decision</td><td>Architecture document</td></tr>
+                        <tr><td>5. UX Design</td><td>Designed the screens, flows, and design system</td><td>UX and design documents</td></tr>
+                        <tr><td>6. Work breakdown</td><td>Split the plan into epics and stories with acceptance criteria</td><td>Epic & story breakdown</td></tr>
+                        <tr><td>7. Readiness check</td><td>Verified the plan was consistent before building</td><td>Assessment reports</td></tr>
+                        <tr><td>8. Sprint planning</td><td>Sequenced the work by dependency</td><td>Sprint plan</td></tr>
+                        <tr><td>9. Build</td><td>Test-first implementation by AI agents</td><td>Backend and frontend code</td></tr>
+                        <tr><td>10. Code review</td><td>Three independent adversarial reviews per piece</td><td>Review notes</td></tr>
+                        <tr><td>11. Testing</td><td>Automated tests, acceptance tests, quality checks</td><td>~790 automated tests</td></tr>
+                    </tbody>
+                </table>
+                <p>In total, the method produced 27 planning documents — one for every area of the system — and everyday workflows described step by step. A good example: "Carlos processes a supplier invoice," a single action that touches five parts of the system, from receiving to bookkeeping.</p>
+                <h3>The AI teammates</h3>
+                <p>Each agent encodes a different role and way of thinking — so multiple perspectives are applied at every stage.</p>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">John</div>
+                        <div class="agent-role">Product Manager</div>
+                        <div class="agent-desc">Drives discovery, challenges assumptions, and owns the quality of the plan</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Mary</div>
+                        <div class="agent-role">Business Analyst</div>
+                        <div class="agent-desc">Brings strategic frameworks and clear, structured thinking to requirements</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Winston</div>
+                        <div class="agent-role">System Architect</div>
+                        <div class="agent-desc">Prefers boring, stable technology; ties every decision to business value</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Sally</div>
+                        <div class="agent-role">UX Designer</div>
+                        <div class="agent-desc">Balances empathy with edge cases; starts simple and improves with feedback</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Amelia</div>
+                        <div class="agent-role">Software Engineer</div>
+                        <div class="agent-desc">Strict test-first development; documents tests and catches regressions</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Murat</div>
+                        <div class="agent-role">Test Architect</div>
+                        <div class="agent-desc">Risk-based testing strategy and quality pipelines</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Paige</div>
+                        <div class="agent-role">Technical Writer</div>
+                        <div class="agent-desc">Clear documentation and editorial quality</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Carson</div>
+                        <div class="agent-role">Brainstorming Coach</div>
+                        <div class="agent-desc">Facilitates ideation and divergent thinking</div>
+                    </div>
+                </div>
+                <div class="highlight-box teal">
+                    <p><strong>Why it matters:</strong> the structure is what let AI agents build something financial-grade without drifting. Traceability answered "why does this exist?" in seconds — and the readiness checks caught problems before they became expensive.</p>
+                </div>
             </div>
 
-            <!-- 8. How It Works -->
+            <!-- 7. Discovery & Research -->
             <div class="cs-section">
-                <h2><span class="num">8</span> How It Works</h2>
-                        <p>Everything that happens is recorded as an event in an append-only log: a delivery received, an item picked, an invoice entered. Nothing is edited or deleted — corrections are new events.</p>
-                        <p>Configurable rules translate those events into double-entry bookkeeping. The result is a perfect audit trail, point-in-time reporting, and full traceability: every number can be traced back to who did what, where, and when.</p>
-                        <p><strong>The QuickBooks bridge is optional.</strong> It can import opening balances and push records for businesses transitioning off QuickBooks, but the system's own ledger is the source of truth from day one — never a dependency.</p>
-                        <p><strong>Security and multi-tenancy:</strong> each customer's data is isolated at the database level, with role-based access and encryption in transit and at rest.</p>
-                        <p><strong>Tech stack:</strong> React and TypeScript on the front end; Python with FastAPI and PostgreSQL on the back end — deployed on free-tier hosting for the MVP.</p>
-                        <div class="highlight-box">
-                            <p><strong>Why it is different:</strong> traditional ERPs lose the link between operations and finance. Here, the link is the architecture.</p>
-                        </div>
+                <h2><span class="num">7</span> Discovery & Research</h2>
+                <p><strong>Brainstorming</strong> shaped the concept: the North Star, the target market, and four pillars — fast onboarding templates, an event-driven accounting engine, a finance dashboard, and an AI copilot.</p>
+                <p><strong>Domain research</strong> mapped every type of financial transaction in a business — from issuing a purchase order to settling a customer invoice — to its accounting impact. A second deep dive covered supplier invoice workflows, document-reading technology, and compliance requirements.</p>
+                <p><strong>Market research</strong> studied "QuickBooks leavers": who they are, what triggers the switch, how they buy, and how NetSuite, Sage Intacct, and Xero price and position themselves. The pattern was clear: fear of implementation failure is the biggest barrier, and transparent pricing is the biggest opening.</p>
+                <div class="highlight-box teal">
+                    <p><strong>Key insight that shaped the strategy:</strong> rather than charging per module like traditional ERP vendors, win on transparent pricing, a fast 5-day go-live, and free frontline users. Compete as operations-first, not another finance-first suite.</p>
+                </div>
             </div>
 
-            <!-- 9. The Experience -->
+            <!-- 8. AI in the Product -->
             <div class="cs-section">
-                <h2><span class="num">9</span> The Experience</h2>
-                        <p>A clean, professional interface built on a small design system — type scale, color tokens, spacing, reusable components. Designed for quick decisions, not decoration.</p>
-                        <p><strong>Mobile first for the warehouse:</strong> scan-first screens, large touch targets, offline support, no keyboard needed.</p>
-                        <p><strong>The finance web app ("the Cockpit"):</strong> real-time financial statements, alerts only when something deviates, and a close checklist that shows exactly what is left before month-end.</p>
-                        <p><strong>A consistent flow through the invoice pipeline:</strong> Scan → Review → Match → Approve → Pay. At any point, the operator knows where they are and what comes next.</p>
-                        <p><strong>One dashboard, two audiences:</strong> daily operations for staff (queues, exceptions, deadlines) and a leadership view for management (cost per invoice, cash outlook, overpayments caught).</p>
+                <h2><span class="num">8</span> AI in the Product</h2>
+                <p><strong>The philosophy:</strong> use AI where it clearly helps, and keep a human in the loop for anything that touches money. Augment, don't replace.</p>
+                <p><strong>Reading supplier invoices.</strong> A two-tier approach: a fast path extracts text directly from native PDFs; a vision model handles scanned documents. The system escalates automatically when confidence is low, and anything below the bar goes to a human review queue.</p>
+                <p><strong>Confidence scoring and human review.</strong> Per-field confidence scores highlight exactly what to check. The system learns from corrections but never fully trusts itself.</p>
+                <p><strong>Matching is deliberately not AI.</strong> Checking an invoice against what was ordered and received is rules-based and auditable — financial integrity is never left to a model's guess.</p>
+                <p><strong>Payment suggestions.</strong> Every day the system proposes which bills to pay and which to delay, flags duplicates and outliers, and explains each recommendation in plain language. It never moves money — the controller reviews and approves.</p>
+                <p><strong>Setup copilot.</strong> During onboarding, AI suggests account mappings, finds duplicate customer data and missing items, and classifies unknown barcodes.</p>
+                <div class="highlight-box accent">
+                    <p><strong>Guardrails:</strong> no chatbot. No autonomous decisions. AI can be switched off per customer. Every output is a suggestion a person can override.</p>
+                </div>
             </div>
 
-            <!-- 10. Progress -->
+            <!-- 9. How It Works -->
             <div class="cs-section">
-                <h2><span class="num">10</span> Progress</h2>
-                        <div class="highlight-box warning">
-                            <p><strong>Still unfinished.</strong> Most core areas are built and tested. The remaining areas are either in progress or explicitly planned for later. Progress as of September 2026.</p>
-                        </div>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">36 of 46</div>
-                                <div class="metric-label">Work items built</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">~790</div>
-                                <div class="metric-label">Automated tests passing</div>
-                            </div>
-                        </div>
-                        <h3>Built and tested</h3>
-                        <ul>
-                            <li>The event-driven accounting engine (automatic double-entry bookkeeping)</li>
-                            <li>The mobile warehouse app: receive, pick, transfer, ship, count — offline-capable</li>
-                            <li>Purchasing: orders, goods receipts, invoice capture and matching, exceptions</li>
-                            <li>Payments: payment runs with AI suggestions, recorded (never executed)</li>
-                            <li>Sales: customers, quotes, orders, picking and shipping, invoices, payments, returns, credit notes</li>
-                            <li>Inventory: barcode catalog, transfers, weighted-average valuation</li>
-                            <li>The finance dashboard with real-time statements and a close checklist</li>
-                            <li>Audit trail and access logging</li>
-                            <li>AI helpers: invoice reading, payment suggestions, setup copilot</li>
-                            <li>Security: per-customer data isolation, role-based access, encryption</li>
-                        </ul>
-                        <h3>Still in progress</h3>
-                        <ul>
-                            <li>Finishing some management screens (inventory, projects, vendor management)</li>
-                        </ul>
-                        <h3>Planned, not built</h3>
-                        <ul>
-                            <li>Subscription billing (designed in detail, not built)</li>
-                            <li>Multiple companies and multiple currencies</li>
-                            <li>Tax filing workflows</li>
-                            <li>Manufacturing and native mobile apps (later phases)</li>
-                        </ul>
+                <h2><span class="num">9</span> How It Works</h2>
+                <p>Everything that happens is recorded as an event in an append-only log: a delivery received, an item picked, an invoice entered. Nothing is edited or deleted — corrections are new events.</p>
+                <p>Configurable rules translate those events into double-entry bookkeeping. The result is a perfect audit trail, point-in-time reporting, and full traceability: every number can be traced back to who did what, where, and when.</p>
+                <p><strong>The QuickBooks bridge is optional.</strong> It can import opening balances and push records for businesses transitioning off QuickBooks, but the system's own ledger is the source of truth from day one — never a dependency.</p>
+                <p><strong>Security and multi-tenancy:</strong> each customer's data is isolated at the database level, with role-based access and encryption in transit and at rest.</p>
+                <p><strong>Tech stack:</strong> React and TypeScript on the front end; Python with FastAPI and PostgreSQL on the back end — deployed on free-tier hosting for the MVP.</p>
+                <div class="highlight-box">
+                    <p><strong>Why it is different:</strong> traditional ERPs lose the link between operations and finance. Here, the link is the architecture.</p>
+                </div>
             </div>
 
-            <!-- 11. Quality & Testing -->
+            <!-- 10. The Experience -->
             <div class="cs-section">
-                <h2><span class="num">11</span> Quality & Testing</h2>
-                        <p><strong>Tests come first.</strong> Acceptance criteria are written before a feature is built, and every criterion maps to at least one automated test.</p>
-                        <p><strong>Three independent reviews per piece of work.</strong> A "blind" reviewer sees only the code and hunts for bugs and security issues. An edge-case reviewer walks every branch and boundary. An acceptance reviewer checks the result against the spec.</p>
-                        <p><strong>Readiness checks before building.</strong> The first formal assessment found 6 issues — two of them critical — that were fixed before development began. A later assessment in September 2026 surfaced remaining planning gaps, which were addressed or explicitly deferred.</p>
-                        <p><strong>Continuous integration.</strong> Every change runs linting, type checks, and the full test suite before merge; deployments are automated.</p>
-                        <div class="highlight-box accent">
-                            <p><strong>Quality principle:</strong> tests should prove the absence of defects, not just the presence of features.</p>
-                        </div>
+                <h2><span class="num">10</span> The Experience</h2>
+                <p>A clean, professional interface built on a small design system — type scale, color tokens, spacing, reusable components. Designed for quick decisions, not decoration.</p>
+                <p><strong>Mobile first for the warehouse:</strong> scan-first screens, large touch targets, offline support, no keyboard needed.</p>
+                <p><strong>The finance web app ("the Cockpit"):</strong> real-time financial statements, alerts only when something deviates, and a close checklist that shows exactly what is left before month-end.</p>
+                <p><strong>A consistent flow through the invoice pipeline:</strong> Scan → Review → Match → Approve → Pay. At any point, the operator knows where they are and what comes next.</p>
+                <p><strong>One dashboard, two audiences:</strong> daily operations for staff (queues, exceptions, deadlines) and a leadership view for management (cost per invoice, cash outlook, overpayments caught).</p>
+
+                <h3>Screenshots</h3>
+                <div class="screenshot-grid">
+                    <figure class="screenshot">
+                        <div class="screenshot-placeholder">The Cockpit — finance dashboard</div>
+                        <figcaption>Real-time financial statements and close checklist.</figcaption>
+                    </figure>
+                    <figure class="screenshot">
+                        <div class="screenshot-placeholder">Mobile warehouse — scan screen</div>
+                        <figcaption>Scan-first receiving, picking, and shipping.</figcaption>
+                    </figure>
+                    <figure class="screenshot">
+                        <div class="screenshot-placeholder">Invoice pipeline — match & approve</div>
+                        <figcaption>Scan → Review → Match → Approve → Pay.</figcaption>
+                    </figure>
+                </div>
             </div>
 
-            <!-- 12. Impact & Learnings -->
+            <!-- 11. Progress -->
             <div class="cs-section">
-                <h2><span class="num">12</span> Impact & Learnings</h2>
-                        <h3>What success would look like</h3>
-                        <ul>
-                            <li><strong>Month-end close:</strong> from 12+ days to 3 days or less, for 80% of customers</li>
-                            <li><strong>Warehouse adoption:</strong> 90% of frontline staff using the app within 30 days</li>
-                            <li><strong>Go-live:</strong> under 5 days, at a fixed price</li>
-                            <li><strong>Growth:</strong> 50 paying customers with 90% retention at 6 months</li>
-                            <li><strong>Cost:</strong> 35–65% of the 5-year cost of Microsoft Dynamics</li>
-                        </ul>
-                        <h3>Why this project</h3>
-                        <ul>
-                            <li>Transparent pricing where enterprise ERPs hide costs — and frontline workers free</li>
-                            <li>A 5-day go-live as the wedge against 2-month implementations</li>
-                            <li>AI included at near-zero infrastructure cost</li>
-                        </ul>
-                        <h3>Key learnings</h3>
-                        <p><strong>1. Start with the pain that hurts most.</strong> Supplier invoices were the highest-pain, highest-volume process — and the fastest path to visible value. The same architecture supports every other area.</p>
-                        <p><strong>2. Architect for immutability from day one.</strong> The append-only event log made audit, debugging, and point-in-time reporting trivial. Reversing this later would have been nearly impossible.</p>
-                        <p><strong>3. AI is a tool, not the product.</strong> Every AI feature was tested against one question: does it meaningfully reduce human effort or error? Not "is it cool?"</p>
-                        <p><strong>4. Free-tier AI changes the economics.</strong> Running inference on free tiers eliminated the per-invoice costs that make competing tools expensive. A product decision disguised as an infrastructure decision.</p>
-                        <p><strong>5. The process is the product.</strong> The structured pipeline caught alignment issues before they became expensive rework — and made every piece of the system explainable in seconds.</p>
-                        <p><strong>6. Strategy is a living thing.</strong> The project began framed as a financial platform for restaurants. As research matured, the market framing moved to something bigger and stronger: an entry-level ERP for growing businesses that have outgrown QuickBooks, starting with distribution. Parts of the plan written under the old framing had to be reworked. The lesson: settle the market framing before detailed planning — late repositioning is expensive, even when it is the right call.</p>
-                        <div class="highlight-box teal">
-                            <p><strong>What I would do differently:</strong> bring the testing pipeline in earlier. Formal test architecture came midway through the build; integrating it from the first feature would have caught issues sooner and shortened review cycles.</p>
-                        </div>
+                <h2><span class="num">11</span> Progress</h2>
+                <div class="highlight-box warning">
+                    <p><strong>Still unfinished.</strong> The MVP core is built and tested; the remaining work is fast-follow scope plus documentation gaps. Progress as of September 2026.</p>
+                </div>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">~790</div>
+                        <div class="metric-label">Automated tests passing</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">27</div>
+                        <div class="metric-label">Planning documents (PRDs)</div>
+                    </div>
+                </div>
+                <h3>Built and tested</h3>
+                <ul>
+                    <li>The event engine and append-only event log, with automatic double-entry bookkeeping</li>
+                    <li>The mobile warehouse app: receive, pick, transfer, ship, count — offline-capable</li>
+                    <li>Purchasing: orders, goods receipts, invoice capture and matching, exceptions</li>
+                    <li>Payments: payment runs with AI suggestions, recorded (never executed)</li>
+                    <li>Sales: customers, quotes, orders, picking and shipping, invoices, payments, returns, credit notes</li>
+                    <li>Inventory: barcode catalog, transfers, weighted-average valuation</li>
+                    <li>The finance cockpit with real-time statements and a close checklist</li>
+                    <li>Pit Bay onboarding (5-day go-live) and the setup copilot</li>
+                    <li>Phase-2 foundations: multi-entity, multi-currency, tax, revenue recognition, custom workflows, payroll</li>
+                    <li>Audit trail, access logging, and AI helpers: invoice reading, payment suggestions, setup copilot</li>
+                    <li>Security: per-customer data isolation, role-based access, encryption</li>
+                </ul>
+                <h3>Backlog / not started</h3>
+                <ul>
+                    <li>Fast-follow scope: job and asset events, additional Pit Bay templates</li>
+                    <li>Documentation gaps: some suites are built and tested but lack full story decomposition (traceability, not missing features)</li>
+                </ul>
+            </div>
+
+            <!-- 12. Quality & Testing -->
+            <div class="cs-section">
+                <h2><span class="num">12</span> Quality & Testing</h2>
+                <p><strong>Tests come first.</strong> Acceptance criteria are written before a feature is built, and every criterion maps to at least one automated test.</p>
+                <p><strong>Three independent reviews per piece of work.</strong> A "blind" reviewer sees only the code and hunts for bugs and security issues. An edge-case reviewer walks every branch and boundary. An acceptance reviewer checks the result against the spec.</p>
+                <p><strong>Readiness checks before building.</strong> The first formal assessment found 6 issues — two of them critical — that were fixed before development began. A later assessment in September 2026 surfaced remaining planning gaps, which were addressed or explicitly deferred.</p>
+                <p><strong>Continuous integration.</strong> Every change runs linting, type checks, and the full test suite before merge; deployments are automated.</p>
+                <div class="highlight-box accent">
+                    <p><strong>Quality principle:</strong> tests should prove the absence of defects, not just the presence of features.</p>
+                </div>
+            </div>
+
+            <!-- 13. Impact & Learnings -->
+            <div class="cs-section">
+                <h2><span class="num">13</span> Impact & Learnings</h2>
+                <h3>What success would look like</h3>
+                <ul>
+                    <li><strong>Month-end close:</strong> from 12+ days to 3 days or less, for 80% of customers</li>
+                    <li><strong>Warehouse adoption:</strong> 90% of frontline staff using the app within 30 days</li>
+                    <li><strong>Go-live:</strong> under 5 days, at a fixed price</li>
+                    <li><strong>Growth:</strong> 50 paying customers with 90% retention at 6 months</li>
+                    <li><strong>Cost:</strong> 35–65% of the 5-year cost of Microsoft Dynamics</li>
+                </ul>
+                <h3>Why this project</h3>
+                <ul>
+                    <li>Transparent pricing where enterprise ERPs hide costs — and frontline workers free</li>
+                    <li>A 5-day go-live as the wedge against 2-month implementations</li>
+                    <li>AI included at near-zero infrastructure cost</li>
+                </ul>
+                <h3>Deeper learnings</h3>
+                <p><strong>1. Start with the pain that hurts most.</strong> Supplier invoices were the highest-pain, highest-volume process — and the fastest path to visible value. The same architecture supports every other area.</p>
+                <p><strong>2. Architect for immutability from day one.</strong> The append-only event log made audit, debugging, and point-in-time reporting trivial. Reversing this later would have been nearly impossible.</p>
+                <p><strong>3. AI is a tool, not the product.</strong> Every AI feature was tested against one question: does it meaningfully reduce human effort or error? Not "is it cool?"</p>
+                <p><strong>4. Free-tier AI changes the economics.</strong> Running inference on free tiers eliminated the per-invoice costs that make competing tools expensive. A product decision disguised as an infrastructure decision.</p>
+                <p><strong>5. The process is the product.</strong> The structured pipeline caught alignment issues before they became expensive rework — and made every piece of the system explainable in seconds.</p>
+                <p><strong>6. Strategy is a living thing.</strong> The project began framed as a financial platform for restaurants. As research matured, the market framing moved to something bigger and stronger: an entry-level ERP for growing businesses that have outgrown QuickBooks. Parts of the plan written under the old framing had to be reworked. The lesson: settle the market framing before detailed planning — late repositioning is expensive, even when it is the right call.</p>
+                <div class="highlight-box teal">
+                    <p><strong>What I would do differently:</strong> bring the testing pipeline in earlier. Formal test architecture came midway through the build; integrating it from the first feature would have caught issues sooner and shortened review cycles.</p>
+                </div>
             </div>
 
         </section>

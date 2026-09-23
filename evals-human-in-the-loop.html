@@ -23,7 +23,13 @@
                     </div>
                 </div>
                 <a href="spec-driven-dev.html">Spec Driven Development</a>
-                <a href="ai-strategy.html">AI Strategy</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Strategy <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="ai-strategy.html">The Framework</a>
+                        <a href="ai-strategy-agente-mundial.html">Agente Mundial (Applied)</a>
+                    </div>
+                </div>
                 <a href="evals-human-in-the-loop.html" class="active">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
@@ -46,13 +52,12 @@
                 <span>LLM-as-a-Judge</span>
                 <span>Golden Dataset</span>
                 <span>Human Review</span>
-                <span>Confidence Scoring</span>
+                <span>Quality Gate</span>
             </div>
         </section>
 
         <section id="intro">
-            <p>AI products fail quietly: a response is plausible but wrong, a personality drifts, a document is misread. You can't eyeball quality at scale — and you can't fix what you don't measure.</p>
-            <p>So every AI output gets scored, and anything suspicious goes to a human. The same principle applies to building with AI: reviews and tests gate every change.</p>
+            <p>AI products fail quietly: a response is plausible but wrong, a personality drifts, a document is misread. You can't eyeball quality at scale — and you can't fix what you don't measure. So every AI output gets scored, and anything suspicious goes to a human.</p>
         </section>
 
         <section class="page-content">
@@ -60,72 +65,79 @@
             <!-- 1. Why Evals -->
             <div class="cs-section">
                 <h2><span class="num">1</span> Why Evals</h2>
-                        <ul>
-                            <li><strong>Plausible-but-wrong is the default failure mode</strong> of language models — it reads fine and costs trust.</li>
-                            <li><strong>Consumer products can't ship unmeasured AI.</strong> One bad response can damage the brand; at scale, bad responses are guaranteed unless you filter them.</li>
-                            <li><strong>Evals are the test suite of AI</strong> — the same discipline as software tests, applied to probabilistic output.</li>
-                            <li><strong>What gets measured can be improved:</strong> scores feed prompt calibration and grow the golden dataset.</li>
-                        </ul>
+                <ul>
+                    <li><strong>Plausible-but-wrong is the default failure mode</strong> of language models — it reads fine and costs trust.</li>
+                    <li><strong>Consumer products can't ship unmeasured AI.</strong> One bad response can damage the brand; at scale, bad responses are guaranteed unless you filter them.</li>
+                    <li><strong>Evals are the test suite of AI</strong> — the same discipline as software tests, applied to probabilistic output.</li>
+                    <li><strong>What gets measured can be improved:</strong> scores feed prompt calibration and grow the golden dataset.</li>
+                </ul>
             </div>
 
             <!-- 2. LLM-as-a-Judge -->
             <div class="cs-section">
                 <h2><span class="num">2</span> LLM-as-a-Judge</h2>
-                        <p>Every chatbot response is evaluated by a smaller, faster model against relevance, tone, and factuality — automatically, in the same pipeline as the response itself.</p>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">92%</div>
-                                <div class="metric-label">Accuracy target</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">&lt;1%</div>
-                                <div class="metric-label">Hallucination target</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">&lt;800ms</div>
-                                <div class="metric-label">p95 latency target</div>
-                            </div>
-                        </div>
-                        <p><strong>The golden dataset:</strong> 101 test cases across six categories — intent classification, personality responses, language purity, transcreation, edge cases, and daily summaries — including five adversarial cases built to break the system.</p>
-                        <div class="highlight-box warning">
-                            <p><strong>Calibration is the hard part.</strong> The judge and human reviewers disagreed on borderline responses. A structured rubric with examples improved alignment — but it remains an ongoing calibration problem, not a solved one.</p>
-                        </div>
+                <p>In Agente Mundial, a smaller, faster model evaluates chatbot responses in the same pipeline as generation. It scores two axes — <strong>language purity</strong> (0–10) and <strong>quality</strong> (0–10) — and every score is logged with the response's latency and tokens.</p>
+                <ul>
+                    <li><strong>The judge model</strong> is a smaller LLM (<code>llama-3.1-8b-instant</code>) — cheap enough to run on everything.</li>
+                    <li><strong>A rule-based fast-path</strong> catches script contamination first: if a Spanish response is mixed with Hangul, Arabic, or Cyrillic, a regex check fails it at 0/10 without even calling the model.</li>
+                    <li><strong>Judging is sampleable</strong> — an <code>EVAL_SAMPLE_RATE</code> controls how much traffic is judged (default 100%), so the quality gate can be throttled under load.</li>
+                    <li><strong>The quality gate retries:</strong> a failed response regenerates up to three times, with the judge's feedback injected into the next attempt. After three failures it is "force-approved" and flagged for human review — never silently dropped, never silently shipped.</li>
+                </ul>
+                <p>The targets the contract commits to:</p>
+                <div class="metric-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">92%</div>
+                        <div class="metric-label">Accuracy target</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">&lt;1%</div>
+                        <div class="metric-label">Hallucination target</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">&lt;800ms</div>
+                        <div class="metric-label">p95 latency target</div>
+                    </div>
+                </div>
+                <p><strong>The golden dataset:</strong> 101 test cases across six categories — intent classification, personality responses, language purity, transcreation, edge cases, and daily summaries — including five adversarial cases built to break the system. The eval runner scores against it and persists pass rates per dataset, so regressions are visible run over run.</p>
+                <div class="highlight-box warning">
+                    <p><strong>Calibration is the hard part.</strong> The judge and human reviewers disagreed on borderline responses. A structured rubric with examples improved alignment — but it remains an ongoing calibration problem, not a solved one. These targets are a contract to meet, not a score already achieved: the measurement infrastructure exists, but automated alerting and rollback are still missing.</p>
+                </div>
             </div>
 
             <!-- 3. Human in the Loop -->
             <div class="cs-section">
                 <h2><span class="num">3</span> Human in the Loop</h2>
-                        <p>Humans don't review everything — they review the right things. The triggers:</p>
-                        <ul>
-                            <li><strong>Downvotes</strong> from users route the response to review.</li>
-                            <li><strong>Calibration signals</strong> — a high user rating that the judge scored as a failure.</li>
-                            <li><strong>Quality-gate exhaustion</strong> — responses that failed three automatic retries.</li>
-                        </ul>
-                        <p>Guardrails on the review itself: a daily cap of 20 reviews, deduplication rules, and a reviewer dashboard. Corrections from users are detected, logged, and enter the same queue.</p>
-                        <p>Users can also teach the bot directly: when someone corrects it, the correction is classified and saved for review — feedback becomes signal instead of noise.</p>
+                <p>Humans don't review everything — they review the right things. Human reviews are created automatically when:</p>
+                <ul>
+                    <li><strong>A user downvotes</strong> (rating 1–2) — the response goes to review.</li>
+                    <li><strong>A calibration signal fires</strong> — a high user rating (4–5) that the judge disagreed with.</li>
+                    <li><strong>The quality gate exhausts its retries</strong> — a response force-approved after three failed attempts.</li>
+                </ul>
+                <p>Guardrails on the review itself: a daily cap of 20 reviews, deduplication (max 3 similar reviews per personality + language per week), and a reviewer dashboard. A verdict can pass or fail with a confidence score and notes, and a passing case can be promoted into the golden dataset so the system gets permanently better.</p>
+                <p>Users also teach the bot directly: when someone corrects it, the correction is detected, classified, and logged into the same review pipeline — feedback becomes signal instead of noise.</p>
             </div>
 
             <!-- 4. Evals in Development -->
             <div class="cs-section">
                 <h2><span class="num">4</span> Evals in Development</h2>
-                        <p>The same discipline applies to building the ERP with AI agents:</p>
-                        <ul>
-                            <li><strong>Readiness checks before code</strong> — plan, architecture, and design validated against each other.</li>
-                            <li><strong>Three independent reviews per change</strong> — a blind reviewer (bugs and security), an edge-case reviewer (every branch and boundary), and an acceptance reviewer (against the spec).</li>
-                            <li><strong>~790 automated tests</strong> — tests are written before implementation, and every acceptance criterion maps to at least one test.</li>
-                        </ul>
-                        <p class="card-links"><a href="project-grandesuite.html">See the case study →</a></p>
+                <p>The same discipline applies to building the ERP with AI agents:</p>
+                <ul>
+                    <li><strong>Readiness checks before code</strong> — plan, architecture, and design validated against each other before implementation.</li>
+                    <li><strong>Three independent reviews per change</strong> — a blind reviewer (bugs and security), an edge-case reviewer (every branch and boundary), and an acceptance reviewer (against the spec).</li>
+                    <li><strong>~790 automated tests</strong> — tests are written before implementation, and every acceptance criterion maps to at least one test.</li>
+                </ul>
+                <p class="card-links"><a href="project-grandesuite.html">See the case study →</a></p>
             </div>
 
             <!-- 5. Confidence & Lessons -->
             <div class="cs-section">
                 <h2><span class="num">5</span> Confidence & Lessons</h2>
-                        <p><strong>Confidence UX (designed):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…"). Status: designed but not yet shown to users — one of the honest gaps.</p>
-                        <div class="highlight-box accent">
-                            <p><strong>What I'd do differently:</strong> start the quality pipeline on day one. Retrofitting the judge and review queue after the chatbot was already in use cost more than building it in from the start.</p>
-                        </div>
-                        <p>Documented gaps, not hidden ones: no on-call rotation, no automated retraining, and no automated rollback yet.</p>
-                        <p class="card-links"><a href="project-worldcup.html">See the product it runs on →</a></p>
+                <p><strong>Confidence UX (designed, not yet shown to users):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…"). The judge scores exist and are visible in the developer dashboard, but the user-facing signal is one of the honest gaps still open.</p>
+                <div class="highlight-box accent">
+                    <p><strong>What I'd do differently:</strong> start the quality pipeline on day one. Retrofitting the judge and review queue after the chatbot was already in use cost more than building it in from the start.</p>
+                </div>
+                <p>Documented gaps, not hidden ones: no on-call rotation, no automated retraining, and no automated rollback yet.</p>
+                <p class="card-links"><a href="project-worldcup.html">See the product it runs on →</a></p>
             </div>
 
         </section>

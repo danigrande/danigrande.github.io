@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Product Strategy | Portfolio</title>
+    <title>AI Product Strategy Framework | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,13 @@
                     </div>
                 </div>
                 <a href="spec-driven-dev.html">Spec Driven Development</a>
-                <a href="ai-strategy.html" class="active">AI Strategy</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Strategy <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="ai-strategy.html" class="active">The Framework</a>
+                        <a href="ai-strategy-agente-mundial.html">Agente Mundial (Applied)</a>
+                    </div>
+                </div>
                 <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
                 <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
@@ -34,13 +40,13 @@
 
     <main>
         <section id="hero">
-            <div class="badge">Strategy Framework</div>
-            <h1>AI Product <span>Strategy</span></h1>
-            <p class="subtitle">A six-module strategy for an AI product — from the bet and the moat to unit economics, trust, guardrails, and the pitch.</p>
+            <div class="badge">Strategy Methodology</div>
+            <h1>The AI Product <span>Strategy Framework</span></h1>
+            <p class="subtitle">A six-module method that de-risks an AI product before a line of code is written — forcing the hard questions first and answering them with numbers, not adjectives.</p>
             <p class="meta">
-                <span>Applied to: Agente Mundial (Worldcup Pool)</span>
                 <span>Modules: 6</span>
-                <span>Status: Complete</span>
+                <span>Type: Reusable method</span>
+                <span>Applied to: Agente Mundial (Worldcup Pool)</span>
             </p>
             <div class="hero-tags">
                 <span>The Bet</span>
@@ -53,145 +59,102 @@
         </section>
 
         <section id="intro">
-            <p>Most AI products start with the technology and hope the business follows. This framework forces the harder questions first: Why will this win? What happens when it gets copied? Does it make money? Why will users trust it? What breaks at scale? And how would I pitch it?</p>
-            <p>I built it for my own product — Agente Mundial, the World Cup pool chatbot — and answered every question with numbers instead of adjectives.</p>
-            <p class="card-links"><a href="project-worldcup.html">See the product →</a></p>
+            <p>Most AI products start with the technology and hope the business follows. This framework reverses that order. It front-loads the questions that are hardest to answer — and most expensive to get wrong — so that by the time anything gets built, the bet, the defensibility, and the economics are already on paper.</p>
+            <p>I built it as a sequence of six modules, each adding one layer of the case. Each module ends in a written artifact, and every claim in those artifacts carries a number: a score, a target, or a kill criterion.</p>
+            <p>I've applied the framework end-to-end to one product — <a href="ai-strategy-agente-mundial.html">Agente Mundial, the World Cup pool chatbot</a> — so the method is shown working, not just described.</p>
         </section>
 
         <section class="page-content">
 
             <!-- 1. The Bet -->
             <div class="cs-section">
-                <h2><span class="num">1</span> The Bet — What We're Building, For Whom, Why Now</h2>
-                        <p>A gamified, multi-personality chatbot for World Cup prediction pools. The AI value archetype is a <strong>Copilot</strong> — it doesn't decide anything. It entertains, informs, and keeps the group in the game.</p>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">2/5</div>
-                                <div class="metric-label">Moat vulnerability</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">2/5</div>
-                                <div class="metric-label">Data vulnerability</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">4/5</div>
-                                <div class="metric-label">Platform vulnerability</div>
-                            </div>
-                        </div>
-                        <p><strong>Top risks:</strong> post-event churn (critical — the tournament ends), no data on day one (high), self-hosted infrastructure (medium), untested revenue model (medium), and LLM unit economics (mitigated by the cascading strategy).</p>
-                        <div class="highlight-box warning">
-                            <p><strong>Kill criteria:</strong> if the financial loss exceeds €2,000 with no evidence of revenue growth, the project stops. A product should know what failure looks like before it starts.</p>
-                        </div>
+                <h2><span class="num">1</span> The Bet — What, For Whom, Why Now</h2>
+                <p>The opening question is not "what can we build?" but "why will this win — and what would make us stop?" The Bet forces two things before anything else:</p>
+                <ul>
+                    <li><strong>A three-axis vulnerability diagnostic</strong> — the idea is scored on its contextual moat, its data advantage, and its platform exposure (each out of 5), with a named attacker for each axis.</li>
+                    <li><strong>Kill criteria</strong> — the concrete evidence of failure, agreed up front. A product should know what failure looks like before it starts.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> vulnerability diagnostic · prototype bet (AI value archetype) · kill criteria.</p>
             </div>
 
             <!-- 2. The Moat -->
             <div class="cs-section">
-                <h2><span class="num">2</span> The Moat — Why It Won't Get Copied in Six Months</h2>
-                        <p>A chatbot is easy to clone. The defensibility comes from what compounds: a golden dataset of quality interactions, personalities that are culturally specific, and a scoring engine that is fiddly to rebuild.</p>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">10/20</div>
-                                <div class="metric-label">Data flywheel score</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">85%</div>
-                                <div class="metric-label">Vendor portability</div>
-                            </div>
-                        </div>
-                        <div class="area-grid">
-                            <div class="area-card">
-                                <h4>Platform risk — Meta / Apple</h4>
-                                <p>Native AI agents could appear inside the OS or default group chats. Defense: a dedicated UI and culturally bold personalities that brand-safe horizontal platforms can't ship.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Vertical risk — Sleeper / ESPN</h4>
-                                <p>Existing fantasy-sports incumbents could expand. Defense: a different audience — Spanish-speaking football fans in WhatsApp groups — served by culture-specific anchors they'd have to rebuild from scratch.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Distribution risk — Telegram clones</h4>
-                                <p>An indie developer could ship the same idea as a Telegram mini-app. Defense: the scoring engine, transcreation pipeline, and seven personalities are months of work — and the dataset compounds meanwhile.</p>
-                            </div>
-                        </div>
+                <h2><span class="num">2</span> The Moat — Why It Won't Be Copied in Six Months</h2>
+                <p>An AI feature is easy to clone. Defensibility has to come from something that compounds. The Moat scores four flywheel loops — correction, preference, domain context, and network — out of 20, then assumes the weakest loop is where a competitor attacks first.</p>
+                <ul>
+                    <li><strong>Encroachment assessment</strong> — three attacker types (platform, vertical competitor, adjacent expansion), each with a vector and a time-to-threat.</li>
+                    <li><strong>Kill-switch audit</strong> — vendor dependency scored on provider, abstraction, routing, and evals, with a portability verdict: Ready / Partial / Locked.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> data flywheel map · encroachment threat assessment · kill-switch audit.</p>
             </div>
 
             <!-- 3. The Margin -->
             <div class="cs-section">
-                <h2><span class="num">3</span> The Margin — Will It Make Money or Bleed It</h2>
-                        <p>Free product today; premium entertainment tomorrow. The math works because inference is cascaded: a self-hosted small model handles ~96% of traffic, and a frontier model handles the ~4% that is asynchronous.</p>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">90–94%</div>
-                                <div class="metric-label">AI-adjusted gross margin</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">$0.30–0.50</div>
-                                <div class="metric-label">AI cost per group / tournament</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">~5,400</div>
-                                <div class="metric-label">Paid groups to break even</div>
-                            </div>
-                        </div>
-                        <p><strong>Pricing:</strong> a $4.99 group pass per tournament (admin-sponsored) plus banner ads. At 10% conversion, the blended margin lands between 55–65%. Break-even needs ~5,400 paid groups; the monthly operating cost is covered by just 180–340 paid groups.</p>
-                        <p><strong>Cascading strategy:</strong> today, 100% of traffic runs on a 70B model's free tier. Tomorrow, a self-hosted 8B model handles nearly everything, with a small premium model for daily summaries.</p>
+                <h2><span class="num">3</span> The Margin — Make Money or Bleed It</h2>
+                <p>Frontier-model quality on everything is a margin killer. The Margin builds the unit economics before the product does, then stress-tests them.</p>
+                <ul>
+                    <li><strong>Cost model</strong> — inference, infrastructure, data, and human-in-the-loop, per user per month.</li>
+                    <li><strong>Cascading strategy</strong> — a cheap model for the volume and a frontier model for the judgment, with a routing rule and an expected cascade ratio.</li>
+                    <li><strong>Stress tests</strong> — what happens if inference costs 3x, the heaviest segment doubles, or the provider raises prices 50%.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> cost curve · cascading strategy · pricing model · board one-pager.</p>
             </div>
 
             <!-- 4. The Contract -->
             <div class="cs-section">
                 <h2><span class="num">4</span> The Contract — Why Users Trust a Probabilistic System</h2>
-                        <p>Fun product, serious promises. The contract sets measurable targets instead of vague quality claims:</p>
-                        <div class="metric-grid">
-                            <div class="metric-card">
-                                <div class="metric-value">92%</div>
-                                <div class="metric-label">Accuracy target</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">&lt;1%</div>
-                                <div class="metric-label">Hallucination rate target</div>
-                            </div>
-                            <div class="metric-card">
-                                <div class="metric-value">&lt;800ms</div>
-                                <div class="metric-label">p95 response latency</div>
-                            </div>
-                        </div>
-                        <p><strong>The golden dataset:</strong> 101 test cases across six categories — intent classification, personality responses, language purity, transcreation, edge cases, and daily summaries — including adversarial cases.</p>
-                        <p><strong>Confidence UX (designed):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…").</p>
-                        <p><strong>Human review triggers:</strong> downvotes, calibration signals, and responses that failed the quality gate three times. Daily review cap of 20, with deduplication rules.</p>
-                        <div class="highlight-box">
-                            <p><strong>Honest gaps:</strong> the golden dataset is still small for statistical significance, there is no latency enforcement, and no automated rollback. Naming the gaps is part of the contract.</p>
-                        </div>
+                <p>Users tolerate AI that is occasionally wrong — if it tells them when it isn't sure. The Contract turns vague quality claims into measurable promises.</p>
+                <ul>
+                    <li><strong>Golden dataset</strong> — a fixed set of test cases (including adversarial ones) that define "good" in advance.</li>
+                    <li><strong>Reliability targets</strong> — accuracy, hallucination rate, p95 latency, and drift velocity, each with a measurement and an alert threshold.</li>
+                    <li><strong>Confidence UX</strong> — tiered signalling (high: no indicator; medium: a subtle badge; low: the system qualifies its answer).</li>
+                    <li><strong>Human-in-the-loop architecture</strong> — the explicit escalation path for everything the system isn't sure about.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> golden dataset spec · reliability contract · confidence UX design · HITL architecture · red-team findings.</p>
             </div>
 
             <!-- 5. The Guardrails -->
             <div class="cs-section">
-                <h2><span class="num">5</span> The Guardrails — What Breaks at Scale</h2>
-                        <p>The quality gate compounds: failed responses retry up to three times with judge feedback injected into the prompt. Users never reach the model directly.</p>
-                        <div class="area-grid">
-                            <div class="area-card">
-                                <h4>Autonomy boundaries</h4>
-                                <p>Solo: standard replies, web search, translations, summaries, corrections. Needs a human: forced approvals, downvotes, user reports. Never automatic: account deletion, impersonation.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Escalation</h4>
-                                <p>Judge failure → retry (max 3) → human review. Downvote → human review. User report → pending record. Rate limits guard the model itself.</p>
-                            </div>
-                            <div class="area-card">
-                                <h4>Regulatory exposure</h4>
-                                <p>EU AI Act — minimal (entertainment). GDPR — limited data, but gaps: no lawful-basis register, incomplete deletion. COPPA — high exposure: no age gate yet.</p>
-                            </div>
-                        </div>
-                        <p><strong>Shadow AI audit:</strong> I also mapped the workarounds users were already doing on their own — seven hacks worth about $85/month, from what-if simulations to extra languages. Four became roadmap items; one was governed with rate limits.</p>
-                        <p><strong>Audit cadence:</strong> weekly golden-set evaluation, daily human review, quarterly policy review.</p>
+                <h2><span class="num">5</span> The Guardrails — What Breaks at Scale, What Compounds</h2>
+                <p>Scale turns small gaps into systemic failures. The Guardrails audit the compounding loops and the boundaries of autonomy — what the system can do alone, what needs a human, and what it must never do.</p>
+                <ul>
+                    <li><strong>Feedback-loop audit</strong> — every loop labelled active, broken, or missing, with a fix plan for the broken ones.</li>
+                    <li><strong>Agent topology</strong> — autonomy boundaries, escalation triggers, and an audit cadence.</li>
+                    <li><strong>Shadow AI audit</strong> — the workarounds users are already running themselves, triaged into keep / govern / kill.</li>
+                    <li><strong>Regulatory exposure</strong> — EU AI Act, GDPR, and COPPA mapped against the product.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> compounding-system design · governance posture · shadow AI audit.</p>
             </div>
 
             <!-- 6. The Pitch -->
             <div class="cs-section">
                 <h2><span class="num">6</span> The Pitch — Fund It, Ship It, Grow It</h2>
-                        <p><strong>Three horizons:</strong> Now — per-personality quality thresholds, leaderboard history, more direct-generation languages, match reminders. Next — what-if simulation, a prediction-strategy mode, shareable leaderboard cards. Bet — generic leagues (La Liga, Premier League), custom personalities, cross-group rankings.</p>
-                        <div class="highlight-box accent">
-                            <p><strong>The ask:</strong> $42K — $27K capital for monetization infrastructure plus $15K for three months of self-hosted GPUs. The board narrative: personality-driven commentary turns a static pool into a daily social ritual — and the 50-day tournament generates the data to validate a year-round product.</p>
-                        </div>
-                        <p><strong>The most important decision:</strong> fine-tuning was dropped from all horizons. The data flywheel score was re-scored from 5/5 to 2/5 — fine-tuning improves the <em>next</em> event, not this one. Focus beats ambition.</p>
+                <p>The final module forces the case into a single narrative: a three-horizon roadmap, a one-sentence board thesis, the specific ask, and — critically — a comparison of where the strategy started versus where it is now.</p>
+                <ul>
+                    <li><strong>Three horizons</strong> — Now (quick wins), Next (bets), and Bet (moonshots), each with a metric and a confidence level.</li>
+                    <li><strong>Board narrative</strong> — the one-sentence thesis, the case, the risks, and the ask.</li>
+                    <li><strong>Baseline vs. now</strong> — the M1 strategy written down verbatim, next to what it became. Strategy is a living thing.</li>
+                </ul>
+                <p><strong>Artifacts:</strong> three-horizon roadmap · board pitch · baseline-vs-now check.</p>
+            </div>
+
+            <!-- Principles -->
+            <div class="cs-section">
+                <h2><span class="num">7</span> The Principles That Make It Work</h2>
+                <ul>
+                    <li><strong>Numbers, not adjectives.</strong> "Strong moat" is an opinion; "2/5 data advantage" is a claim that can be argued with.</li>
+                    <li><strong>Red-team before you build.</strong> A partner plays the attacker and targets your weakest loop. Better to hear the attack from a friend than a competitor.</li>
+                    <li><strong>Kill criteria are a feature.</strong> Naming failure up front is what keeps a bet honest — not a concession of weakness.</li>
+                    <li><strong>Cascade the economics.</strong> Cheapest capable model for volume, frontier model for judgment. The ratio is a product decision, not an afterthought.</li>
+                    <li><strong>Baseline vs. now.</strong> The strategy is version-controlled and re-scored as assumptions change — the final module shows how much moved.</li>
+                </ul>
+            </div>
+
+            <!-- Applied -->
+            <div class="cs-section">
+                <h2><span class="num">8</span> See It Applied</h2>
+                <p>Every module above was completed with real numbers for a real product. Read the full worked example — a six-module strategy for the World Cup pool chatbot — to see the framework in action, scores and all.</p>
+                <p class="card-links"><a href="ai-strategy-agente-mundial.html">The worked example: Agente Mundial →</a></p>
             </div>
 
         </section>
