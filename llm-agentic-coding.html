@@ -68,36 +68,47 @@
                 <h2><span class="num">1</span> How I Build, and What It Costs</h2>
                 <p>My daily driver is <strong>opencode</strong> with <strong>DeepSeek V4 Flash</strong>. It's the setup I used to build GrandeSuite Next end-to-end — and the whole project came in at a cost that would be hard to match with a frontier model.</p>
 
-                <h3>What GrandeSuite Next cost</h3>
+                <h3>What GrandeSuite Next consumed</h3>
                 <table class="pipeline-table">
                     <thead>
                         <tr>
-                            <th>Setup</th>
-                            <th>Tokens used</th>
-                            <th>Cost</th>
+                            <th>Token type</th>
+                            <th>Volume</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>opencode + DeepSeek V4 Flash</td><td>[tokens]</td><td>[cost]</td></tr>
+                        <tr><td>Input</td><td>56.2M</td></tr>
+                        <tr><td>Output</td><td>3.9M</td></tr>
+                        <tr><td>Cache read</td><td>1,909.9M</td></tr>
+                        <tr><td>Cache write</td><td>0</td></tr>
+                        <tr><td><strong>Total</strong></td><td><strong>~1,970M</strong></td></tr>
                     </tbody>
                 </table>
+                <p>Cache reads are ~97% of the total — an agent re-reads the same context constantly, which is exactly what prompt caching is for.</p>
 
-                <h3>What it would have cost with other models</h3>
+                <h3>What that cost — and what it would have cost elsewhere</h3>
                 <table class="pipeline-table">
                     <thead>
                         <tr>
                             <th>Model</th>
+                            <th>Cache hit</th>
+                            <th>Cache read $/1M</th>
                             <th>Estimated cost</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>[Anthropic Claude]</td><td>[estimate]</td></tr>
-                        <tr><td>[OpenAI GPT]</td><td>[estimate]</td></tr>
-                        <tr><td>[Google Gemini]</td><td>[estimate]</td></tr>
+                        <tr><td>DeepSeek V4 Flash <span class="tag tag-green">actual setup</span></td><td>97%</td><td>$0.0028</td><td>~$14</td></tr>
+                        <tr><td>Gemini 3.7 Flash</td><td>80%</td><td>$0.15</td><td>~$855</td></tr>
+                        <tr><td>Claude Sonnet 5</td><td>65%</td><td>$0.20</td><td>~$3,391</td></tr>
+                        <tr><td>GPT-5.6 Sol</td><td>80%</td><td>$0.40</td><td>~$3,853</td></tr>
+                        <tr><td>Claude Opus 5.5</td><td>65%</td><td>$0.40</td><td>~$6,782</td></tr>
+                        <tr><td>Claude Opus 5</td><td>65%</td><td>$0.50</td><td>~$8,478</td></tr>
+                        <tr><td>GPT-5.6 Sol Fast</td><td>80%</td><td>$1.00</td><td>~$9,671</td></tr>
+                        <tr><td>Claude Fable 5.1</td><td>65%</td><td>$0.25</td><td>~$15,998</td></tr>
                     </tbody>
                 </table>
                 <div class="highlight-box warning">
-                    <p><strong>Placeholder.</strong> Token and cost figures to be filled in from opencode's usage data — the same token volume priced across the other models.</p>
+                    <p><strong>Why DeepSeek wins on cost.</strong> DeepSeek V4.1 Flash caches far more aggressively than the others: a cache read costs <strong>2%</strong> of input with <strong>free writes</strong> and persists <strong>hours–days</strong>. Anthropic and OpenAI read at <strong>~10%</strong>; Anthropic charges <strong>1.25×</strong> for cache writes and its cache expires in <strong>5 minutes</strong>, so it caches less in practice. The cache-hit ratios above are estimates — they are what drive the cost. Figures are input + cache read + output + cache writes at September 2026 list rates; on a flat-rate plan like opencode GO, the cash cost is lower still.</p>
                 </div>
 
                 <p>I've tried the alternatives — other models, and other IDEs like Visual Studio with Kilo Code, and Antigravity. They work. But on cost, opencode + DeepSeek is in a different league.</p>
