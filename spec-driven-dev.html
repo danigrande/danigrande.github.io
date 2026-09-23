@@ -97,7 +97,31 @@
             <!-- 3. The Pipeline -->
             <div class="cs-section">
                 <h2><span class="num">3</span> The Pipeline</h2>
-                        <p>Every feature in the ERP project flowed through the same eleven phases. No phase was skipped.</p>
+                        <p>Every feature in the ERP project flowed through the same eleven phases. No phase was skipped — each one is owned by an agent role, with a human gate before and after the build.</p>
+                        <div class="flow-row">
+                            <div class="flow-step"><span class="flow-step-name">1. Brainstorming</span><span class="flow-role">Analyst</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">2. Brief</span><span class="flow-role">Analyst</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">3. Requirements</span><span class="flow-role">Product Manager</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">4. Architecture</span><span class="flow-role">Architect</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">5. UX Design</span><span class="flow-role">UX Designer</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">6. Work breakdown</span><span class="flow-role">Product Manager</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step flow-gate"><span class="flow-step-name">7. Readiness check</span><span class="flow-role">Human gate</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">8. Sprint planning</span><span class="flow-role">Developer</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">9. Build</span><span class="flow-role">Developer</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step flow-gate"><span class="flow-step-name">10. Code review</span><span class="flow-role">Human gate</span></div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-step"><span class="flow-step-name">11. Testing</span><span class="flow-role">Test Architect</span></div>
+                        </div>
+                        <p class="flow-note">↩ Readiness and review loop issues back to earlier phases — an orchestrated loop, not a waterfall.</p>
                         <table class="pipeline-table">
                             <thead>
                                 <tr>
@@ -120,6 +144,9 @@
                                 <tr><td>11. Testing</td><td>Automated tests, acceptance tests, quality checks</td><td>~790 automated tests</td></tr>
                             </tbody>
                         </table>
+                        <div class="highlight-box">
+                            <p><strong>Where the human sits.</strong> You don't review all 27 documents by hand — the agents cross-check each other (the review lenses read the code; the readiness check validates the PRD against architecture, UX, and epics). The human steps in at two gates only: <strong>approve the plan</strong> before build (phase 7), and <strong>accept each change</strong> against the spec (phase 10). It's orchestration, not bureaucracy.</p>
+                        </div>
             </div>
 
             <!-- 4. What Makes a Spec Work -->
@@ -151,7 +178,33 @@
                                 <div class="metric-label">Automated tests</div>
                             </div>
                         </div>
-                        <p>The method caught problems early: the first readiness assessment found six issues — two of them critical — before development began. Traceability meant any number, screen, or test in the system could be explained from the spec in seconds.</p>
+                        <p>The method caught problems early: the first readiness assessment found six issues — two critical (low impact), two major, two minor — before any code was written. Traceability meant any number, screen, or test in the system could be explained from the spec in seconds.</p>
+                        <h3>A real story — acceptance criteria</h3>
+                        <div class="code-snippet"><pre>Story 1.1 — Vendor Bill Database Model &amp; List/Detail API
+
+As a developer, I want to create the VendorInvoice and VendorInvoiceLine
+tables with list and detail API endpoints, so the data layer exists for
+all downstream vendor bill features.
+
+Acceptance Criteria:
+1. Given no vendor bills exist, When I call GET /api/v1/ap/invoices,
+   Then an empty list is returned
+2. Given a tenant with multiple bills, When I call with a status filter,
+   Then only bills matching that status are returned
+3. Given a bill exists with line items, When I call GET /api/v1/ap/invoices/{id},
+   Then the response includes all header fields and line items
+4. Given a tenant_id is present, When any endpoint is called,
+   Then data is scoped to that tenant_id via RLS</pre></div>
+                        <h3>The readiness report that caught it</h3>
+                        <div class="code-snippet"><pre>Readiness Assessment — 2026-07-03
+
+CRITICAL — Story 1.1 is technical setup with no user value (low impact)
+CRITICAL — Story 3.5 has a forward dependency on Epic 6 (low impact)
+MAJOR    — no "project scaffolding" story (monorepo, deps, tooling)
+MAJOR    — no CI/CD pipeline story
+MINOR    — dark-mode story misplaced; Story 1.2 borderline infra
+
+Result: 6 issues (2 critical, 2 major, 2 minor) — caught before any code.</pre></div>
                         <p class="card-links"><a href="project-grandesuite.html">See the full case study →</a></p>
             </div>
 
