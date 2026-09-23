@@ -680,7 +680,6 @@ main > section:last-child {
 .pipeline-table td:first-child {
     font-weight: 600;
     color: var(--text);
-    white-space: nowrap;
 }
 
 /* Link buttons */
@@ -917,6 +916,29 @@ main > section:last-child {
     line-height: 1.6;
     color: var(--text-secondary);
     white-space: pre;
+}
+
+/* Scoped: AI Strategy (Agente Mundial) — clearer heading hierarchy */
+.strategy-full .cs-section {
+    padding-top: 1.5rem;
+}
+
+.strategy-full .cs-section h2 {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+}
+
+.strategy-full .cs-section h3 {
+    color: var(--primary);
+    font-size: 1.15rem;
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.strategy-full .cs-section h4 {
+    margin-top: 1.75rem;
+    font-weight: 600;
 }
 
 /* Footer */
