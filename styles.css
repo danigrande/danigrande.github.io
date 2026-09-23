@@ -711,6 +711,25 @@ main > section:last-child {
     color: var(--primary-light);
 }
 
+/* Use-case flows */
+.usecase-flows {
+    display: grid;
+    gap: 0.75rem;
+    margin: 1.25rem 0;
+}
+
+.usecase-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: var(--primary-light);
+    margin-bottom: 0.4rem;
+}
+
+.usecase-flow .pipe {
+    margin: 0;
+}
+
 /* Screenshots */
 .screenshot-grid {
     display: grid;

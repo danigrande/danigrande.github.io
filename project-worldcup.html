@@ -32,7 +32,7 @@
                 </div>
                 <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
-                <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
+                <a href="llm-agentic-coding.html">Costs of LLMs</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
@@ -67,9 +67,33 @@
 
         <section class="page-content">
 
-            <!-- 1. Problem & Opportunity -->
+            <!-- 0. Why This Project -->
             <div class="cs-section">
-                <h2><span class="num">1</span> Problem & Opportunity</h2>
+                <h2><span class="num">0</span> Why This Project</h2>
+                <p>My group of friends runs a prediction pool every World Cup. But it always had a bottleneck: one person — the admin — had to update the spreadsheet by hand after every match, tally how everyone was doing, and write a summary to keep the banter alive.</p>
+                <p>That admin was the least fun job in the group. So I asked a different question: could an AI agent take that role instead? Could it keep the standings up to date on its own, summarise how each player was doing, and — most importantly — roast each of us the way a friend would?</p>
+                <p>Agente Mundial is the answer: a chatbot that runs the pool's social layer, so nobody has to be the admin. Instead of reading a static spreadsheet, the group talks to the agent — and it talks back.</p>
+            </div>
+
+            <!-- 1. Key Learnings -->
+            <div class="cs-section">
+                <h2><span class="num">1</span> Key Learnings</h2>
+                <p>After building this, the things that matter most:</p>
+                <ol>
+                    <li><strong>RAG quality is harder than it looks.</strong> Chunking, embeddings, and retrieval relevance all needed iteration — and a dedicated evaluation set would have sped that up.</li>
+                    <li><strong>Transcreation paid for itself.</strong> Non-English users reported far higher satisfaction than with raw machine translation.</li>
+                    <li><strong>Judges need calibration.</strong> The scoring model disagreed with human reviewers on borderline responses; a rubric with examples helped, but it's an ongoing problem.</li>
+                    <li><strong>Personality is fragile.</strong> Without careful anchoring, the bot drifts out of character. Character consistency should be tested automatically.</li>
+                    <li><strong>Start the quality pipeline earlier.</strong> Adding judging and human review after launch created a retrofitting tax. Next time: day one.</li>
+                </ol>
+                <div class="highlight-box accent">
+                    <p><strong>Draft list.</strong> Final key learnings to be confirmed.</p>
+                </div>
+            </div>
+
+            <!-- 2. Problem & Opportunity -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> Problem & Opportunity</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>The Problem</h4>
@@ -82,9 +106,9 @@
                         </div>
             </div>
 
-            <!-- 2. Vision & Strategy -->
+            <!-- 3. Vision & Strategy -->
             <div class="cs-section">
-                <h2><span class="num">2</span> Vision & Strategy</h2>
+                <h2><span class="num">3</span> Vision & Strategy</h2>
                         <p>The north star: <strong>the ultimate companion for World Cup 2026</strong> — predictions, banter, and AI-generated hype in one place.</p>
                         <div class="area-grid">
                             <div class="area-card">
@@ -102,9 +126,9 @@
                         </div>
             </div>
 
-            <!-- 3. What the App Does -->
+            <!-- 4. What the App Does -->
             <div class="cs-section">
-                <h2><span class="num">3</span> What the App Does</h2>
+                <h2><span class="num">4</span> What the App Does</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>Prediction Engine</h4>
@@ -119,11 +143,26 @@
                                 <p>Real-time point calculation as scores come in. The Pool Wall ("El Muro") shows every player's predictions in one view — the fuel for social competition. Each pool is isolated with its own rules and admins.</p>
                             </div>
                         </div>
+                        <h3>Screenshots</h3>
+                        <div class="screenshot-grid">
+                            <figure class="screenshot">
+                                <div class="screenshot-placeholder">Agente Mundial — chat</div>
+                                <figcaption>Seven personalities bantering with the group.</figcaption>
+                            </figure>
+                            <figure class="screenshot">
+                                <div class="screenshot-placeholder">Leaderboard &amp; El Muro</div>
+                                <figcaption>Live standings and every player's picks in one wall.</figcaption>
+                            </figure>
+                            <figure class="screenshot">
+                                <div class="screenshot-placeholder">Prediction entry</div>
+                                <figcaption>Classic and Dynamic prediction modes.</figcaption>
+                            </figure>
+                        </div>
             </div>
 
-            <!-- 4. The AI Pipeline -->
+            <!-- 5. The AI Pipeline -->
             <div class="cs-section">
-                <h2><span class="num">4</span> The AI Pipeline</h2>
+                <h2><span class="num">5</span> The AI Pipeline</h2>
                         <p>Every chatbot message flows through a pipeline built for quality, safety, and cultural fit:</p>
                         <div class="pipe">
                             <span class="pipe-step">User Message</span>
@@ -156,9 +195,9 @@
                         </p>
             </div>
 
-            <!-- 5. Key Decisions & Trade-offs -->
+            <!-- 6. Key Decisions & Trade-offs -->
             <div class="cs-section">
-                <h2><span class="num">5</span> Key Decisions & Trade-offs</h2>
+                <h2><span class="num">6</span> Key Decisions & Trade-offs</h2>
                         <div class="decision-row">
                             <div class="decision-label">No frontend framework</div>
                             <div class="decision-desc"><strong>Why:</strong> speed of iteration for a solo build; static hosting is free and there's no build step. <strong>Trade-off:</strong> more manual UI work and no component reuse. <strong>Verdict:</strong> right call for an MVP; a team would want React.</div>
@@ -185,9 +224,9 @@
                         </div>
             </div>
 
-            <!-- 6. Research & Feedback Loops -->
+            <!-- 7. Research & Feedback Loops -->
             <div class="cs-section">
-                <h2><span class="num">6</span> Research & Feedback Loops</h2>
+                <h2><span class="num">7</span> Research & Feedback Loops</h2>
                         <div class="area-grid">
                             <div class="area-card">
                                 <h4>What Informed the Features</h4>
@@ -200,9 +239,9 @@
                         </div>
             </div>
 
-            <!-- 7. Delivery & Roadmap -->
+            <!-- 8. Delivery & Roadmap -->
             <div class="cs-section">
-                <h2><span class="num">7</span> Delivery & Roadmap</h2>
+                <h2><span class="num">8</span> Delivery & Roadmap</h2>
                         <p>The product evolved through seven phases, each one usable on its own:</p>
                         <ul>
                             <li><strong>Phase 1 — Core pool:</strong> accounts, groups, prediction entry, scoring engine, leaderboard</li>
@@ -215,16 +254,16 @@
                         </ul>
             </div>
 
-            <!-- 8. Business & Product Strategy -->
+            <!-- 9. Business & Product Strategy -->
             <div class="cs-section">
-                <h2><span class="num">8</span> Business & Product Strategy</h2>
+                <h2><span class="num">9</span> Business & Product Strategy</h2>
                         <p>Beyond the build, I wrote a <strong>six-module strategy teardown</strong> of the product — the bet, the moat, the margin, the contract, the guardrails, and the pitch — with real numbers: unit economics, defensibility, reliability targets, and regulatory exposure.</p>
-                        <p class="card-links"><a href="ai-strategy.html">Read the strategy →</a></p>
+                        <p class="card-links"><a href="ai-strategy-agente-mundial.html">Read the applied strategy →</a></p>
             </div>
 
-            <!-- 9. By the Numbers -->
+            <!-- 10. By the Numbers -->
             <div class="cs-section">
-                <h2><span class="num">9</span> By the Numbers</h2>
+                <h2><span class="num">10</span> By the Numbers</h2>
                         <div class="metric-grid">
                             <div class="metric-card">
                                 <div class="metric-value">7</div>
@@ -254,18 +293,6 @@
                         <p>Figures describe the built prototype, as of September 2026.</p>
             </div>
 
-            <!-- 10. Lessons Learned -->
-            <div class="cs-section">
-                <h2><span class="num">10</span> Lessons Learned</h2>
-                        <ul>
-                            <li><strong>RAG quality is harder than it looks.</strong> Chunking, embeddings, and retrieval relevance all needed iteration — and a dedicated evaluation set would have sped that up.</li>
-                            <li><strong>Transcreation paid for itself.</strong> Non-English users reported far higher satisfaction than with raw machine translation.</li>
-                            <li><strong>Judges need calibration.</strong> The scoring model disagreed with human reviewers on borderline responses; a rubric with examples helped, but it's an ongoing problem.</li>
-                            <li><strong>Personality is fragile.</strong> Without careful anchoring, the bot drifts out of character. Character consistency should be tested automatically.</li>
-                            <li><strong>Start the quality pipeline earlier.</strong> Adding judging and human review after launch created a retrofitting tax. Next time: day one.</li>
-                        </ul>
-            </div>
-
             <!-- 11. Status & Links -->
             <div class="cs-section">
                 <h2><span class="num">11</span> Status & Links</h2>
@@ -276,7 +303,7 @@
                             <a href="https://github.com/danigrande/porra-mundial" target="_blank" rel="noopener">GitHub ↗</a>
                         </p>
                         <p class="card-links">
-                            <a href="ai-strategy.html">AI Product Strategy →</a>
+                            <a href="ai-strategy-agente-mundial.html">AI Product Strategy →</a>
                             <a href="project-agent.html">The AI Agents behind it →</a>
                         </p>
             </div>

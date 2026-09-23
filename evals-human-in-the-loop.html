@@ -32,7 +32,7 @@
                 </div>
                 <a href="evals-human-in-the-loop.html" class="active">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
-                <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
+                <a href="llm-agentic-coding.html">Costs of LLMs</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
@@ -62,9 +62,57 @@
 
         <section class="page-content">
 
-            <!-- 1. Why Evals -->
+            <!-- 1. The Two Use Cases -->
             <div class="cs-section">
-                <h2><span class="num">1</span> Why Evals</h2>
+                <h2><span class="num">1</span> The Two Use Cases</h2>
+                <p>This discipline is applied in two very different products. Here is each in plain terms — and the problem evals solve for it.</p>
+                <div class="area-grid">
+                    <div class="area-card">
+                        <h4>Agente Mundial — a chatbot that talks to people</h4>
+                        <p><strong>What it is:</strong> a chatbot inside a World Cup prediction-pool app. AI personalities banter with your friend group in 14 languages.</p>
+                        <p><strong>The problem:</strong> an AI that talks to people can sound plausible but be wrong, drift out of character, or slip into the wrong language — and one bad message costs trust. You can't read every message by hand.</p>
+                        <p><strong>How it's checked:</strong> a second, smaller AI scores every reply for quality and language purity; anything suspicious is flagged for a human.</p>
+                    </div>
+                    <div class="area-card">
+                        <h4>GrandeSuite Next — an ERP where AI does the busywork</h4>
+                        <p><strong>What it is:</strong> business software for growing companies, where AI reads supplier invoices, suggests which bills to pay, and helps with setup.</p>
+                        <p><strong>The problem:</strong> here the AI touches money. A misread number or a bad suggestion is expensive — so it has to be accurate and auditable, not just plausible.</p>
+                        <p><strong>How it's checked:</strong> per-field confidence scores flag uncertain data; anything below the bar goes to a human queue. Matching and payments stay rules-based — and the software itself is built by AI under tests and reviews.</p>
+                    </div>
+                </div>
+
+                <p>Both are the same pattern: AI produces output, an automatic check scores it, and the hard cases go to a human.</p>
+                <div class="usecase-flows">
+                    <div class="usecase-flow">
+                        <div class="usecase-label">Agente Mundial</div>
+                        <div class="pipe">
+                            <span class="pipe-step">User asks</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step active">AI replies</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Judge scores</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Human if flagged</span>
+                        </div>
+                    </div>
+                    <div class="usecase-flow">
+                        <div class="usecase-label">GrandeSuite Next</div>
+                        <div class="pipe">
+                            <span class="pipe-step">Invoice arrives</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step active">AI reads &amp; suggests</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Confidence check</span>
+                            <span class="pipe-arrow">→</span>
+                            <span class="pipe-step">Human if low</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Why Evals -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> Why Evals</h2>
                 <ul>
                     <li><strong>Plausible-but-wrong is the default failure mode</strong> of language models — it reads fine and costs trust.</li>
                     <li><strong>Consumer products can't ship unmeasured AI.</strong> One bad response can damage the brand; at scale, bad responses are guaranteed unless you filter them.</li>
@@ -73,9 +121,9 @@
                 </ul>
             </div>
 
-            <!-- 2. LLM-as-a-Judge -->
+            <!-- 3. LLM-as-a-Judge -->
             <div class="cs-section">
-                <h2><span class="num">2</span> LLM-as-a-Judge</h2>
+                <h2><span class="num">3</span> LLM-as-a-Judge</h2>
                 <p>In Agente Mundial, a smaller, faster model evaluates chatbot responses in the same pipeline as generation. It scores two axes — <strong>language purity</strong> (0–10) and <strong>quality</strong> (0–10) — and every score is logged with the response's latency and tokens.</p>
                 <ul>
                     <li><strong>The judge model</strong> is a smaller LLM (<code>llama-3.1-8b-instant</code>) — cheap enough to run on everything.</li>
@@ -104,9 +152,9 @@
                 </div>
             </div>
 
-            <!-- 3. Human in the Loop -->
+            <!-- 4. Human in the Loop -->
             <div class="cs-section">
-                <h2><span class="num">3</span> Human in the Loop</h2>
+                <h2><span class="num">4</span> Human in the Loop</h2>
                 <p>Humans don't review everything — they review the right things. Human reviews are created automatically when:</p>
                 <ul>
                     <li><strong>A user downvotes</strong> (rating 1–2) — the response goes to review.</li>
@@ -117,9 +165,9 @@
                 <p>Users also teach the bot directly: when someone corrects it, the correction is detected, classified, and logged into the same review pipeline — feedback becomes signal instead of noise.</p>
             </div>
 
-            <!-- 4. Evals in Development -->
+            <!-- 5. Evals in Development -->
             <div class="cs-section">
-                <h2><span class="num">4</span> Evals in Development</h2>
+                <h2><span class="num">5</span> Evals in Development</h2>
                 <p>The same discipline applies to building the ERP with AI agents:</p>
                 <ul>
                     <li><strong>Readiness checks before code</strong> — plan, architecture, and design validated against each other before implementation.</li>
@@ -129,9 +177,9 @@
                 <p class="card-links"><a href="project-grandesuite.html">See the case study →</a></p>
             </div>
 
-            <!-- 5. Confidence & Lessons -->
+            <!-- 6. Confidence & Lessons -->
             <div class="cs-section">
-                <h2><span class="num">5</span> Confidence & Lessons</h2>
+                <h2><span class="num">6</span> Confidence & Lessons</h2>
                 <p><strong>Confidence UX (designed, not yet shown to users):</strong> above 90% confidence, no indicator; 70–90%, a subtle badge; below 70%, the bot qualifies its answer ("No estoy seguro, pero…"). The judge scores exist and are visible in the developer dashboard, but the user-facing signal is one of the honest gaps still open.</p>
                 <div class="highlight-box accent">
                     <p><strong>What I'd do differently:</strong> start the quality pipeline on day one. Retrofitting the judge and review queue after the chatbot was already in use cost more than building it in from the start.</p>

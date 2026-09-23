@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LLMs & Agentic Coding | Portfolio</title>
+    <title>Costs of LLMs & Agentic Coding | Portfolio</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,7 @@
                 </div>
                 <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
-                <a href="llm-agentic-coding.html" class="active">LLMs & Agentic Coding</a>
+                <a href="llm-agentic-coding.html" class="active">Costs of LLMs</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
@@ -40,127 +40,111 @@
 
     <main>
         <section id="hero">
-            <div class="badge">Models & Tooling</div>
-            <h1>LLMs & <span>Agentic Coding</span></h1>
-            <p class="subtitle">How I choose models, control costs, and let AI agents write production code — without losing quality.</p>
+            <div class="badge">Cost Engineering</div>
+            <h1>Costs of LLMs & <span>Agentic Coding</span></h1>
+            <p class="subtitle">What it actually costs to build software with AI agents — the setup I use, what the alternatives would have cost, and when running models locally makes sense.</p>
             <p class="meta">
-                <span>Models in use: 4</span>
-                <span>Approach: Free tiers + planned cascading</span>
-                <span>Evidence: ~790 automated tests in the ERP</span>
+                <span>Setup: opencode + DeepSeek V4 Flash</span>
+                <span>Evidence: GrandeSuite Next</span>
+                <span>Also tried: Kilo Code, Antigravity</span>
             </p>
             <div class="hero-tags">
-                <span>Model Selection</span>
-                <span>Cascading Inference</span>
-                <span>Cost Engineering</span>
-                <span>Test-First Agents</span>
+                <span>opencode</span>
+                <span>DeepSeek</span>
+                <span>Cost per Project</span>
+                <span>Local LLMs</span>
             </div>
         </section>
 
         <section id="intro">
-            <p>There is no single best model — there is a best model for each job at each price point. I run a portfolio: fast and cheap where volume is high, stronger where judgment matters, and small where the economics demand it.</p>
-            <p>And I don't just use models — I use them to build. AI agents wrote the ERP's code under specs, tests, and reviews.</p>
+            <p>This is not a page about which model each project uses. It's about how I actually build — the tools, the model choices, and what it all costs.</p>
+            <p>The headline: I build with <strong>opencode</strong> running <strong>DeepSeek V4 Flash</strong>, and for agentic coding its price-to-capability ratio has been unbeatable.</p>
         </section>
 
         <section class="page-content">
 
-            <!-- 1. The Models I Actually Use -->
+            <!-- 1. How I Build, and What It Costs -->
             <div class="cs-section">
-                <h2><span class="num">1</span> The Models I Actually Use</h2>
+                <h2><span class="num">1</span> How I Build, and What It Costs</h2>
+                <p>My daily driver is <strong>opencode</strong> with <strong>DeepSeek V4 Flash</strong>. It's the setup I used to build GrandeSuite Next end-to-end — and the whole project came in at a cost that would be hard to match with a frontier model.</p>
+
+                <h3>What GrandeSuite Next cost</h3>
+                <table class="pipeline-table">
+                    <thead>
+                        <tr>
+                            <th>Setup</th>
+                            <th>Tokens used</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>opencode + DeepSeek V4 Flash</td><td>[tokens]</td><td>[cost]</td></tr>
+                    </tbody>
+                </table>
+
+                <h3>What it would have cost with other models</h3>
+                <table class="pipeline-table">
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Estimated cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>[Anthropic Claude]</td><td>[estimate]</td></tr>
+                        <tr><td>[OpenAI GPT]</td><td>[estimate]</td></tr>
+                        <tr><td>[Google Gemini]</td><td>[estimate]</td></tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box warning">
+                    <p><strong>Placeholder.</strong> Token and cost figures to be filled in from opencode's usage data — the same token volume priced across the other models.</p>
+                </div>
+
+                <p>I've tried the alternatives — other models, and other IDEs like Visual Studio with Kilo Code, and Antigravity. They work. But on cost, opencode + DeepSeek is in a different league.</p>
+            </div>
+
+            <!-- 2. Cheap vs. Frontier Models -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> Cheap vs. Frontier Models</h2>
+                <p>It's noticeable — especially for planning — that frontier models are better. They make fewer mistakes, and that means I lose less time. When a model gets it wrong, I pay for it twice: once to notice, once to fix it.</p>
+                <p>So the choice depends on the stakes:</p>
+                <ul>
+                    <li><strong>When failure is cheap,</strong> I'd use cheaper models without hesitation. If something breaks and it doesn't matter, why pay more?</li>
+                    <li><strong>When correctness matters — or I need to do something complex, fast —</strong> the smarter model wins. The fear of shipping something broken, and the need to move quickly on hard problems, makes frontier models worth the premium.</li>
+                </ul>
+                <div class="highlight-box accent">
+                    <p><strong>The real cost equation</strong> isn't price per million tokens — it's tokens <em>plus</em> the time lost to errors.</p>
+                </div>
+            </div>
+
+            <!-- 3. Local LLMs for Agentic Coding -->
+            <div class="cs-section">
+                <h2><span class="num">3</span> Local LLMs for Agentic Coding</h2>
+                <p>"Can I just run this on my own machine?" is the question everyone asks. The honest answer depends on what you're doing:</p>
                 <div class="area-grid">
                     <div class="area-card">
-                        <h4>Llama 3.3 70B on Groq <span class="tag tag-purple">Real-time</span></h4>
-                        <p>The chatbot's voice. Inference speed gives Agente Mundial its real-time feel, with strong quality for structured tasks.</p>
+                        <h4>On a personal computer — for agentic coding</h4>
+                        <p><strong>An absolute no-go.</strong> Small models aren't smart enough to drive an agent, you need roughly double the RAM of the context window (easily a 200k window), and the speed is far too slow to be usable.</p>
                     </div>
                     <div class="area-card">
-                        <h4>Llama 3.1 8B <span class="tag tag-green">Evals</span></h4>
-                        <p>The judge. Scores every chatbot response for language purity and quality — small, fast, and cheap enough to run on everything.</p>
+                        <h4>Locally, for simple tasks</h4>
+                        <p><strong>Yes, definitely.</strong> A small LangChain workflow pointed at a local model via Ollama, LM Studio, or MLX works well for simple jobs. And if it needs to run 24/7, you can host it on Vercel connected to HuggingFace — simple, and cheap.</p>
                     </div>
                     <div class="area-card">
-                        <h4>Qwen 2.5 7B on HuggingFace <span class="tag tag-blue">Fallback</span></h4>
-                        <p>The failover when Groq is unavailable, so the chatbot keeps responding rather than failing hard.</p>
-                    </div>
-                    <div class="area-card">
-                        <h4>Llama 3.2 11B Vision on HuggingFace <span class="tag tag-gold">OCR</span></h4>
-                        <p>Reads scanned supplier invoices in the ERP, escalating to human review when confidence is low.</p>
+                        <h4>A local server for big models (Kimi K2, GLM 5.1)</h4>
+                        <p><strong>Not worth it.</strong> Running models that size needs serious hardware and serious money. It only makes sense if you have 30–50 users to spread the cost across.</p>
                     </div>
                 </div>
             </div>
 
-            <!-- 2. The Cascading Strategy -->
+            <!-- 4. See It in Practice -->
             <div class="cs-section">
-                <h2><span class="num">2</span> The Cascading Strategy</h2>
-                <p>Frontier quality for everything is a margin killer. The <strong>direction</strong> is to cascade traffic by value — but today, everything runs on free tiers, and the cascade is the plan for when it scales:</p>
-                <ul>
-                    <li>A <strong>self-hosted small model</strong> would handle ~96% of traffic — pennies per call, no vendor lock-in.</li>
-                    <li>A <strong>premium async model</strong> would handle the ~4% where quality pays: summaries and analysis.</li>
-                </ul>
-                <div class="metric-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">96%</div>
-                        <div class="metric-label">Self-hosted traffic (target)</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">4%</div>
-                        <div class="metric-label">Premium async traffic (target)</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">90–94%</div>
-                        <div class="metric-label">AI-adjusted gross margin (target)</div>
-                    </div>
-                </div>
-                <p><strong>The break-even math:</strong> a $4.99 per-group pass against $0.30–0.50 of AI cost per group per tournament. The cascade is what would make 90%+ margins possible at consumer prices — the free tiers are what make the MVP free today.</p>
-                <div class="highlight-box warning">
-                    <p><strong>Honest framing:</strong> the 96/4 cascade and the self-hosted model are targets, not today's reality. Today, 100% of chatbot traffic runs on Groq's free tier, with a HuggingFace fallback.</p>
-                </div>
-            </div>
-
-            <!-- 3. Cost Engineering -->
-            <div class="cs-section">
-                <h2><span class="num">3</span> Cost Engineering</h2>
-                <ul>
-                    <li><strong>Free tiers as a product decision:</strong> the MVP runs inference on free-tier providers — document reading, setup suggestions, payment-batch composition — at $0 infrastructure cost.</li>
-                    <li><strong>Unit economics per feature:</strong> costs are tracked honestly per feature rather than hand-waved as "cheap."</li>
-                    <li><strong>Funded targets vs. MVP reality:</strong> full-scale figures are goals for after revenue; the MVP lives inside free-tier limits by design.</li>
-                    <li><strong>Provider abstraction:</strong> an inference adapter layer means models can be swapped — Groq to HuggingFace to a future self-hosted model — without code changes.</li>
-                </ul>
-            </div>
-
-            <!-- 4. Agentic Coding in Practice -->
-            <div class="cs-section">
-                <h2><span class="num">4</span> Agentic Coding in Practice</h2>
-                <p>The ERP's codebase is implemented by AI agents across the full MVP — under human-owned product decisions.</p>
-                <ul>
-                    <li><strong>Specs first:</strong> every work item starts from a written requirement with acceptance criteria.</li>
-                    <li><strong>Test-first:</strong> tests define "done" before implementation starts.</li>
-                    <li><strong>Three independent reviews per change:</strong> blind, edge-case, and acceptance.</li>
-                    <li><strong>Humans own:</strong> scope, priorities, framing, and every acceptance decision.</li>
-                </ul>
-                <div class="metric-grid">
-                    <div class="metric-card">
-                        <div class="metric-value">~790</div>
-                        <div class="metric-label">Automated tests</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">27</div>
-                        <div class="metric-label">Planning documents</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-value">3</div>
-                        <div class="metric-label">Reviews per change</div>
-                    </div>
-                </div>
-                <p class="card-links"><a href="project-grandesuite.html">See the ERP case study →</a></p>
-            </div>
-
-            <!-- 5. What I Learned -->
-            <div class="cs-section">
-                <h2><span class="num">5</span> What I Learned</h2>
-                <ul>
-                    <li><strong>Latency is a product feature.</strong> The chatbot's real-time feel comes from inference speed, not raw model size.</li>
-                    <li><strong>Some decisions should never be AI.</strong> The ERP's invoice matching is deliberately rules-based and auditable — AI extracts and suggests; deterministic logic decides.</li>
-                    <li><strong>Free tiers change product economics.</strong> Per-invoice AI cost is what makes competing tools expensive; free-tier inference removes it.</li>
-                    <li><strong>Models are swappable.</strong> Architecture should depend on capabilities and interfaces, not on one provider's name.</li>
-                </ul>
+                <h2><span class="num">4</span> See It in Practice</h2>
+                <p>The cost numbers above come from a real project: GrandeSuite Next, built end-to-end with this setup.</p>
+                <p class="card-links">
+                    <a href="project-grandesuite.html">The GrandeSuite Next case study →</a>
+                    <a href="spec-driven-dev.html">How the work was specified →</a>
+                </p>
             </div>
 
         </section>

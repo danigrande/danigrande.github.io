@@ -32,7 +32,7 @@
                 </div>
                 <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
                 <a href="project-agent.html">AI Agents</a>
-                <a href="llm-agentic-coding.html">LLMs & Agentic Coding</a>
+                <a href="llm-agentic-coding.html">Costs of LLMs</a>
             </div>
             <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
         </div>
@@ -63,9 +63,29 @@
 
         <section class="page-content">
 
-            <!-- 1. Why Specs First -->
+            <!-- 0. Why This Project -->
             <div class="cs-section">
-                <h2><span class="num">1</span> Why Specs First</h2>
+                <h2><span class="num">0</span> Why This Project</h2>
+                <p>Agentic coding is fantastic for a personal project — you decide on the fly, change direction mid-build, and keep the whole thing in your head. But that way of working is impossible on a team. Software development has always needed structure for a reason: frameworks like Waterfall and Agile, with specifications, QA, and process, exist because coordination doesn't happen by accident.</p>
+                <p>Frameworks like <strong>BMAD</strong> caught my attention because they make that structure AI-native. With agents playing the different roles on a team — analyst, architect, designer, engineer, test architect — you can generate specifications and user stories, and even run an Agile debate without a room full of people.</p>
+                <p>As a PM, preparing user stories and running Agile ceremonies consumed about 80% of my time. If software could accelerate that — producing specs and user stories, and pressure-testing them the way a team would — I'd get that time back for the work that always gets squeezed out: market and competitor analysis, research, and customer usage analysis.</p>
+                <p>And it raised a bigger question. If I can impersonate every role on the team, do I still need a team at all — or just someone to orchestrate it?</p>
+            </div>
+
+            <!-- 1. Key Learnings -->
+            <div class="cs-section">
+                <h2><span class="num">1</span> Key Learnings</h2>
+                <p>After building this, the things that matter most:</p>
+                <ol>
+                    <li><strong>For simple software, this is a big step forward.</strong> Agents genuinely improve specifications on a project that fits in one head. But for something as complex as an ERP, you still need people on the team — because someone has to review what the model produces. Someone needs to own the responsibility and hold the knowledge.</li>
+                    <li><strong>Specs look good — but they omit details.</strong> AI-written specifications usually read well, yet they quietly skip many necessary details. Closing those gaps takes real time and iteration.</li>
+                    <li><strong>It multiplies the team, it doesn't replace it.</strong> Moving 80% of my spec-writing and Agile-meeting time onto agents makes the whole team more productive — but the people, and the review they provide, are still needed.</li>
+                </ol>
+            </div>
+
+            <!-- 2. Why Specs First -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> Why Specs First</h2>
                         <ul>
                             <li><strong>Agents drift without a single source of truth.</strong> A spec is the contract every generation must respect — prompts alone are not.</li>
                             <li><strong>Traceability.</strong> Every piece of work links back to the requirement that justifies it — "why does this exist?" is answered in seconds.</li>
@@ -74,9 +94,9 @@
                         </ul>
             </div>
 
-            <!-- 2. The Pipeline -->
+            <!-- 3. The Pipeline -->
             <div class="cs-section">
-                <h2><span class="num">2</span> The Pipeline</h2>
+                <h2><span class="num">3</span> The Pipeline</h2>
                         <p>Every feature in the ERP project flowed through the same eleven phases. No phase was skipped.</p>
                         <table class="pipeline-table">
                             <thead>
@@ -102,9 +122,9 @@
                         </table>
             </div>
 
-            <!-- 3. What Makes a Spec Work -->
+            <!-- 4. What Makes a Spec Work -->
             <div class="cs-section">
-                <h2><span class="num">3</span> What Makes a Spec Work</h2>
+                <h2><span class="num">4</span> What Makes a Spec Work</h2>
                         <ul>
                             <li><strong>Testable acceptance criteria</strong> — written before implementation; nothing vague survives.</li>
                             <li><strong>Traceability</strong> — every work item links to its requirement and the architecture decision behind it.</li>
@@ -114,9 +134,9 @@
                         </ul>
             </div>
 
-            <!-- 4. Evidence -->
+            <!-- 5. Evidence -->
             <div class="cs-section">
-                <h2><span class="num">4</span> Evidence: GrandeSuite Next</h2>
+                <h2><span class="num">5</span> Evidence: GrandeSuite Next</h2>
                         <div class="metric-grid">
                             <div class="metric-card">
                                 <div class="metric-value">27</div>
@@ -135,9 +155,9 @@
                         <p class="card-links"><a href="project-grandesuite.html">See the full case study →</a></p>
             </div>
 
-            <!-- 5. Lessons Learned -->
+            <!-- 6. Spec-Writing Lessons -->
             <div class="cs-section">
-                <h2><span class="num">5</span> Lessons Learned</h2>
+                <h2><span class="num">6</span> Spec-Writing Lessons</h2>
                         <ul>
                             <li><strong>Settle the framing before detailed specs.</strong> The project was first planned as a restaurant platform; by the time it was repositioned as an entry-level ERP, parts of the plan had to be reworked. Late strategy changes are expensive — even when they are right.</li>
                             <li><strong>Specs must evolve with the product.</strong> Changes are versioned and deliberate; corrections become new decisions, not edits to history.</li>
