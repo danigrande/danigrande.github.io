@@ -776,6 +776,16 @@ main > section:last-child {
     border-radius: 10px;
 }
 
+.screenshot video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 440px;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #0b1220;
+}
+
 /* Flow diagram */
 .flow-row {
     display: flex;
