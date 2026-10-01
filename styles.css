@@ -1051,3 +1051,39 @@ footer p {
         white-space: normal;
     }
 }
+
+/* Demo videos (GrandeSuite case study) */
+.screenshot.screenshot--feature {
+    margin-bottom: 1rem;
+}
+
+.screenshot.screenshot--feature video {
+    max-height: 620px;
+}
+
+.screenshot-grid.screenshot-grid--demos {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.screenshot__blurb {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin: 0 0 0.75rem;
+}
+
+.screenshot.screenshot--warehouse video {
+    max-width: 280px;
+    max-height: 580px;
+    margin: 0 auto;
+}
+
+@media (max-width: 700px) {
+    .screenshot-grid.screenshot-grid--demos {
+        grid-template-columns: 1fr;
+    }
+
+    .screenshot.screenshot--warehouse video {
+        max-width: 320px;
+    }
+}
