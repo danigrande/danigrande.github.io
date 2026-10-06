@@ -163,12 +163,12 @@
             <!-- 6. Video -->
             <div class="cs-section">
                 <h2><span class="num">6</span> See It in Action</h2>
-                <p>The full loop in the developer dashboard: analyse the feedback, generate the PRD, review it, and approve it.</p>
+                <p>The whole loop, end to end: a user submits feedback and the group upvotes it, then the agent triages it, drafts a PRD, and a person approves it.</p>
                 <figure class="screenshot screenshot--feature">
                     <video controls muted loop playsinline preload="metadata" poster="assets/demo/worldcup-agent-prd.png">
                         <source src="assets/demo/worldcup-agent-prd.mp4" type="video/mp4">
                     </video>
-                    <figcaption>Developer dashboard &mdash; feedback → analyse → generate PRD → approve.</figcaption>
+                    <figcaption>Feedback capture &amp; voting &rarr; the three agents triage it &rarr; a PRD is drafted &rarr; a human approves it.</figcaption>
                 </figure>
             </div>
 
@@ -178,10 +178,10 @@
                 <div class="highlight-box">
                     <p><strong>Nothing is built automatically.</strong> A person reviews and approves every PRD before it becomes work. The agents analyse, draft and suggest; the decision stays with the human.</p>
                 </div>
-                <p><strong>Designed in LangFlow, implemented natively.</strong> The pipeline was first designed as a three-agent graph in LangFlow. In production it runs as the same three prompts, natively in Node via Groq — no external service to host, no cold starts, and the same structured output.</p>
-                <p><strong>An honest fix.</strong> The earlier integration only called the LangFlow flow when a flow ID was configured, and otherwise silently fell back to a keyword classifier — and on error it could store an empty analysis. The native pipeline replaces that: the real agents now run on every request, with a graceful keyword fallback only if the model is unavailable, so feedback is never marked "analysed" with nothing behind it.</p>
+                <p><strong>Designed in LangFlow, run in the app.</strong> The pipeline started life as a three-agent graph in LangFlow. In the product it runs those same three agents directly — a deliberate choice, mainly to avoid paying to host LangFlow around the clock for a small internal tool. LangFlow could run this in production perfectly well; it just isn't worth the extra cost here.</p>
+                <p><strong>What that changes.</strong> Because the agents run on every request, the analysis is real rather than a stand-in — and if the model is ever unavailable, the system falls back to a simple rule-based pass instead of leaving the feedback unprocessed.</p>
                 <div class="highlight-box teal">
-                    <p><strong>What's built:</strong> feedback capture and voting, the developer dashboard, the three-agent pipeline, the PRD model, and the <code>/prds/approved</code> endpoint a coding agent could consume. <strong>What's not:</strong> the coding agent itself is not wired in — the loop stops at human approval.</p>
+                    <p><strong>What's built:</strong> feedback capture and voting in the app, the developer dashboard, the three-agent pipeline, and the approved-PRD output a coding agent could pick up. <strong>What's not:</strong> the coding agent itself isn't wired in — the loop stops at human approval.</p>
                 </div>
             </div>
 
