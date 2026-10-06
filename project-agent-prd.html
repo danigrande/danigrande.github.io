@@ -76,9 +76,21 @@
                 <p>That is exactly the kind of structured thinking an AI pipeline is good at — <em>if</em> it is constrained. So the agent does the analysis and the drafting, and a human keeps the decision. The pipeline turns feedback into a draft requirement; the person approves, edits, or rejects it.</p>
             </div>
 
-            <!-- 2. The flow -->
+            <!-- 2. Video -->
             <div class="cs-section">
-                <h2><span class="num">2</span> The Flow</h2>
+                <h2><span class="num">2</span> See It in Action</h2>
+                <p>The whole loop, end to end: a user submits feedback and the group upvotes it, then the agent triages it, drafts a PRD, and a person approves it.</p>
+                <figure class="screenshot screenshot--feature">
+                    <video controls muted loop playsinline preload="metadata" poster="assets/demo/worldcup-agent-prd.png">
+                        <source src="assets/demo/worldcup-agent-prd.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Feedback capture &amp; voting &rarr; the three agents triage it &rarr; a PRD is drafted &rarr; a human approves it.</figcaption>
+                </figure>
+            </div>
+
+            <!-- 3. The flow -->
+            <div class="cs-section">
+                <h2><span class="num">3</span> The Flow</h2>
                 <p>Feedback enters one end and a prioritised, reviewable PRD comes out the other — with a human gate before anything becomes work:</p>
                 <div class="flow-row">
                     <div class="flow-step"><div class="flow-step-name">Feedback</div><div class="flow-role">raw input</div></div>
@@ -87,7 +99,7 @@
                     <div class="flow-arrow">&rarr;</div>
                     <div class="flow-step"><div class="flow-step-name">PRD Writer</div><div class="flow-role">draft requirement</div></div>
                     <div class="flow-arrow">&rarr;</div>
-                    <div class="flow-step"><div class="flow-step-name">Juno Orchestrator</div><div class="flow-role">validate + consolidate</div></div>
+                    <div class="flow-step"><div class="flow-step-name">PM-Agent-Orchestrator</div><div class="flow-role">validate + consolidate</div></div>
                     <div class="flow-arrow">&rarr;</div>
                     <div class="flow-step flow-gate"><div class="flow-step-name">Human approval</div><div class="flow-role">required</div></div>
                     <div class="flow-arrow">&rarr;</div>
@@ -96,9 +108,9 @@
                 <p class="flow-note">The approved PRDs are exposed at a dedicated endpoint that a coding agent could consume — the last step is designed, not automated.</p>
             </div>
 
-            <!-- 3. The three agents -->
+            <!-- 4. The three agents -->
             <div class="cs-section">
-                <h2><span class="num">3</span> The Three Agents</h2>
+                <h2><span class="num">4</span> The Three Agents</h2>
                 <div class="agent-grid">
                     <div class="agent-card">
                         <div class="agent-name">Strategy Owner</div>
@@ -111,16 +123,16 @@
                         <div class="agent-desc">Turns the analysis into a formal draft: title, problem statement, proposed solution, user impact, technical notes, acceptance criteria and suggested files. It only writes for P0–P2 — P3 and P-PENDING are explicitly set aside rather than forced into a requirement.</div>
                     </div>
                     <div class="agent-card">
-                        <div class="agent-name">Juno Orchestrator</div>
+                        <div class="agent-name">PM-Agent-Orchestrator</div>
                         <div class="agent-role">Orchestrator · validates and consolidates</div>
                         <div class="agent-desc">Checks the PRD against the original feedback, resolves inconsistencies between the analysis and the draft, and consolidates everything into the final structured output. If the feedback was fuzzy, it returns a clear "needs more information" instead of a PRD.</div>
                     </div>
                 </div>
             </div>
 
-            <!-- 4. Priority rubric -->
+            <!-- 5. Priority rubric -->
             <div class="cs-section">
-                <h2><span class="num">4</span> The Priority Rubric</h2>
+                <h2><span class="num">5</span> The Priority Rubric</h2>
                 <p>Prioritisation is not vibes. The Strategy Owner works against a fixed rubric and a product strategy, so a scoring bug outranks a nice-to-have emoji.</p>
                 <table class="pipeline-table">
                     <thead>
@@ -137,9 +149,9 @@
                 <p>The strategy the agent prioritises against covers six areas: scoring reliability, user and group growth, chat engagement, mobile UX, social features, and performance.</p>
             </div>
 
-            <!-- 5. The PRD schema -->
+            <!-- 6. The PRD schema -->
             <div class="cs-section">
-                <h2><span class="num">5</span> What It Produces</h2>
+                <h2><span class="num">6</span> What It Produces</h2>
                 <p>The final output is a single structured object, ready to be reviewed and stored:</p>
                 <div class="code-snippet"><pre>{
   "status": "prd_generated | needs_clarification | low_priority",
@@ -157,18 +169,6 @@
   "suggestedFiles": ["models/Group.js", "routes/groupRoutes.js"]
 }</pre></div>
                 <p>The acceptance criteria are deliberately written to be testable — vague language is rejected by the PRD Writer's own instructions.</p>
-            </div>
-
-            <!-- 6. Video -->
-            <div class="cs-section">
-                <h2><span class="num">6</span> See It in Action</h2>
-                <p>The whole loop, end to end: a user submits feedback and the group upvotes it, then the agent triages it, drafts a PRD, and a person approves it.</p>
-                <figure class="screenshot screenshot--feature">
-                    <video controls muted loop playsinline preload="metadata" poster="assets/demo/worldcup-agent-prd.png">
-                        <source src="assets/demo/worldcup-agent-prd.mp4" type="video/mp4">
-                    </video>
-                    <figcaption>Feedback capture &amp; voting &rarr; the three agents triage it &rarr; a PRD is drafted &rarr; a human approves it.</figcaption>
-                </figure>
             </div>
 
             <!-- 7. Human gate & honesty -->
