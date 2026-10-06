@@ -791,6 +791,7 @@ main > section:last-child {
     display: flex;
     flex-wrap: wrap;
     align-items: stretch;
+    justify-content: center;
     gap: 4px;
     margin: 1.5rem 0 0.75rem;
 }
