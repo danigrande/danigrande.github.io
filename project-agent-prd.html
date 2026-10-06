@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback → PRD | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DANIEL GRANDE</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Projects <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="project-grandesuite.html">GrandeSuite Next</a>
+                        <a href="project-grandesuite-ai.html">GrandeSuite AI</a>
+                        <a href="project-worldcup.html">Worldcup Pool App</a>
+                    </div>
+                </div>
+                <a href="spec-driven-dev.html">Spec Driven Development</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Strategy <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="ai-strategy.html">The Framework</a>
+                        <a href="ai-strategy-agente-mundial.html">Agente Mundial (Applied)</a>
+                    </div>
+                </div>
+                <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Agents <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="project-agent-worldcup.html">Agente Mundial (chatbot)</a>
+                        <a href="project-agent-prd.html" class="active">Feedback → PRD</a>
+                    </div>
+                </div>
+                <a href="llm-agentic-coding.html">Costs of LLMs</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="badge">AI Agent · Process</div>
+            <h1>From user feedback to a <span>PRD</span></h1>
+            <p class="subtitle">A three-agent pipeline that reads raw user feedback, prioritises it against the product strategy, and drafts a reviewable product requirement — with a human approving every output.</p>
+            <p class="meta">
+                <span>Applied to: Worldcup Pool (developer dashboard)</span>
+                <span>Status: Live</span>
+                <span>Agents: 3</span>
+            </p>
+            <div class="hero-tags">
+                <span>Multi-Agent</span>
+                <span>Feedback → PRD</span>
+                <span>Human Approval Gate</span>
+                <span>Groq</span>
+            </div>
+        </section>
+
+        <section id="intro">
+            <p>User feedback usually dies in a backlog. This agent exists to close the loop: instead of a note nobody reads, feedback becomes a structured, prioritised product requirement that a person reviews — and only then can a coding agent pick it up.</p>
+            <p>It is a genuine multi-agent pipeline: three agents with distinct roles, chained together, with a human gate at the end. <strong>Nothing is built automatically.</strong></p>
+        </section>
+
+        <section class="page-content">
+
+            <!-- 1. Why -->
+            <div class="cs-section">
+                <h2><span class="num">1</span> Why This Agent</h2>
+                <p>The Worldcup app already captures feedback and lets users vote on it. But votes are not a plan: someone still has to read the feedback, decide what it means, judge whether it matters against the roadmap, and write it up well enough to build.</p>
+                <p>That is exactly the kind of structured thinking an AI pipeline is good at — <em>if</em> it is constrained. So the agent does the analysis and the drafting, and a human keeps the decision. The pipeline turns feedback into a draft requirement; the person approves, edits, or rejects it.</p>
+            </div>
+
+            <!-- 2. The flow -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> The Flow</h2>
+                <p>Feedback enters one end and a prioritised, reviewable PRD comes out the other — with a human gate before anything becomes work:</p>
+                <div class="flow-row">
+                    <div class="flow-step"><div class="flow-step-name">Feedback</div><div class="flow-role">raw input</div></div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step"><div class="flow-step-name">Strategy Owner</div><div class="flow-role">classify + prioritise</div></div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step"><div class="flow-step-name">PRD Writer</div><div class="flow-role">draft requirement</div></div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step"><div class="flow-step-name">Juno Orchestrator</div><div class="flow-role">validate + consolidate</div></div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step flow-gate"><div class="flow-step-name">Human approval</div><div class="flow-role">required</div></div>
+                    <div class="flow-arrow">&rarr;</div>
+                    <div class="flow-step"><div class="flow-step-name">Coding agent</div><div class="flow-role">/prds/approved</div></div>
+                </div>
+                <p class="flow-note">The approved PRDs are exposed at a dedicated endpoint that a coding agent could consume — the last step is designed, not automated.</p>
+            </div>
+
+            <!-- 3. The three agents -->
+            <div class="cs-section">
+                <h2><span class="num">3</span> The Three Agents</h2>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">Strategy Owner</div>
+                        <div class="agent-role">Analyst · classifies and prioritises</div>
+                        <div class="agent-desc">Reads the feedback, classifies its type (bug, feature, improvement, other) and assigns a priority against a six-point product strategy. If the feedback is too vague, it refuses to guess: it marks it <code>P-PENDING</code> and flags it as fuzzy.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">PRD Writer</div>
+                        <div class="agent-role">Author · drafts the requirement</div>
+                        <div class="agent-desc">Turns the analysis into a formal draft: title, problem statement, proposed solution, user impact, technical notes, acceptance criteria and suggested files. It only writes for P0–P2 — P3 and P-PENDING are explicitly set aside rather than forced into a requirement.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Juno Orchestrator</div>
+                        <div class="agent-role">Orchestrator · validates and consolidates</div>
+                        <div class="agent-desc">Checks the PRD against the original feedback, resolves inconsistencies between the analysis and the draft, and consolidates everything into the final structured output. If the feedback was fuzzy, it returns a clear "needs more information" instead of a PRD.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Priority rubric -->
+            <div class="cs-section">
+                <h2><span class="num">4</span> The Priority Rubric</h2>
+                <p>Prioritisation is not vibes. The Strategy Owner works against a fixed rubric and a product strategy, so a scoring bug outranks a nice-to-have emoji.</p>
+                <table class="pipeline-table">
+                    <thead>
+                        <tr><th>Tier</th><th>Meaning</th><th>PRD written?</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>P0</td><td>Critical bugs, scoring errors, system outages</td><td>Yes</td></tr>
+                        <tr><td>P1</td><td>Core features (login, groups, scores), important bugs</td><td>Yes</td></tr>
+                        <tr><td>P2</td><td>Improvements to existing features, UI/UX</td><td>Yes</td></tr>
+                        <tr><td>P3</td><td>Minor suggestions, nice-to-have</td><td>No — set aside</td></tr>
+                        <tr><td>P-PENDING</td><td>Ambiguous or incomplete feedback</td><td>No — needs clarification</td></tr>
+                    </tbody>
+                </table>
+                <p>The strategy the agent prioritises against covers six areas: scoring reliability, user and group growth, chat engagement, mobile UX, social features, and performance.</p>
+            </div>
+
+            <!-- 5. The PRD schema -->
+            <div class="cs-section">
+                <h2><span class="num">5</span> What It Produces</h2>
+                <p>The final output is a single structured object, ready to be reviewed and stored:</p>
+                <div class="code-snippet"><pre>{
+  "status": "prd_generated | needs_clarification | low_priority",
+  "priority": "P0 | P1 | P2 | P3 | P-PENDING",
+  "title": "Implementación de Grupos Públicos con Búsqueda y Unirse",
+  "problemStatement": "Los usuarios no pueden unirse a grupos existentes…",
+  "proposedSolution": "Sistema de visibilidad de grupos + página de descubrimiento…",
+  "userImpact": "Reduce la fricción de entrada y acelera la adopción…",
+  "technicalNotes": "Modelo de grupo + endpoints de unión…",
+  "acceptanceCriteria": [
+    "Un admin puede marcar un grupo como Público o Privado",
+    "La página de exploración lista solo grupos públicos",
+    "Al pulsar Unirse, el usuario se añade sin duplicados"
+  ],
+  "suggestedFiles": ["models/Group.js", "routes/groupRoutes.js"]
+}</pre></div>
+                <p>The acceptance criteria are deliberately written to be testable — vague language is rejected by the PRD Writer's own instructions.</p>
+            </div>
+
+            <!-- 6. Video -->
+            <div class="cs-section">
+                <h2><span class="num">6</span> See It in Action</h2>
+                <p>The full loop in the developer dashboard: analyse the feedback, generate the PRD, review it, and approve it.</p>
+                <figure class="screenshot screenshot--feature">
+                    <video controls muted loop playsinline preload="metadata" poster="assets/demo/worldcup-agent-prd.png">
+                        <source src="assets/demo/worldcup-agent-prd.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Developer dashboard &mdash; feedback → analyse → generate PRD → approve.</figcaption>
+                </figure>
+            </div>
+
+            <!-- 7. Human gate & honesty -->
+            <div class="cs-section">
+                <h2><span class="num">7</span> The Human Gate — and What's Real</h2>
+                <div class="highlight-box">
+                    <p><strong>Nothing is built automatically.</strong> A person reviews and approves every PRD before it becomes work. The agents analyse, draft and suggest; the decision stays with the human.</p>
+                </div>
+                <p><strong>Designed in LangFlow, implemented natively.</strong> The pipeline was first designed as a three-agent graph in LangFlow. In production it runs as the same three prompts, natively in Node via Groq — no external service to host, no cold starts, and the same structured output.</p>
+                <p><strong>An honest fix.</strong> The earlier integration only called the LangFlow flow when a flow ID was configured, and otherwise silently fell back to a keyword classifier — and on error it could store an empty analysis. The native pipeline replaces that: the real agents now run on every request, with a graceful keyword fallback only if the model is unavailable, so feedback is never marked "analysed" with nothing behind it.</p>
+                <div class="highlight-box teal">
+                    <p><strong>What's built:</strong> feedback capture and voting, the developer dashboard, the three-agent pipeline, the PRD model, and the <code>/prds/approved</code> endpoint a coding agent could consume. <strong>What's not:</strong> the coding agent itself is not wired in — the loop stops at human approval.</p>
+                </div>
+            </div>
+
+            <!-- 8. Status -->
+            <div class="cs-section">
+                <h2><span class="num">8</span> Status &amp; Links</h2>
+                <p>The pipeline is <strong>live</strong> in the developer dashboard: it analyses feedback, generates a structured PRD, and stores approved PRDs at a dedicated endpoint.</p>
+                <p class="card-links">
+                    <a href="https://porra-mundial-six.vercel.app/dev_dashboard.html" target="_blank" rel="noopener">Developer dashboard ↗</a>
+                    <a href="https://github.com/danigrande/porra-mundial" target="_blank" rel="noopener">GitHub ↗</a>
+                </p>
+                <p class="card-links">
+                    <a href="project-agent-worldcup.html">The other agent — the chatbot &rarr;</a>
+                    <a href="evals-human-in-the-loop.html">Evals &amp; human in the loop &rarr;</a>
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

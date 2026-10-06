@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agente Mundial — the Chatbot | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo">DANIEL GRANDE</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">Projects <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="project-grandesuite.html">GrandeSuite Next</a>
+                        <a href="project-grandesuite-ai.html">GrandeSuite AI</a>
+                        <a href="project-worldcup.html">Worldcup Pool App</a>
+                    </div>
+                </div>
+                <a href="spec-driven-dev.html">Spec Driven Development</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Strategy <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="ai-strategy.html">The Framework</a>
+                        <a href="ai-strategy-agente-mundial.html">Agente Mundial (Applied)</a>
+                    </div>
+                </div>
+                <a href="evals-human-in-the-loop.html">Evals & Human in the Loop</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="dropdown-toggle">AI Agents <span class="arrow">▾</span></a>
+                    <div class="dropdown-menu">
+                        <a href="project-agent-worldcup.html" class="active">Agente Mundial (chatbot)</a>
+                        <a href="project-agent-prd.html">Feedback → PRD</a>
+                    </div>
+                </div>
+                <a href="llm-agentic-coding.html">Costs of LLMs</a>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero">
+            <div class="badge">AI Agent · Product</div>
+            <h1>Agente Mundial — a chatbot with <span>seven faces</span></h1>
+            <p class="subtitle">A personality-driven chatbot that runs the social layer of a World Cup prediction pool: it talks trash, summarises matches, and answers questions in 14 languages — with a quality gate on every message.</p>
+            <p class="meta">
+                <span>Applied to: Worldcup Pool (Agente Mundial)</span>
+                <span>Status: Live</span>
+                <span>Personalities: 7</span>
+            </p>
+            <div class="hero-tags">
+                <span>LLM + RAG</span>
+                <span>7 Personalities</span>
+                <span>14 Languages</span>
+                <span>LLM-as-a-Judge</span>
+                <span>Human-in-the-Loop</span>
+            </div>
+        </section>
+
+        <section id="intro">
+            <p>Every World Cup, someone in the group becomes the admin: they tally the points by hand and write the daily summary. That person has the least fun job in the group. <strong>Agente Mundial</strong> takes that job instead — it keeps the standings alive, roasts the players, and talks to the group like a friend would.</p>
+            <p>It is deliberately <strong>not</strong> a swarm of agents. It is one stateless chatbot with a small set of supporting services — simpler to debug, cheaper to run, and easier to trust.</p>
+        </section>
+
+        <section class="page-content">
+
+            <!-- 1. Why -->
+            <div class="cs-section">
+                <h2><span class="num">1</span> Why This Agent</h2>
+                <p>My friend group runs a prediction pool every World Cup. The bottleneck was always the same: one person had to update the spreadsheet after every match and write a summary to keep the banter going.</p>
+                <p>So I asked a different question: could an AI take the <em>social</em> role instead? Keep the standings current, summarise how everyone is doing, and — most importantly — roast each of us the way a friend would. Agente Mundial is the answer: instead of reading a static spreadsheet, the group talks to the agent, and it talks back.</p>
+            </div>
+
+            <!-- 2. The pipeline -->
+            <div class="cs-section">
+                <h2><span class="num">2</span> How It Works</h2>
+                <p>Every message flows through one pipeline, with a quality gate before anything reaches the user:</p>
+                <div class="pipe">
+                    <span class="pipe-step">User Message</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">RAG Memory</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">Web Search</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">Personality Prompt</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step active">Groq LLM</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">Judge Eval</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">Transcreation</span>
+                    <span class="pipe-arrow">&rarr;</span>
+                    <span class="pipe-step">Response</span>
+                </div>
+                <p>Around that pipeline, supporting services do the agent-like work:</p>
+                <ul>
+                    <li><strong>Personality prompt</strong> — each character has a structured humour "anchor" (mechanism, tone, energy, catchphrases, forbidden patterns) injected into the system prompt.</li>
+                    <li><strong>Judge</strong> — a second, smaller model scores every reply for language purity and quality; failures regenerate with the judge's feedback, up to three times.</li>
+                    <li><strong>Transcreation</strong> — adapts humour and football idioms across 14 languages, including 8 non-Latin scripts.</li>
+                    <li><strong>RAG memory + web search + RSS</strong> — conversational context and live match news.</li>
+                    <li><strong>Correction detection</strong> — when a user corrects the bot, it is detected and logged as a reviewable signal.</li>
+                </ul>
+                <div class="highlight-box teal">
+                    <p><strong>The honest detail:</strong> it is one stateless chatbot plus services — not a multi-agent system. That choice is the point: fewer moving parts, lower cost, easier to reason about. The judge and human-review machinery is covered in detail on the <a href="evals-human-in-the-loop.html">Evals &amp; Human in the Loop</a> page.</p>
+                </div>
+            </div>
+
+            <!-- 3. Personalities -->
+            <div class="cs-section">
+                <h2><span class="num">3</span> The Seven Personalities</h2>
+                <p>Each character is defined by a humour anchor, not just a name. The anchor fixes the comedic mechanism, the energy level, the cultural references, a set of catchphrases to rotate, and a list of forbidden topics.</p>
+                <div class="agent-grid">
+                    <div class="agent-card">
+                        <div class="agent-name">Andrés Montes</div>
+                        <div class="agent-role">Street wisdom · ES · Energy 5/5</div>
+                        <div class="agent-desc">Exuberant, streetwise, epic. Catchphrases like <em>"ráfaga"</em>, <em>"toma toma toma"</em>, <em>"faroliyo"</em>, <em>"jugón"</em>. Cultural fuel: street basketball, boxing, salsa, the market.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Josep Pedrerol</div>
+                        <div class="agent-role">Dramatic reveal · ES · Energy 4/5</div>
+                        <div class="agent-desc">The TV host with an exclusive. <em>"Atentos"</em>, <em>"señores"</em>, <em>"lo que les voy a contar"</em>. Built on the late-night football debate show.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Tomás Roncero</div>
+                        <div class="agent-role">Exaggerated emotion · ES · Energy 5/5</div>
+                        <div class="agent-desc">Everything is historic or an insurmountable abyss. <em>"Esto es histórico"</em>, <em>"estoy llorando"</em>, <em>"Dios mío"</em>. Passionate sports journalism.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Darth Vader</div>
+                        <div class="agent-role">Menacing wit · EN · Energy 3/5</div>
+                        <div class="agent-desc">Solemn, imperial, deadpan. <em>"Impressive"</em>, <em>"I find your lack of faith disturbing"</em>, <em>"your destiny"</em>. Star Wars lore and villain monologues.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Donald Trump</div>
+                        <div class="agent-role">Superlatives · EN · Energy 5/5</div>
+                        <div class="agent-desc">Everything is the best or a total disaster. <em>"Tremendous"</em>, <em>"believe me"</em>, <em>"HUGE"</em>, <em>"nobody knows"</em>. Bombastic, self-congratulatory, parody only.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Fabrizio Romano</div>
+                        <div class="agent-role">Breaking news · ES · Energy 3/5</div>
+                        <div class="agent-desc">Predictions are transfers. <em>"Here we go"</em>, <em>"breaking"</em>, <em>"done deal"</em>, <em>"verbal agreement"</em>. Transfer-market journalism.</div>
+                    </div>
+                    <div class="agent-card">
+                        <div class="agent-name">Juez Dredd</div>
+                        <div class="agent-role">Authoritarian judgment · ES · Energy 3/5</div>
+                        <div class="agent-desc">The ruthless judge. <em>"I am the law"</em>, <em>"sentenciado"</em>, <em>"caso cerrado"</em>, <em>"cadena perpetua"</em>. Mega-City One courtroom humour.</div>
+                    </div>
+                </div>
+                <p>Four characters generate natively in Spanish and two in English; the rest of the 14 languages are reached through transcreation. Users pick their agent's personality from their profile — the same group can hear a different voice for every player.</p>
+            </div>
+
+            <!-- 4. Video -->
+            <div class="cs-section">
+                <h2><span class="num">4</span> See It in Action</h2>
+                <p>Agente Mundial in the group chat: answering as Andrés Montes, then switching personality to Donald Trump.</p>
+                <figure class="screenshot screenshot--warehouse">
+                    <video controls muted loop playsinline preload="metadata" poster="assets/demo/worldcup-mobile.png">
+                        <source src="assets/demo/worldcup-mobile.mp4" type="video/mp4">
+                    </video>
+                    <figcaption>Mobile app &mdash; from Andrés Montes to Donald Trump, same group, new voice.</figcaption>
+                </figure>
+            </div>
+
+            <!-- 5. Staying in character & safe -->
+            <div class="cs-section">
+                <h2><span class="num">5</span> Staying in Character &amp; Safe</h2>
+                <ul>
+                    <li><strong>Structured anchors, not vibes.</strong> Every personality encodes its comedic mechanism, energy and forbidden topics, so the bot does not drift into generic or offensive territory.</li>
+                    <li><strong>Forbidden patterns.</strong> Each anchor lists what it must never do (profanity, dark humour, real politics, real religions).</li>
+                    <li><strong>A judge on every reply.</strong> Language purity and quality are scored 0–10; a contaminated or low-quality response is regenerated with feedback.</li>
+                    <li><strong>Never silently shipped.</strong> After three failed attempts a response is force-approved and flagged for human review — never dropped without a trace.</li>
+                    <li><strong>Corrections become signal.</strong> When a user corrects the bot, the correction is detected, classified, and logged into the review pipeline.</li>
+                </ul>
+                <p class="card-links"><a href="evals-human-in-the-loop.html">How the judge and human review work &rarr;</a></p>
+            </div>
+
+            <!-- 6. Status -->
+            <div class="cs-section">
+                <h2><span class="num">6</span> Status &amp; Links</h2>
+                <p>The chatbot is <strong>live</strong> as a working prototype, running the full pipeline — personalities, judge, transcreation and correction detection — on every message.</p>
+                <p class="card-links">
+                    <a href="https://porra-mundial-six.vercel.app" target="_blank" rel="noopener">Live app ↗</a>
+                    <a href="https://github.com/danigrande/porra-mundial" target="_blank" rel="noopener">GitHub ↗</a>
+                    <a href="project-worldcup.html">The full product case study &rarr;</a>
+                </p>
+                <p class="card-links">
+                    <a href="project-agent-prd.html">The other agent — Feedback → PRD &rarr;</a>
+                    <a href="ai-strategy-agente-mundial.html">The applied AI strategy &rarr;</a>
+                </p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Daniel Grande. Built with precision and AI strategy.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
