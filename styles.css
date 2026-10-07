@@ -776,39 +776,24 @@ main > section:last-child {
     justify-content: center;
 }
 
-/* Home: sign-off */
-.home-signoff {
-    text-align: center;
-    margin-top: 2.5rem;
+/* Brand icons (LinkedIn / GitHub) */
+.nav-icon svg,
+.card-links a svg,
+.icon-link svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+    fill: currentColor;
 }
 
-.home-signoff .home-signoff-name {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--text);
-    margin-bottom: 2px;
+.nav-icon {
+    display: inline-flex;
+    align-items: center;
 }
 
-.home-signoff .home-signoff-role {
-    font-size: 0.9rem;
-    color: var(--text-muted);
-    margin-bottom: 0.5rem;
-}
-
-.footer-links {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    margin-top: 0.4rem;
-}
-
-.footer-links a {
-    color: var(--text-muted);
-}
-
-.footer-links a:hover {
-    color: var(--primary-light);
+.icon-link {
+    display: inline-flex;
+    align-items: center;
 }
 
 /* Use-case flows */
