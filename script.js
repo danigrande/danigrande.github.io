@@ -1,3 +1,13 @@
+(function () {
+    var params = new URLSearchParams(window.location.search);
+    if (params.has('notrack')) {
+        localStorage.setItem('umami.disabled', 1);
+        params.delete('notrack');
+        var query = params.toString();
+        history.replaceState(null, '', window.location.pathname + (query ? '?' + query : '') + window.location.hash);
+    }
+})();
+
 document.addEventListener('DOMContentLoaded', function () {
     var navToggle = document.querySelector('.nav-toggle');
     var navLinks = document.querySelector('.nav-links');
