@@ -733,6 +733,84 @@ main > section:last-child {
     color: var(--text-muted);
 }
 
+/* Home: hero CTAs */
+.hero-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 1.75rem;
+}
+
+.hero-cta a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    padding: 11px 22px;
+    border-radius: 10px;
+    color: var(--primary-light);
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+}
+
+.hero-cta a:hover {
+    background: rgba(59, 130, 246, 0.16);
+    border-color: rgba(59, 130, 246, 0.5);
+    color: var(--text);
+}
+
+.hero-cta a.primary {
+    background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.hero-cta a.primary:hover {
+    filter: brightness(1.08);
+    color: #ffffff;
+}
+
+.card-links--center {
+    justify-content: center;
+}
+
+/* Home: sign-off */
+.home-signoff {
+    text-align: center;
+    margin-top: 2.5rem;
+}
+
+.home-signoff .home-signoff-name {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text);
+    margin-bottom: 2px;
+}
+
+.home-signoff .home-signoff-role {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    margin-top: 0.4rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+}
+
+.footer-links a:hover {
+    color: var(--primary-light);
+}
+
 /* Use-case flows */
 .usecase-flows {
     display: grid;
