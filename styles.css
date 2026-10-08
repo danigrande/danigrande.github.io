@@ -963,6 +963,65 @@ main > section:last-child {
     font-size: 0.95rem;
 }
 
+/* Vertical timeline (career / history) */
+.timeline {
+    position: relative;
+    margin: 1.5rem 0;
+    padding-left: 1.75rem;
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 1.6rem;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.06rem;
+    top: 0.3rem;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border);
+    border: 2px solid var(--bg);
+}
+
+.timeline-item.active::before {
+    background: var(--primary);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.18);
+}
+
+.timeline-date {
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.timeline-role {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.timeline-company {
+    color: var(--primary-light);
+    font-weight: 500;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-top: 3px;
+}
+
 /* Score cards (scored /5 with a bar) */
 .score-grid {
     display: grid;
