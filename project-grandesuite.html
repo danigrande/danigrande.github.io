@@ -119,9 +119,23 @@
                 <p>GrandeSuite Next is that experiment: an entry-level ERP for growing businesses, designed and built end-to-end by one product manager working with AI. Not to prove a point about AI, but to find out how much of a "thousand-person, five-year" project is actually reachable &mdash; and where the real hard parts still are.</p>
             </div>
 
-            <!-- 2. The Problem -->
+            <!-- 2. Key Learnings -->
             <div class="cs-section">
-                <h2><span class="num">2</span> The Problem</h2>
+                <h2><span class="num">2</span> Key Learnings</h2>
+                <p>After building this, the things that matter most:</p>
+                <ol>
+                    <li><strong>Start with the pain that hurts most.</strong> Supplier invoices were the highest-pain, highest-volume process &mdash; and the fastest path to visible value. The same architecture supports every other area.</li>
+                    <li><strong>Architect for immutability from day one.</strong> The append-only event log made audit, debugging, and point-in-time reporting trivial. Reversing this later would have been nearly impossible.</li>
+                    <li><strong>AI is a tool, not the product.</strong> Every AI feature was tested against one question: does it meaningfully reduce human effort or error? Not "is it cool?"</li>
+                    <li><strong>Free-tier AI changes the economics.</strong> Running inference on free tiers eliminated the per-invoice costs that make competing tools expensive. A product decision disguised as an infrastructure decision.</li>
+                    <li><strong>The process is the product.</strong> The structured pipeline caught alignment issues before they became expensive rework &mdash; and made every piece of the system explainable in seconds.</li>
+                    <li><strong>Strategy is a living thing.</strong> The project began framed as a financial platform for restaurants. As research matured, the framing moved to something bigger and stronger: an entry-level ERP for growing businesses that have outgrown QuickBooks. Parts of the plan written under the old framing had to be reworked. Settle the market framing before detailed planning &mdash; late repositioning is expensive, even when it is the right call.</li>
+                </ol>
+            </div>
+
+            <!-- 3. The Problem -->
+            <div class="cs-section">
+                <h2><span class="num">3</span> The Problem</h2>
                 <p>Growing businesses eventually outgrow the accounting software that got them started. The tools that work at $2M in revenue start to break at $20M. And the jump to enterprise software is brutal.</p>
                 <p>Five things go wrong again and again:</p>
                 <ul>
@@ -136,9 +150,9 @@
                 </div>
             </div>
 
-            <!-- 3. Market & Opportunity -->
+            <!-- 4. Market & Opportunity -->
             <div class="cs-section">
-                <h2><span class="num">3</span> Market &amp; Opportunity</h2>
+                <h2><span class="num">4</span> Market &amp; Opportunity</h2>
                 <p><strong>Who it is for.</strong> Businesses that have outgrown QuickBooks &mdash; typically 20&ndash;200 employees and $2&ndash;25M in revenue. Especially operations-heavy businesses like distributors, where inventory and paperwork are the daily reality.</p>
                 <p><strong>Why now.</strong> There is a wave of "QuickBooks leavers." More than half of migrations start with a pricing shock, and most businesses know they need to move but delay 6&ndash;18 months &mdash; mostly out of fear that a new system will fail to get off the ground.</p>
                 <p><strong>The competition.</strong> NetSuite is the default "safe choice," but it costs $150K+ with months of consultants. Sage Intacct and Microsoft Dynamics sit nearby. Intuit launched its own Enterprise Suite in 2026, aimed at the same buyer.</p>
@@ -149,9 +163,9 @@
                 </div>
             </div>
 
-            <!-- 4. Discovery & Research -->
+            <!-- 5. Discovery & Research -->
             <div class="cs-section">
-                <h2><span class="num">4</span> Discovery &amp; Research</h2>
+                <h2><span class="num">5</span> Discovery &amp; Research</h2>
                 <p><strong>Brainstorming</strong> shaped the concept: the North Star, the target market, and four pillars &mdash; fast onboarding templates, an event-driven accounting engine, a finance dashboard, and an AI copilot.</p>
                 <p><strong>Domain research</strong> mapped every type of financial transaction in a business &mdash; from issuing a purchase order to settling a customer invoice &mdash; to its accounting impact. A second deep dive covered supplier invoice workflows, document-reading technology, and compliance requirements.</p>
                 <p><strong>Market research</strong> studied "QuickBooks leavers": who they are, what triggers the switch, how they buy, and how NetSuite, Sage Intacct, and Xero price and position themselves. The pattern was clear: fear of implementation failure is the biggest barrier, and transparent pricing is the biggest opening.</p>
@@ -160,9 +174,9 @@
                 </div>
             </div>
 
-            <!-- 5. Product Vision -->
+            <!-- 6. Product Vision -->
             <div class="cs-section">
-                <h2><span class="num">5</span> Product Vision</h2>
+                <h2><span class="num">6</span> Product Vision</h2>
                 <p>GrandeSuite Next is one place to run the financial life of a growing business: buy, sell, get paid, pay suppliers, and keep the books &mdash; no exports, no spreadsheets, no separate accounting package. The <strong>vision</strong> is a native general ledger as the single source of truth, with multi-entity and multi-currency support, and a QuickBooks bridge as an onboarding convenience for businesses transitioning off QBO &mdash; never a dependency.</p>
                 <p>Two everyday flows meet in one system:</p>
                 <ul>
@@ -178,9 +192,9 @@
                 </div>
             </div>
 
-            <!-- 6. What Success Looks Like -->
+            <!-- 7. What Success Looks Like -->
             <div class="cs-section">
-                <h2><span class="num">6</span> What Success Looks Like</h2>
+                <h2><span class="num">7</span> What Success Looks Like</h2>
                 <ul>
                     <li><strong>Month-end close:</strong> from 12+ days to 3 days or less, for 80% of customers</li>
                     <li><strong>Warehouse adoption:</strong> 90% of frontline staff using the app within 30 days</li>
@@ -197,9 +211,9 @@
                 <p>The event-driven core that links operations and finance.</p>
             </div>
 
-            <!-- 7. What the System Does -->
+            <!-- 8. What the System Does -->
             <div class="cs-section">
-                <h2><span class="num">7</span> What the System Does</h2>
+                <h2><span class="num">8</span> What the System Does</h2>
                 <div class="area-grid">
                     <div class="area-card">
                         <h4>Buying from Suppliers</h4>
@@ -236,9 +250,9 @@
                 </div>
             </div>
 
-            <!-- 8. How It Works -->
+            <!-- 9. How It Works -->
             <div class="cs-section">
-                <h2><span class="num">8</span> How It Works</h2>
+                <h2><span class="num">9</span> How It Works</h2>
                 <p>Everything that happens is recorded as an event in an append-only log: a delivery received, an item picked, an invoice entered. Nothing is edited or deleted &mdash; corrections are new events.</p>
                 <p>Configurable rules translate those events into double-entry bookkeeping. The result is a perfect audit trail, point-in-time reporting, and full traceability: every number can be traced back to who did what, where, and when.</p>
                 <p><strong>The QuickBooks bridge is optional.</strong> It can import opening balances and push records for businesses transitioning off QuickBooks, but the system's own ledger is the source of truth from day one &mdash; never a dependency.</p>
@@ -256,9 +270,9 @@
                 <p>A deliberately narrow use of AI: it reduces effort and error in specific, checkable places, and stays out of everything that touches money.</p>
             </div>
 
-            <!-- 9. AI in the Product -->
+            <!-- 10. AI in the Product -->
             <div class="cs-section">
-                <h2><span class="num">9</span> AI in the Product</h2>
+                <h2><span class="num">10</span> AI in the Product</h2>
                 <p><strong>The philosophy:</strong> use AI where it clearly helps, and keep a human in the loop for anything that touches money. Augment, don't replace.</p>
                 <p><strong>Reading supplier invoices.</strong> A two-tier approach: a fast path extracts text directly from native PDFs; a vision model handles scanned documents. The system escalates automatically when confidence is low, and anything below the bar goes to a human review queue.</p>
                 <p><strong>Confidence scoring and human review.</strong> Per-field confidence scores highlight exactly what to check. The system learns from corrections but never fully trusts itself.</p>
@@ -278,9 +292,9 @@
                 <p>The method, the quality pipeline, and where the build stands.</p>
             </div>
 
-            <!-- 10. How it was built (BMAD) -->
+            <!-- 11. How it was built (BMAD) -->
             <div class="cs-section">
-                <h2><span class="num">10</span> How It Was Built &mdash; BMAD</h2>
+                <h2><span class="num">11</span> How It Was Built &mdash; BMAD</h2>
                 <p>GrandeSuite Next was built with <strong>BMAD</strong> &mdash; a structured, AI-augmented development method that takes a product from first idea to production in defined phases. Every phase produces documents that feed the next, and named AI agents play different roles: product manager, business analyst, architect, designer, engineer, test architect, writer.</p>
                 <p>Nothing was skipped: research before requirements, requirements before architecture, architecture before code. Every feature can be traced back to why it exists. In total, the method produced <strong>27 planning documents</strong> &mdash; one for every area of the system &mdash; plus everyday workflows described step by step.</p>
                 <h3>The AI teammates</h3>
@@ -333,9 +347,9 @@
                 <p class="card-links"><a href="spec-driven-dev.html">See the method in detail &mdash; Spec-Driven Development &rarr;</a></p>
             </div>
 
-            <!-- 11. Quality & Testing -->
+            <!-- 12. Quality & Testing -->
             <div class="cs-section">
-                <h2><span class="num">11</span> Quality &amp; Testing</h2>
+                <h2><span class="num">12</span> Quality &amp; Testing</h2>
                 <p><strong>Tests come first.</strong> Acceptance criteria are written before a feature is built, and every criterion maps to at least one automated test.</p>
                 <p><strong>Three independent reviews per piece of work.</strong> A "blind" reviewer sees only the code and hunts for bugs and security issues. An edge-case reviewer walks every branch and boundary. An acceptance reviewer checks the result against the spec.</p>
                 <p><strong>Readiness checks before building.</strong> The first formal assessment found 6 issues &mdash; two of them critical &mdash; that were fixed before development began. A later assessment in September 2026 surfaced remaining planning gaps, which were addressed or explicitly deferred.</p>
@@ -345,9 +359,9 @@
                 </div>
             </div>
 
-            <!-- 12. Progress -->
+            <!-- 13. Progress -->
             <div class="cs-section">
-                <h2><span class="num">12</span> Progress</h2>
+                <h2><span class="num">13</span> Progress</h2>
                 <div class="highlight-box warning">
                     <p><strong>Still unfinished.</strong> The MVP core is built and tested; the remaining work is fast-follow scope plus documentation gaps. Progress as of September 2026.</p>
                 </div>
@@ -387,20 +401,6 @@
                 <span class="part-tag">Part 5 &middot; What I'd Do Differently</span>
                 <h2>What I learned, and what I'd change</h2>
                 <p>The lessons that came out of building it &mdash; and the calls I'd make differently next time.</p>
-            </div>
-
-            <!-- 13. Key Learnings -->
-            <div class="cs-section">
-                <h2><span class="num">13</span> Key Learnings</h2>
-                <p>After building this, the things that matter most:</p>
-                <ol>
-                    <li><strong>Start with the pain that hurts most.</strong> Supplier invoices were the highest-pain, highest-volume process &mdash; and the fastest path to visible value. The same architecture supports every other area.</li>
-                    <li><strong>Architect for immutability from day one.</strong> The append-only event log made audit, debugging, and point-in-time reporting trivial. Reversing this later would have been nearly impossible.</li>
-                    <li><strong>AI is a tool, not the product.</strong> Every AI feature was tested against one question: does it meaningfully reduce human effort or error? Not "is it cool?"</li>
-                    <li><strong>Free-tier AI changes the economics.</strong> Running inference on free tiers eliminated the per-invoice costs that make competing tools expensive. A product decision disguised as an infrastructure decision.</li>
-                    <li><strong>The process is the product.</strong> The structured pipeline caught alignment issues before they became expensive rework &mdash; and made every piece of the system explainable in seconds.</li>
-                    <li><strong>Strategy is a living thing.</strong> The project began framed as a financial platform for restaurants. As research matured, the framing moved to something bigger and stronger: an entry-level ERP for growing businesses that have outgrown QuickBooks. Parts of the plan written under the old framing had to be reworked. Settle the market framing before detailed planning &mdash; late repositioning is expensive, even when it is the right call.</li>
-                </ol>
             </div>
 
             <!-- 14. What I'd Do Differently -->
